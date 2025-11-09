@@ -6,17 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navToggle) {
         navToggle.addEventListener("click", () => {
+            // Toggle menu active class
             navLinks.classList.toggle("active");
             
+            // Toggle body scroll
+            document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "auto";
+
             // Toggle icon (bars to times)
             const icon = navToggle.querySelector("i");
             if (icon.classList.contains("fa-bars")) {
                 icon.classList.remove("fa-bars");
                 icon.classList.add("fa-times");
+                icon.style.color = 'white'; // Ensure 'X' is white
             } else {
                 icon.classList.remove("fa-times");
                 icon.classList.add("fa-bars");
+                icon.style.color = 'white'; // Ensure 'bars' are white
             }
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
         });
     }
 
@@ -26,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (form) {
         // Check if the action URL is set
-        if (form.action === "httpsIS-NOT-SET") {
+        if (form.action.includes("YOUR_ID_HERE") || form.action.includes("httpsIS-NOT-SET")) {
             if (formStatus) {
                 formStatus.innerHTML = "<b>Important:</b> Please set up your form endpoint in <code>index.html</code>.";
                 formStatus.className = "error";
@@ -35,12 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         form.addEventListener("submit", async (e) => {
-            e.preventDefault(); // Prevent the default form submission
-            
+            e.preventDefault(); 
             const data = new FormData(form);
             
             try {
-                // Send form data asynchronously
                 const response = await fetch(form.action, {
                     method: "POST",
                     body: data,
@@ -50,14 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 if (response.ok) {
-                    // Success
                     if (formStatus) {
                         formStatus.innerHTML = "Thanks! Your message has been sent.";
                         formStatus.className = "success";
                     }
-                    form.reset(); // Clear the form
+                    form.reset();
                 } else {
-                    // Server returned an error
                     const responseData = await response.json();
                     if (Object.hasOwn(responseData, 'errors')) {
                         throw new Error(responseData["errors"].map(error => error["message"]).join(", "));
@@ -66,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             } catch (error) {
-                // Network or other error
                 if (formStatus) {
                     formStatus.innerHTML = `<b>Error:</b> ${error.message}`;
                     formStatus.className = "error";
