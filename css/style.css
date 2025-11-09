@@ -2,13 +2,13 @@
 :root {
     --primary-color: #D4AF37; /* Gold */
     --primary-hover: #EACD69; /* Lighter gold for hover */
-    --dark-color: #000000;    /* Pure black background */
-    --secondary-dark: #111111; /* Slightly lighter black */
-    --light-color: #FFFFFF;  /* Pure white */
-    --text-color: #EAEAEA;  /* Off-white for body text */
-    --border-color: #333333;  /* Subtle border for lines */
-    --border-radius: 0;       /* Sharp corners */
-    --shadow: none;           /* No shadows */
+    --dark-color: #0B0B0B;    /* A slightly softer black 'environment' */
+    --secondary-dark: #111111;
+    --light-color: #FFFFFF;
+    --text-color: #EAEAEA;
+    --border-color: #333333;  /* The 'architectonic lines' */
+    --border-radius: 0;
+    --shadow: none;
 }
 
 * {
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif; /* New architectural font */
+    font-family: 'Lato', sans-serif;
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--dark-color);
@@ -38,29 +38,40 @@ body {
 
 h1, h2, h3 {
     color: var(--light-color);
-    line-height: 1.3;
+    line-height: 1.2;
     margin-bottom: 15px;
-    font-weight: 300; /* Lighter weight for airy feel */
+    font-weight: 300; /* Lighter for a cleaner feel */
 }
 
-h1 { font-size: 3.2rem; }
+h1 { 
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 400;
+    padding-bottom: 25px;
+    /* The main structural line */
+    border-bottom: 1px solid var(--border-color); 
 }
 h3 {
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 p {
     margin-bottom: 15px;
+    font-weight: 300;
+    font-size: 1.1rem;
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0; /* More negative space */
 }
 
 .cta-button {
@@ -108,7 +119,7 @@ header .container {
 }
 
 .logo span {
-    color: var(--primary-color); /* The gold finch */
+    color: var(--primary-color); /* Gold finch */
     font-weight: 400;
 }
 
@@ -133,10 +144,9 @@ header .container {
 }
 
 .nav-links a:hover {
-    color: var(--primary-color); /* The gold finch */
+    color: var(--primary-color);
 }
 
-/* Nav CTA (outline style) */
 .nav-links .nav-cta {
     background-color: transparent;
     border: 2px solid var(--primary-color);
@@ -149,14 +159,7 @@ header .container {
     color: var(--dark-color);
 }
 
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--light-color);
-    cursor: pointer;
-}
+.nav-toggle { display: none; /* ... (rest is the same as before) ... */ }
 
 /* ======== HERO SECTION ======== */
 #hero {
@@ -168,62 +171,91 @@ header .container {
 }
 
 .hero-content {
-    max-width: 700px;
     text-align: left;
+    position: relative;
+    /* This is the architectonic guide line */
+    padding-left: 40px;
+    border-left: 2px solid var(--primary-color);
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 300;
+    font-size: 4rem;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 30px;
+    color: var(--text-color);
+    max-width: 600px;
+}
+
+/* ======== SERVICES SECTION (New List Style) ======== */
+#services h2 {
+    text-align: center; /* Center the main title */
+}
+
+.services-list {
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-item {
+    /* Asymmetrical grid for the item itself */
+    display: grid;
+    grid-template-columns: 1fr; /* Default for mobile */
+    gap: 20px;
+    
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color); /* Structural separator */
+}
+
+.service-item:first-child {
+    border-top: 1px solid var(--border-color);
+}
+
+.service-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.service-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Gold finch */
+}
+
+.service-description p {
+    font-size: 1.1rem;
     color: var(--text-color);
 }
 
-/* ======== SERVICES SECTION ======== */
-#services {
-    text-align: left;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.service-card {
-    background-color: transparent;
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color); /* Architectural line */
-    transition: border-color 0.3s ease;
-}
-
-.service-card:hover {
-    border-color: var(--primary-color); /* The gold finch */
-}
-
-.service-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color); /* The gold finch */
-    margin-bottom: 20px;
-}
-
-/* ======== ABOUT SECTION ======== */
+/* ======== ABOUT SECTION (New Asymmetrical Layout) ======== */
 .about-section {
     background-color: var(--secondary-dark); /* Subtle contrast */
-    text-align: center;
 }
 
-.about-section p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Default for mobile */
+    gap: 60px;
+    align-items: center;
+}
+
+.about-layout h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    border: none; /* Remove border from H2 in this section */
+    padding-bottom: 0;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
 }
 
 /* ======== CONTACT SECTION ======== */
@@ -233,14 +265,16 @@ header .container {
     padding-bottom: 60px;
 }
 
-#contact h2, #contact p {
+#contact h2 {
     text-align: center;
 }
 
-.form-group {
-    margin-bottom: 25px;
+#contact p {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
+.form-group { margin-bottom: 25px; }
 .form-group label {
     display: block;
     margin-bottom: 8px;
@@ -250,7 +284,6 @@ header .container {
     letter-spacing: 1px;
     color: var(--text-color);
 }
-
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -263,18 +296,12 @@ header .container {
     color: var(--light-color);
     transition: border-color 0.3s ease;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--primary-color); /* The gold finch */
+    border-color: var(--primary-color);
     outline: none;
 }
-
-#contact-form button {
-    width: 100%;
-    font-size: 1.1rem;
-}
-
+#contact-form button { width: 100%; font-size: 1.1rem; }
 #form-status {
     text-align: center;
     margin-top: 20px;
@@ -293,55 +320,70 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-/* ======== RESPONSIVE (MOBILE) STYLES ======== */
+/* ======== RESPONSIVE (TABLET & DESKTOP) ======== */
+
+/* Mobile-first: .nav-toggle, .nav-links.active from previous CSS are fine */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+    z-index: 1002;
+}
+
+/* Styles for the mobile menu (same as before) */
 @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    #hero h1 { font-size: 2.5rem; }
+    h1 { font-size: 2.5rem; }
+    #hero h1 { font-size: 3rem; }
     h2 { font-size: 1.8rem; }
-
     .logo { font-size: 1.4rem; }
-
-    .nav-toggle {
-        display: block;
-        z-index: 1002;
-    }
-    
-    .nav-toggle i {
-         color: var(--light-color);
-    }
+    .nav-toggle { display: block; }
 
     .nav-links {
         display: none;
-        position: fixed; /* Fullscreen overlay */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         background-color: var(--dark-color);
         flex-direction: column;
-        justify-content: center; /* Center links vertically */
+        justify-content: center;
         text-align: center;
         z-index: 1001;
     }
-    
-    .nav-links.active {
-        display: flex;
+    .nav-links.active { display: flex; }
+    .nav-links li { margin: 25px 0; }
+    .nav-links a { font-size: 1.5rem; }
+    .nav-links .nav-cta { font-size: 1.2rem; padding: 12px 25px; }
+
+    .hero-content { padding-left: 20px; }
+}
+
+/* Apply grid layouts for larger screens */
+@media (min-width: 769px) {
+    .service-item {
+        /* 1/3 for header, 2/3 for description */
+        grid-template-columns: 1fr 2fr;
+        align-items: flex-start;
+        gap: 40px;
     }
 
-    .nav-links li {
-        margin: 25px 0; /* More space */
-    }
-    
-    .nav-links a {
-        font-size: 1.5rem; /* Large, easy-to-tap links */
-    }
-    
-    .nav-links .nav-cta {
-        font-size: 1.2rem;
-        padding: 12px 25px;
+    .service-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .service-description {
+        padding-top: 5px; /* Align text better */
+    }
+
+    .about-layout {
+        /* 1/3 for title, 2/3 for text */
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .about-layout h2 {
+        text-align: right;
     }
 }
