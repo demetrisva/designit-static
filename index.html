@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignIt.pro - Professional Web Design & IT Services</title>
+    <meta name="description" content="Expert web design, development, and IT solutions to grow your business.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">DesignIt.pro</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="cta-button nav-cta">Get Quote</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Crafting Digital Experiences That Work.</h1>
+                <p>Professional web design, custom development, and reliable IT services tailored for your success.</p>
+                <a href="#contact" class="cta-button">Let's Build Something</a>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Website Design</h3>
+                    <p>Modern, responsive, and user-friendly designs that capture your brand and convert visitors into customers.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Creation</h3>
+                    <p>From static sites to full-stack applications, we build fast, secure, and scalable websites from the ground up.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>IT Services</h3>
+                    <p>Reliable IT support, network solutions, and cloud services to keep your business running smoothly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About DesignIt.pro</h2>
+                <p>We are a passionate team of designers, developers, and IT professionals dedicated to helping businesses thrive in the digital world. We believe in clean code, transparent communication, and building long-term partnerships. Your success is our mission.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Get in Touch</h2>
+            <p>Ready to start your project? Fill out the form below or email us.</p>
+            
+            <form id="contact-form" action=https://formspree.io/f/meovjkay method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div id="form-status"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DesignIt.pro. All rights reserved.</p>
+            </div>
+    </footer>
+
+</body>
+</html>
