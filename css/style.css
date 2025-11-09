@@ -72,7 +72,7 @@ section {
 header {
     background-color: var(--light-color);
     border-bottom: 1px solid #eee;
-    padding: 20px 0;
+    padding: 15px 0; /* Slightly reduced padding for logo */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -85,11 +85,21 @@ header .container {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Fallback for no image */
     font-weight: 700;
     color: var(--dark-color);
     text-decoration: none;
+    display: flex; /* To align image vertically if needed */
+    align-items: center;
 }
+
+/* New CSS for the logo image */
+.logo img {
+    height: 45px; /* Adjust as needed for your logo size */
+    width: auto;
+    display: block; /* Ensures it behaves like a block element within flex */
+}
+
 
 .nav-links {
     display: flex;
@@ -259,6 +269,10 @@ footer {
     h1 { font-size: 2.2rem; }
     #hero h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
+
+    .logo img {
+        height: 35px; /* Adjust logo size for smaller screens */
+    }
 
     .nav-toggle {
         display: block;
