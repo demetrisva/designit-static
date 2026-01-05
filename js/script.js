@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     form.reset();
                 } else {
                     const responseData = await response.json();
-                    if (Object.hasOwn(responseData, 'errors')) {
+                    if (responseData && typeof responseData === 'object' && 'errors' in responseData) {
                         throw new Error(responseData["errors"].map(error => error["message"]).join(", "));
                     } else {
                         throw new Error("Oops! There was a problem submitting your form.");
