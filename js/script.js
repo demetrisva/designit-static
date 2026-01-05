@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // --- Mobile Navigation Toggle ---
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navToggle.addEventListener("click", () => {
             // Toggle menu active class
             navLinks.classList.toggle("active");
-            
+
             // Toggle body scroll
             document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "auto";
 
@@ -54,9 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         form.addEventListener("submit", async (e) => {
-            e.preventDefault(); 
+            e.preventDefault();
             const data = new FormData(form);
-            
+
             try {
                 const response = await fetch(form.action, {
                     method: "POST",
@@ -88,4 +88,28 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+
+    // --- Scroll Animations (Intersection Observer) ---
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    // Elements to animate
+    const animatedElements = document.querySelectorAll("section, .service-item, .about-layout, #contact-form");
+
+    animatedElements.forEach(el => {
+        el.classList.add("fade-in-section"); // Add the helper class
+        observer.observe(el);
+    });
 });
