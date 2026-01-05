@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     // Elements to animate
-    const animatedElements = document.querySelectorAll("section, .service-item, .about-layout, #contact-form");
+    const animatedElements = document.querySelectorAll("section, .service-card, .about-grid, .hero-text, #contact-form");
 
     animatedElements.forEach(el => {
         el.classList.add("fade-in-section"); // Add the helper class
