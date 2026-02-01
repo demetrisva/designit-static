@@ -1,26 +1,25 @@
 /* ======== TECHNO-MINIMAL THEME (Wix Style) ======== */
 :root {
-    --bg-color: #000000;
-    /* Pure Black */
-    --surface-color: #0d0d0d;
-    /* Very dark grey for contrast */
+    --bg-color: #050505;
+    --surface-color: rgba(20, 20, 20, 0.7);
 
-    --primary-color: #FF4500;
-    /* NEON ORANGE */
-    --primary-dim: rgba(255, 69, 0, 0.2);
+    --primary-color: #FF5F1F;
+    /* Neon Orange - slightly more vibrant */
+    --primary-dim: rgba(255, 95, 31, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.1);
 
-    --text-main: #FFFFFF;
-    --text-muted: #888888;
+    --text-main: #FDFDFD;
+    --text-muted: #A0A0A0;
 
     --grid-line: rgba(255, 255, 255, 0.1);
     --border-light: #333333;
 
     --font-mono: 'Space Mono', monospace;
 
-    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --cube-size: 250px;
-    --cube-radius: 125px;
+    --cube-size: 280px;
+    --cube-radius: 140px;
 }
 
 * {
@@ -140,9 +139,11 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.9);
-    border-bottom: 1px solid var(--border-light);
-    padding: 1.25rem 0;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1.5rem 0;
 }
 
 .nav-layout {
@@ -376,13 +377,17 @@ header {
 
 .service-card {
     background: var(--bg-color);
-    padding: 3rem 2rem;
+    padding: 4rem 2.5rem;
     position: relative;
     transition: var(--transition);
+    border: 1px solid transparent;
 }
 
 .service-card:hover {
     background: var(--surface-color);
+    backdrop-filter: blur(5px);
+    border-color: var(--primary-dim);
+    transform: translateY(-5px);
 }
 
 .card-header {
@@ -537,19 +542,21 @@ header {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
-    background: transparent;
-    border: 1px solid var(--border-light);
+    padding: 1.25rem;
+    background: rgba(20, 20, 20, 0.5);
+    border: 1px solid var(--glass-border);
     color: var(--text-main);
     font-family: var(--font-mono);
     font-size: 1rem;
+    transition: var(--transition);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background: rgba(255, 69, 0, 0.05);
+    background: rgba(255, 95, 31, 0.03);
+    box-shadow: 0 0 20px rgba(255, 95, 31, 0.1);
 }
 
 .full-width {
