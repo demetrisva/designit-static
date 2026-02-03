@@ -346,8 +346,10 @@ header {
     }
 }
 
-/* --- SERVICES SECTION --- */
-#services {
+/* --- SERVICES & TOPICS SECTION --- */
+#services,
+#topics,
+#insights {
     padding: 8rem 0;
     border-bottom: 1px solid var(--border-light);
 }
