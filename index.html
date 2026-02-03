@@ -32,7 +32,7 @@
             <ul class="nav-links">
                 <li><a href="#topics">// TOPICS</a></li>
                 <li><a href="#about">// ABOUT</a></li>
-                <li><a href="#contact" class="btn-link">[ CONNECT ]</a></li>
+                <li><a href="contact.html" class="btn-link">[ CONNECT ]</a></li>
             </ul>
 
             <button class="nav-toggle" aria-label="toggle navigation">
@@ -229,30 +229,32 @@
             </div>
         </section>
 
-        <section id="contact">
-            <div class="container contact-container">
-                <h2>CONNECT</h2>
-                <p>Have a topic to discuss? Initialize transmission.</p>
+        <section id="news"
+            style="padding: 4rem 0; border-top: 1px solid var(--border-light); background: rgba(0, 255, 65, 0.02);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>SYSTEM_LOG</h2>
+                    <span class="line-decorator"></span>
+                </div>
 
-                <form id="contact-form" action="https://formspree.io/f/meovjkay" method="POST">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">NAME_</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">EMAIL_</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter Email">
-                        </div>
+                <div class="news-feed"
+                    style="font-family: 'Space Mono', monospace; font-size: 0.9rem; color: var(--text-muted);">
+                    <div class="log-entry" style="margin-bottom: 1rem;">
+                        <span style="color: var(--primary-color);">[2026-02-03]</span> :: <span
+                            style="color: var(--text-color);">New insight added: "Future of CSS" uploaded to
+                            archive.</span>
                     </div>
-                    <div class="form-group">
-                        <label for="message">MESSAGE_</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Share your thoughts..."></textarea>
+                    <div class="log-entry" style="margin-bottom: 1rem;">
+                        <span style="color: var(--primary-color);">[2026-02-02]</span> :: <span
+                            style="color: var(--text-color);">System maintenance complete. Redundancy protocols
+                            verified.</span>
                     </div>
-                    <button type="submit" class="cta-button full-width">SEND MESSAGE_</button>
-                    <div id="form-status"></div>
-                </form>
+                    <div class="log-entry">
+                        <span style="color: var(--primary-color);">[2026-02-01]</span> :: <span
+                            style="color: var(--text-color);">DesignIt.pro v3.0 initialization sequence
+                            successful.</span>
+                    </div>
+                </div>
             </div>
         </section>
 
