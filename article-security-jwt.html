@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Alert: JWT // DesignIt.pro</title>
+    <meta name="description"
+        content="CRITICAL ALERT: Zero-day vulnerability in legacy JWT libraries. Patch immediately.">
+
+    <!-- Space Mono Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css?v=3.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="grid-background"></div>
+
+    <header>
+        <nav class="container nav-layout">
+            <a href="index.html" class="logo">{ DesignIt.pro }</a>
+            <a href="index.html#news" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+                SYSTEM_LOG</a>
+        </nav>
+    </header>
+
+    <main style="padding-top: 200px; padding-bottom: 8rem;">
+        <article class="container" style="max-width: 800px;">
+            <header class="article-header"
+                style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
+                <span class="mono-label" style="margin-bottom: 0.5rem; color: #FF0000;">:: SECURITY_ALERT_LEVEL_5</span>
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">JWT_NULL_SIG_VULNERABILITY</h1>
+                <div class="article-meta"
+                    style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
+                    <span><i class="far fa-calendar"></i> 2026-02-04</span>
+                    <span><i class="far fa-clock"></i> 3 MIN READ</span>
+                    <span><i class="fas fa-shield-alt"></i> CRITICAL PATCH</span>
+                </div>
+            </header>
+
+            <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
+                <p class="lead-text" style="color: #FF5F1F;">A critical vulnerability has been discovered in legacy
+                    implementations of JSON Web Token (JWT) libraries. This exploit allows attackers to bypass
+                    authentication by setting the algorithm header to "none".</p>
+
+                <h2>THE_EXPLOIT_VECTOR</h2>
+                <p>JWTs typically consist of three parts: Header, Payload, and Signature. The server verifies the
+                    signature to ensure the token hasn't been tampered with. However, many older libraries trust the
+                    "alg" (algorithm) field in the header blindly.</p>
+
+                <p>If an attacker modifies a captured token to set <code>"alg": "none"</code> and removes the signature,
+                    vulnerable servers may accept the token as valid without verifying it. This allows the attacker to
+                    impersonate any user, including administrators, by simply modifying the payload.</p>
+
+                <blockquote>
+                    "Never trust the client. Never trust the header. Validate everything on the server."
+                </blockquote>
+
+                <h3>REMEDIATION_STEPS</h3>
+                <p>Immediate action is required for all systems using JWT for session management:</p>
+
+                <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
+                    <li style="margin-bottom: 0.5rem;"><strong>Audit Dependencies:</strong> Check your `package.json` or
+                        `go.mod` for outdated JWT libraries.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Enforce Algorithm Allowlist:</strong> Explicitly
+                        configure your verifier to ONLY accept specific algorithms (e.g., HS256, RS256).</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Reject "None":</strong> Ensure your authentication
+                        middleware explicitly rejects tokens with "alg": "none".</li>
+                </ul>
+
+                <p>Security is an ongoing process. Subscribe to CVE feeds for your core dependencies and automate your
+                    patch cycle.</p>
+            </div>
+
+            <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+                <div class="share-actions">
+                    <span style="color: var(--primary-color); font-weight: 700;">SHARE_PACKET:</span>
+                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="margin-left: 1rem;"><i class="fas fa-envelope"></i></a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 DesignIt.pro // SYSTEM_ACTIVE</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Lifehacks // DesignIt.pro</title>
+    <meta name="description" content="Productivity tips for the modern terminal user: SSH keys and ZSH aliases.">
+
+    <!-- Space Mono Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css?v=3.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="grid-background"></div>
+
+    <header>
+        <nav class="container nav-layout">
+            <a href="index.html" class="logo">{ DesignIt.pro }</a>
+            <a href="index.html#news" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+                SYSTEM_LOG</a>
+        </nav>
+    </header>
+
+    <main style="padding-top: 200px; padding-bottom: 8rem;">
+        <article class="container" style="max-width: 800px;">
+            <header class="article-header"
+                style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
+                <span class="mono-label" style="margin-bottom: 0.5rem; color: #00FF41;">:: TERMINAL_OPTIMIZATION</span>
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">DEV_ENVIRONMENT_HACKS</h1>
+                <div class="article-meta"
+                    style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
+                    <span><i class="far fa-calendar"></i> 2026-02-04</span>
+                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
+                    <span><i class="fas fa-terminal"></i> PRODUCTIVITY</span>
+                </div>
+            </header>
+
+            <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
+                <p class="lead-text">Seconds saved accumulate into hours. Optimizing your terminal environment is the
+                    highest ROI activity for any backend engineer.</p>
+
+                <h2>KILL_PASSWORD_AUTH</h2>
+                <p>Typing your password for every <code>git push</code> or server login is a waste of life. Use SSH
+                    keys. If you haven't set up key-based authentication yet, run this one-liner:</p>
+
+                <pre
+                    style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 2px solid var(--primary-color); font-family: 'Space Mono', monospace;  margin-bottom: 1.5rem; overflow-x: auto;"><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></pre>
+
+                <p>Then, copy it to your remote server instantly:</p>
+
+                <pre
+                    style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 2px solid var(--primary-color); font-family: 'Space Mono', monospace; margin-bottom: 1.5rem; overflow-x: auto;"><code>ssh-copy-id user@192.168.1.10</code></pre>
+
+                <p>You will never type that server password again.</p>
+
+                <h3>ALIAS_EVERYTHING</h3>
+                <p>Your <code>~/.zshrc</code> or <code>~/.bashrc</code> is your personal toolbox. If you type a command
+                    more than twice a day, alias it.</p>
+
+                <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
+                    <li style="margin-bottom: 0.5rem;"><code>alias gs="git status"</code></li>
+                    <li style="margin-bottom: 0.5rem;"><code>alias dc="docker-compose"</code></li>
+                    <li style="margin-bottom: 0.5rem;"><code>alias ..="cd .."</code></li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <code>alias update="sudo apt update && sudo apt upgrade -y"</code></li>
+                </ul>
+
+                <blockquote>
+                    "The best developers are lazy. They automate everything."
+                </blockquote>
+            </div>
+
+            <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+                <div class="share-actions">
+                    <span style="color: var(--primary-color); font-weight: 700;">SHARE_PACKET:</span>
+                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="margin-left: 1rem;"><i class="fas fa-envelope"></i></a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 DesignIt.pro // SYSTEM_ACTIVE</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
