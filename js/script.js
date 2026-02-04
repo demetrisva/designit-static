@@ -106,7 +106,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     // Elements to animate
-    const animatedElements = document.querySelectorAll("section, .service-card, .about-grid, .hero-text, #contact-form");
+    const animatedElements = document.querySelectorAll(
+        "section, .service-card, .hero-text, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card"
+    );
+
+    const staggerGroups = [
+        { selector: ".services-grid .service-card", step: 0.08 },
+        { selector: ".method-steps .step", step: 0.07 },
+        { selector: ".news-feed .log-entry", step: 0.05 },
+        { selector: ".related-grid .related-card", step: 0.06 },
+        { selector: ".article-nav .article-nav-link", step: 0.06 },
+        { selector: ".capabilities-grid .capability-card", step: 0.07 },
+    ];
+
+    staggerGroups.forEach(group => {
+        document.querySelectorAll(group.selector).forEach((el, index) => {
+            el.style.transitionDelay = `${index * group.step}s`;
+        });
+    });
+
+    // --- Hover Glow Surfaces ---
+    const glowTargets = document.querySelectorAll(
+        ".service-card, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card, .capability-card, .featured-insight"
+    );
+
+    glowTargets.forEach(el => {
+        el.classList.add("glow-surface");
+        const onMove = (event) => {
+            const rect = el.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 100;
+            const y = ((event.clientY - rect.top) / rect.height) * 100;
+            el.style.setProperty("--glow-x", `${x}%`);
+            el.style.setProperty("--glow-y", `${y}%`);
+            el.style.setProperty("--glow-opacity", "1");
+        };
+
+        const onLeave = () => {
+            el.style.setProperty("--glow-opacity", "0");
+        };
+
+        el.addEventListener("mousemove", onMove);
+        el.addEventListener("mouseleave", onLeave);
+    });
 
     animatedElements.forEach(el => {
         el.classList.add("fade-in-section"); // Add the helper class

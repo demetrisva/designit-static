@@ -64,6 +64,11 @@
 
                 <p class="lead-text">Performance is not just a rendering problem. It is an algorithmic problem. Every extra loop, every unnecessary diff, and every hidden listener steals budget from the user.</p>
 
+                <div class="article-callout">
+                    <span class="callout-label">FIELD_NOTE</span>
+                    <p>Lead with measurement. Define your frame budget, profile the main thread, and move anything expensive off the critical path.</p>
+                </div>
+
                 <h2>RENDER_BUDGETS</h2>
                 <p>Modern UIs are data-heavy, and the easiest mistake is to treat the DOM like a free resource. Virtualization keeps lists cheap. Memoization keeps components stable. And batching updates keeps the main thread breathing.</p>
 

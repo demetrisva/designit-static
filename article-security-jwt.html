@@ -64,6 +64,11 @@
 
                 <p class="lead-text">JWTs are powerful, but they are not magic. They are portable claims, and every claim is a potential vulnerability unless you validate it with intent.</p>
 
+                <div class="article-callout">
+                    <span class="callout-label">FIELD_NOTE</span>
+                    <p>Tighten validation first. Enforce issuer, audience, and expiration checks before adding new features or providers.</p>
+                </div>
+
                 <h2>CLAIMS_WITH_INTENT</h2>
                 <p>The most common JWT failures are not cryptographic. They are logical. Accepting the wrong issuer, skipping audience checks, or ignoring token expiration turns authentication into a best-effort guess.</p>
 
