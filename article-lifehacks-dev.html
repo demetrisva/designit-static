@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Lifehacks // DesignIt.pro</title>
-    <meta name="description" content="Productivity tips for the modern terminal user: SSH keys and ZSH aliases.">
+    <meta name="description" content="Remove daily friction with SSH patterns, shell leverage, and tooling that compounds your time.">
 
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,14 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
         crossorigin="anonymous"></script>
+    <meta property="og:title" content="Developer Lifehacks">
+    <meta property="og:description" content="Remove daily friction with SSH patterns, shell leverage, and tooling that compounds your time.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="DesignIt.pro">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Developer Lifehacks">
+    <meta name="twitter:description" content="Remove daily friction with SSH patterns, shell leverage, and tooling that compounds your time.">
+
 </head>
 
 <body>
@@ -37,49 +45,62 @@
             <header class="article-header"
                 style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
                 <span class="mono-label" style="margin-bottom: 0.5rem; color: #00FF41;">:: TERMINAL_OPTIMIZATION</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">DEV_ENVIRONMENT_HACKS</h1>
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">DEV_FRICTION</h1>
                 <div class="article-meta"
                     style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
                     <span><i class="far fa-calendar"></i> 2026-02-04</span>
-                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
+                    <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-terminal"></i> PRODUCTIVITY</span>
                 </div>
             </header>
 
             <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
-                <p class="lead-text">Seconds saved accumulate into hours. Optimizing your terminal environment is the
-                    highest ROI activity for any backend engineer.</p>
 
-                <h2>KILL_PASSWORD_AUTH</h2>
-                <p>Typing your password for every <code>git push</code> or server login is a waste of life. Use SSH
-                    keys. If you haven't set up key-based authentication yet, run this one-liner:</p>
+                <p class="lead-text">Small frictions compound. The fastest developers are not the ones who type faster, but the ones who remove repetitive decisions from their day.</p>
 
-                <pre
-                    style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 2px solid var(--primary-color); font-family: 'Space Mono', monospace;  margin-bottom: 1.5rem; overflow-x: auto;"><code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></pre>
-
-                <p>Then, copy it to your remote server instantly:</p>
+                <h2>SSH_AS_SUPERPOWER</h2>
+                <p>Use a dedicated key per machine, and wire your <code>~/.ssh/config</code> so hosts become memorable names instead of IP addresses.</p>
 
                 <pre
-                    style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 2px solid var(--primary-color); font-family: 'Space Mono', monospace; margin-bottom: 1.5rem; overflow-x: auto;"><code>ssh-copy-id user@192.168.1.10</code></pre>
+                    style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 2px solid var(--primary-color); font-family: 'Space Mono', monospace; margin-bottom: 1.5rem; overflow-x: auto;"><code>Host staging
+  HostName 192.168.1.10
+  User deploy
+  IdentityFile ~/.ssh/id_ed25519_staging</code></pre>
 
-                <p>You will never type that server password again.</p>
+                <p>Pair that with <code>ssh-copy-id</code> once, and you will never retype a password again.</p>
 
-                <h3>ALIAS_EVERYTHING</h3>
-                <p>Your <code>~/.zshrc</code> or <code>~/.bashrc</code> is your personal toolbox. If you type a command
-                    more than twice a day, alias it.</p>
+                <h3>TERMINAL_LEVERAGE</h3>
+                <p>Your shell is a multiplier. A few smart tools pay back every hour.</p>
 
                 <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;"><code>alias gs="git status"</code></li>
-                    <li style="margin-bottom: 0.5rem;"><code>alias dc="docker-compose"</code></li>
-                    <li style="margin-bottom: 0.5rem;"><code>alias ..="cd .."</code></li>
-                    <li style="margin-bottom: 0.5rem;">
-                        <code>alias update="sudo apt update && sudo apt upgrade -y"</code></li>
+                    <li style="margin-bottom: 0.5rem;"><code>rg</code> for fast, project-wide search.</li>
+                    <li style="margin-bottom: 0.5rem;"><code>fzf</code> to jump through files and command history.</li>
+                    <li style="margin-bottom: 0.5rem;"><code>git worktree</code> to keep multiple branches in parallel.</li>
+                    <li style="margin-bottom: 0.5rem;"><code>tmux</code> or <code>zellij</code> to keep sessions alive.</li>
                 </ul>
 
                 <blockquote>
-                    "The best developers are lazy. They automate everything."
+                    "Automation is kindness to your future self."
                 </blockquote>
             </div>
+            <section class="related-articles">
+                <span class="related-label">RELATED_INSIGHTS</span>
+                <div class="related-grid">
+                    <a href="article-algo-efficiency.html" class="related-card">
+                        <div class="related-title">ALGORITHMIC_BUDGETS</div>
+                        <p class="related-desc">Speed as a feature and a budget.</p>
+                    </a>
+                    <a href="article-security-jwt.html" class="related-card">
+                        <div class="related-title">JWT_DISCIPLINE</div>
+                        <p class="related-desc">Security habits that scale with teams.</p>
+                    </a>
+                    <a href="article-design-systems.html" class="related-card">
+                        <div class="related-title">DECISION_SYSTEMS</div>
+                        <p class="related-desc">Repeatable decisions that cut friction.</p>
+                    </a>
+                </div>
+            </section>
+
 
             <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
                 <div class="share-actions">

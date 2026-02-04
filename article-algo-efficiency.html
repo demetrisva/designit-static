@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithmic Efficiency // DesignIt.pro</title>
-    <meta name="description"
-        content="Reducing computational overhead in frontend applications for better battery life.">
+    <meta name="description" content="Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.">
 
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +18,14 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
         crossorigin="anonymous"></script>
+    <meta property="og:title" content="Algorithmic Efficiency">
+    <meta property="og:description" content="Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="DesignIt.pro">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Algorithmic Efficiency">
+    <meta name="twitter:description" content="Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.">
+
 </head>
 
 <body>
@@ -38,51 +45,57 @@
             <header class="article-header"
                 style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
                 <span class="mono-label" style="margin-bottom: 0.5rem;">:: INSIGHT_LOG_004</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">ALGORITHMIC_EFFICIENCY</h1>
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">ALGORITHMIC_BUDGETS</h1>
                 <div class="article-meta"
                     style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
-                    <span><i class="far fa-calendar"></i> 2026-02-03</span>
-                    <span><i class="far fa-clock"></i> 8 MIN READ</span>
+                    <span><i class="far fa-calendar"></i> 2026-02-04</span>
+                    <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-tag"></i> PERFORMANCE</span>
                 </div>
             </header>
 
             <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
-                <p class="lead-text">Frontend development is no longer just about moving pixels; it is about managing
-                    memory. As web applications rival native software in complexity, O(n^2) operations can drain a
-                    user's battery in minutes.</p>
 
-                <h2>THE_COST_OF_JAVASCRIPT</h2>
-                <p>We often focus on download size, but execution time is the silent killer. A 2MB bundle might download
-                    quickly on 5G, but parsing and compiling that on a low-end Android device typically locks the main
-                    thread for seconds. This is unacceptable.</p>
+                <p class="lead-text">Performance is not just a rendering problem. It is an algorithmic problem. Every extra loop, every unnecessary diff, and every hidden listener steals budget from the user.</p>
 
-                <p>We must return to computer science fundamentals. Are we re-rendering a list of 10,000 items every
-                    time a single checkbox changes? Virtualization (windowing) is mandatory for large datasets,
-                    rendering only what is visible to the viewport.</p>
+                <h2>RENDER_BUDGETS</h2>
+                <p>Modern UIs are data-heavy, and the easiest mistake is to treat the DOM like a free resource. Virtualization keeps lists cheap. Memoization keeps components stable. And batching updates keeps the main thread breathing.</p>
+
+                <p>Think in budgets: a frame gives you about 16ms. Spend it on what the user can see and feel, not on work that can wait.</p>
 
                 <blockquote>
-                    "The fastest code is the code that never runs."
+                    "The fastest interaction is the one that never blocks the main thread."
                 </blockquote>
 
-                <h3>MEMORY_LEAKS_AND_GC</h3>
-                <p>Garbage Collection (GC) in JavaScript is automatic, but not magic. Event listeners attached to
-                    removed DOM elements, detached nodes, and global variables can inadvertently keep memory hostage.
-                </p>
+                <h3>BACKGROUND_WORK</h3>
+                <p>Push expensive work off the critical path. Web Workers, idle callbacks, and precomputation keep the UI responsive while still delivering rich functionality.</p>
 
                 <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;">Use <code>WeakMap</code> and <code>WeakSet</code> for caching
-                        object references.</li>
-                    <li style="margin-bottom: 0.5rem;">Profile heaps snapshots in DevTools to identify detached nodes.
-                    </li>
-                    <li style="margin-bottom: 0.5rem;">Debounce and throttle expensive event handlers (scroll, resize).
-                    </li>
+                    <li style="margin-bottom: 0.5rem;">Virtualize long lists and tables; never render what you cannot see.</li>
+                    <li style="margin-bottom: 0.5rem;">Use <code>requestIdleCallback</code> or workers for heavy transforms.</li>
+                    <li style="margin-bottom: 0.5rem;">Profile and remove listeners that fire on scroll and resize.</li>
                 </ul>
 
-                <p>Efficient algorithms respect the user's hardware. By optimizing our loops and managing our state, we
-                    not only improve frame rates but also extended battery life—a crucial metric in the mobile-first
-                    era.</p>
+                <p>Algorithmic efficiency is a UX feature. It preserves battery, reduces heat, and makes complex applications feel effortless.</p>
             </div>
+            <section class="related-articles">
+                <span class="related-label">RELATED_INSIGHTS</span>
+                <div class="related-grid">
+                    <a href="article-future-css.html" class="related-card">
+                        <div class="related-title">CSS_CONTEXTUAL_FUTURES</div>
+                        <p class="related-desc">Modern CSS that reduces layout complexity.</p>
+                    </a>
+                    <a href="article-green-computing.html" class="related-card">
+                        <div class="related-title">LEAN_COMPUTING</div>
+                        <p class="related-desc">Energy-aware performance choices.</p>
+                    </a>
+                    <a href="article-lifehacks-dev.html" class="related-card">
+                        <div class="related-title">DEV_FRICTION</div>
+                        <p class="related-desc">Tools and habits that reduce daily overhead.</p>
+                    </a>
+                </div>
+            </section>
+
 
             <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
                 <div class="share-actions">

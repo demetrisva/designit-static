@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Alert: JWT // DesignIt.pro</title>
-    <meta name="description"
-        content="CRITICAL ALERT: Zero-day vulnerability in legacy JWT libraries. Patch immediately.">
+    <title>JWT Security // DesignIt.pro</title>
+    <meta name="description" content="JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.">
 
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +18,14 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
         crossorigin="anonymous"></script>
+    <meta property="og:title" content="JWT Security">
+    <meta property="og:description" content="JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="DesignIt.pro">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JWT Security">
+    <meta name="twitter:description" content="JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.">
+
 </head>
 
 <body>
@@ -38,7 +45,7 @@
             <header class="article-header"
                 style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
                 <span class="mono-label" style="margin-bottom: 0.5rem; color: #FF0000;">:: SECURITY_ALERT_LEVEL_5</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">JWT_NULL_SIG_VULNERABILITY</h1>
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">JWT_DISCIPLINE</h1>
                 <div class="article-meta"
                     style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
                     <span><i class="far fa-calendar"></i> 2026-02-04</span>
@@ -48,38 +55,47 @@
             </header>
 
             <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
-                <p class="lead-text" style="color: #FF5F1F;">A critical vulnerability has been discovered in legacy
-                    implementations of JSON Web Token (JWT) libraries. This exploit allows attackers to bypass
-                    authentication by setting the algorithm header to "none".</p>
 
-                <h2>THE_EXPLOIT_VECTOR</h2>
-                <p>JWTs typically consist of three parts: Header, Payload, and Signature. The server verifies the
-                    signature to ensure the token hasn't been tampered with. However, many older libraries trust the
-                    "alg" (algorithm) field in the header blindly.</p>
+                <p class="lead-text">JWTs are powerful, but they are not magic. They are portable claims, and every claim is a potential vulnerability unless you validate it with intent.</p>
 
-                <p>If an attacker modifies a captured token to set <code>"alg": "none"</code> and removes the signature,
-                    vulnerable servers may accept the token as valid without verifying it. This allows the attacker to
-                    impersonate any user, including administrators, by simply modifying the payload.</p>
+                <h2>CLAIMS_WITH_INTENT</h2>
+                <p>The most common JWT failures are not cryptographic. They are logical. Accepting the wrong issuer, skipping audience checks, or ignoring token expiration turns authentication into a best-effort guess.</p>
+
+                <p>Always treat the header and payload as untrusted input. The signature only guarantees integrity if you verify it correctly and enforce the rules you expect.</p>
 
                 <blockquote>
-                    "Never trust the client. Never trust the header. Validate everything on the server."
+                    "Never trust a token you did not constrain."
                 </blockquote>
 
-                <h3>REMEDIATION_STEPS</h3>
-                <p>Immediate action is required for all systems using JWT for session management:</p>
+                <h3>DEFENSE_IN_DEPTH</h3>
+                <p>Solid JWT handling is a stack of safeguards, not a single library call.</p>
 
                 <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;"><strong>Audit Dependencies:</strong> Check your `package.json` or
-                        `go.mod` for outdated JWT libraries.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Enforce Algorithm Allowlist:</strong> Explicitly
-                        configure your verifier to ONLY accept specific algorithms (e.g., HS256, RS256).</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Reject "None":</strong> Ensure your authentication
-                        middleware explicitly rejects tokens with "alg": "none".</li>
+                    <li style="margin-bottom: 0.5rem;">Validate <code>iss</code>, <code>aud</code>, and <code>exp</code> on every request.</li>
+                    <li style="margin-bottom: 0.5rem;">Rotate signing keys and cache JWKS with a short TTL.</li>
+                    <li style="margin-bottom: 0.5rem;">Use short-lived access tokens with refresh token rotation.</li>
                 </ul>
 
-                <p>Security is an ongoing process. Subscribe to CVE feeds for your core dependencies and automate your
-                    patch cycle.</p>
+                <p>When JWTs are handled with discipline, they scale cleanly. When handled casually, they scale risk.</p>
             </div>
+            <section class="related-articles">
+                <span class="related-label">RELATED_INSIGHTS</span>
+                <div class="related-grid">
+                    <a href="article-data-sovereignty.html" class="related-card">
+                        <div class="related-title">DATA_BOUNDARIES</div>
+                        <p class="related-desc">Privacy and residency as architecture.</p>
+                    </a>
+                    <a href="article-server-redundancy.html" class="related-card">
+                        <div class="related-title">RESILIENCE_BY_DESIGN</div>
+                        <p class="related-desc">Staying online under stress.</p>
+                    </a>
+                    <a href="article-lifehacks-dev.html" class="related-card">
+                        <div class="related-title">DEV_FRICTION</div>
+                        <p class="related-desc">Operational habits that reduce mistakes.</p>
+                    </a>
+                </div>
+            </section>
+
 
             <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
                 <div class="share-actions">
