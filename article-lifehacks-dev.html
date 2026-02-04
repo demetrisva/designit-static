@@ -13,7 +13,7 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.1">
@@ -43,34 +43,31 @@
     <header>
         <nav class="container nav-layout">
             <a href="index.html" class="logo">{ DesignIt.pro }</a>
-            <a href="index.html#news" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+            <a href="index.html#news" class="secondary-button small">&lt;
                 SYSTEM_LOG</a>
         </nav>
     </header>
 
     <main class="article-main">
-        <article class="container" style="max-width: 800px;">
-            <header class="article-header"
-                style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
-                <span class="mono-label" style="margin-bottom: 0.5rem; color: #00FF41;">:: TERMINAL_OPTIMIZATION</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">DEV_FRICTION</h1>
-                <div class="article-meta"
-                    style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
+        <article class="article-shell">
+            <header class="article-header">
+                <span class="mono-label article-label label-accent">:: TERMINAL_OPTIMIZATION</span>
+                <h1 class="article-title">DEV_FRICTION</h1>
+                <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-02-04</span>
                     <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-terminal"></i> PRODUCTIVITY</span>
                 </div>
             </header>
 
-            <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
+            <div class="article-content">
 
                 <p class="lead-text">Small frictions compound. The fastest developers are not the ones who type faster, but the ones who remove repetitive decisions from their day.</p>
 
                 <h2>SSH_AS_SUPERPOWER</h2>
                 <p>Use a dedicated key per machine, and wire your <code>~/.ssh/config</code> so hosts become memorable names instead of IP addresses.</p>
 
-                <pre
-                    style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 2px solid var(--primary-color); font-family: 'Space Mono', monospace; margin-bottom: 1.5rem; overflow-x: auto;"><code>Host staging
+                <pre class="code-block"><code>Host staging
   HostName 192.168.1.10
   User deploy
   IdentityFile ~/.ssh/id_ed25519_staging</code></pre>
@@ -80,11 +77,11 @@
                 <h3>TERMINAL_LEVERAGE</h3>
                 <p>Your shell is a multiplier. A few smart tools pay back every hour.</p>
 
-                <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;"><code>rg</code> for fast, project-wide search.</li>
-                    <li style="margin-bottom: 0.5rem;"><code>fzf</code> to jump through files and command history.</li>
-                    <li style="margin-bottom: 0.5rem;"><code>git worktree</code> to keep multiple branches in parallel.</li>
-                    <li style="margin-bottom: 0.5rem;"><code>tmux</code> or <code>zellij</code> to keep sessions alive.</li>
+                <ul class="article-list">
+                    <li><code>rg</code> for fast, project-wide search.</li>
+                    <li><code>fzf</code> to jump through files and command history.</li>
+                    <li><code>git worktree</code> to keep multiple branches in parallel.</li>
+                    <li><code>tmux</code> or <code>zellij</code> to keep sessions alive.</li>
                 </ul>
 
                 <blockquote>
@@ -121,12 +118,12 @@
 
 
 
-            <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+            <footer class="article-footer">
                 <div class="share-actions">
-                    <span style="color: var(--primary-color); font-weight: 700;">SHARE_PACKET:</span>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fas fa-envelope"></i></a>
+                    <span class="share-label">SHARE_PACKET:</span>
+                    <a href="#" class="share-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="share-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </footer>
         </article>

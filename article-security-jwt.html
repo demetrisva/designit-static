@@ -13,7 +13,7 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.1">
@@ -43,26 +43,24 @@
     <header>
         <nav class="container nav-layout">
             <a href="index.html" class="logo">{ DesignIt.pro }</a>
-            <a href="index.html#news" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+            <a href="index.html#news" class="secondary-button small">&lt;
                 SYSTEM_LOG</a>
         </nav>
     </header>
 
     <main class="article-main">
-        <article class="container" style="max-width: 800px;">
-            <header class="article-header"
-                style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
-                <span class="mono-label" style="margin-bottom: 0.5rem; color: #FF0000;">:: SECURITY_ALERT_LEVEL_5</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">JWT_DISCIPLINE</h1>
-                <div class="article-meta"
-                    style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
+        <article class="article-shell">
+            <header class="article-header">
+                <span class="mono-label article-label label-danger">:: SECURITY_ALERT_LEVEL_5</span>
+                <h1 class="article-title">JWT_DISCIPLINE</h1>
+                <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-02-04</span>
                     <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-shield-alt"></i> CRITICAL PATCH</span>
                 </div>
             </header>
 
-            <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
+            <div class="article-content">
 
                 <p class="lead-text">JWTs are powerful, but they are not magic. They are portable claims, and every claim is a potential vulnerability unless you validate it with intent.</p>
 
@@ -78,10 +76,10 @@
                 <h3>DEFENSE_IN_DEPTH</h3>
                 <p>Solid JWT handling is a stack of safeguards, not a single library call.</p>
 
-                <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;">Validate <code>iss</code>, <code>aud</code>, and <code>exp</code> on every request.</li>
-                    <li style="margin-bottom: 0.5rem;">Rotate signing keys and cache JWKS with a short TTL.</li>
-                    <li style="margin-bottom: 0.5rem;">Use short-lived access tokens with refresh token rotation.</li>
+                <ul class="article-list">
+                    <li>Validate <code>iss</code>, <code>aud</code>, and <code>exp</code> on every request.</li>
+                    <li>Rotate signing keys and cache JWKS with a short TTL.</li>
+                    <li>Use short-lived access tokens with refresh token rotation.</li>
                 </ul>
 
                 <p>When JWTs are handled with discipline, they scale cleanly. When handled casually, they scale risk.</p>
@@ -116,12 +114,12 @@
 
 
 
-            <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+            <footer class="article-footer">
                 <div class="share-actions">
-                    <span style="color: var(--primary-color); font-weight: 700;">SHARE_PACKET:</span>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fas fa-envelope"></i></a>
+                    <span class="share-label">SHARE_PACKET:</span>
+                    <a href="#" class="share-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="share-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </footer>
         </article>

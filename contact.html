@@ -24,7 +24,7 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.1">
@@ -42,15 +42,15 @@
     <header>
         <nav class="container nav-layout">
             <a href="index.html" class="logo">{ DesignIt.pro }</a>
-            <a href="index.html" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+            <a href="index.html" class="secondary-button small">&lt;
                 ABORT</a>
         </nav>
     </header>
 
-    <main style="padding-top: 200px; padding-bottom: 8rem; min-height: 80vh; display: flex; align-items: center;">
-        <div class="container contact-container" style="max-width: 600px;">
-            <h1 style="margin-bottom: 1rem;">ESTABLISH_UPLINK</h1>
-            <p style="margin-bottom: 3rem;">Secure channel open. Input parameters below.</p>
+    <main class="contact-main">
+        <div class="container contact-card">
+            <h1>ESTABLISH_UPLINK</h1>
+            <p class="contact-intro">Secure channel open. Input parameters below.</p>
 
             <form id="contact-form" action="https://formspree.io/f/meovjkay" method="POST">
                 <div class="form-group">
@@ -71,8 +71,7 @@
         </div>
     </main>
 
-    <footer
-        style="position: fixed; bottom: 0; width: 100%; padding: 1rem 0; background: var(--bg-color); border-top: 1px solid var(--border-light);">
+    <footer class="footer-fixed">
         <div class="container footer-content">
             <p>&copy; 2026 DesignIt.pro // SYSTEM_ACTIVE</p>
         </div>

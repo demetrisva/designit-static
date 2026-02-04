@@ -24,44 +24,14 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <script src="js/script.js?v=3.0" defer></script>
-    <style>
-        .policy-content {
-            padding: 120px 0 80px;
-            max-width: 800px;
-        }
-
-        .policy-content h2 {
-            color: var(--primary-color);
-            margin-top: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .policy-content p,
-        .policy-content li {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-        }
-
-        .policy-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-    </style>
-    <script type="application/ld+json" id="jsonld-webpage">{"@context": "https://schema.org", "@type": "WebPage", "name": "Terms of Service", "url": "https://designit.pro/terms.html", "description": "Terms of Service for DesignIt.pro digital architecture.", "isPartOf": {"@type": "WebSite", "name": "DesignIt.pro", "url": "https://designit.pro/"}, "inLanguage": "en"}</script>
+<script type="application/ld+json" id="jsonld-webpage">{"@context": "https://schema.org", "@type": "WebPage", "name": "Terms of Service", "url": "https://designit.pro/terms.html", "description": "Terms of Service for DesignIt.pro digital architecture.", "isPartOf": {"@type": "WebSite", "name": "DesignIt.pro", "url": "https://designit.pro/"}, "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -73,8 +43,8 @@
             <a href="index.html" class="logo">{ DesignIt.pro }</a>
 
             <ul class="nav-links">
-                <li><a href="index.html#services">// SERVICES</a></li>
-                <li><a href="index.html#contact" class="btn-link">[ GET QUOTE ]</a></li>
+                <li><a href="index.html#topics">// SERVICES</a></li>
+                <li><a href="contact.html" class="btn-link">[ GET QUOTE ]</a></li>
             </ul>
 
             <button class="nav-toggle" aria-label="toggle navigation">
@@ -83,7 +53,8 @@
         </nav>
     </header>
 
-    <main class="container policy-content">
+    <main class="policy-main">
+        <div class="container policy-card">
         <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> BACK_TO_HOME</a>
         <h1>TERMS_OF_SERVICE</h1>
         <span class="mono-label">ESTABLISHED: FEBRUARY_2026</span>
@@ -107,15 +78,16 @@
         <h2>05_LIABILITY</h2>
         <p>DesignIt.pro shall not be held liable for any damages arising from the use or inability to use our digital
             services or architectural outputs.</p>
+            </div>
     </main>
 
     <footer>
         <div class="container footer-content">
             <p>&copy; 2026 DesignIt.pro // SYSTEM_ACTIVE</p>
-            <div style="margin-top: 1rem;">
-                <a href="privacy.html" style="margin: 0 10px;">PRIVACY</a> |
-                <a href="terms.html" style="margin: 0 10px;">TERMS</a> |
-                <a href="cookies.html" style="margin: 0 10px;">COOKIES</a>
+            <div class="footer-links">
+                <a href="privacy.html" >PRIVACY</a> |
+                <a href="terms.html" >TERMS</a> |
+                <a href="cookies.html" >COOKIES</a>
             </div>
         </div>
     </footer>

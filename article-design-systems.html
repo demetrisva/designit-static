@@ -13,7 +13,7 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.1">
@@ -43,26 +43,24 @@
     <header>
         <nav class="container nav-layout">
             <a href="index.html" class="logo">{ DesignIt.pro }</a>
-            <a href="index.html#insights" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+            <a href="index.html#insights" class="secondary-button small">&lt;
                 RETURN_TO_BASE</a>
         </nav>
     </header>
 
     <main class="article-main">
-        <article class="container" style="max-width: 800px;">
-            <header class="article-header"
-                style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
-                <span class="mono-label" style="margin-bottom: 0.5rem;">:: INSIGHT_LOG_003</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">DECISION_SYSTEMS</h1>
-                <div class="article-meta"
-                    style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
+        <article class="article-shell">
+            <header class="article-header">
+                <span class="mono-label article-label">:: INSIGHT_LOG_003</span>
+                <h1 class="article-title">DECISION_SYSTEMS</h1>
+                <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-02-04</span>
                     <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-tag"></i> UI/UX</span>
                 </div>
             </header>
 
-            <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
+            <div class="article-content">
 
                 <p class="lead-text">A design system is institutional memory. It captures the decisions that made your product feel coherent and makes those decisions easy to repeat, audit, and evolve.</p>
 
@@ -78,10 +76,10 @@
                 <h3>TOKENS_AS_CONTRACT</h3>
                 <p>Design Tokens turn aesthetics into a durable interface between design and code. We name the purpose, not the color. That lets us change the look without changing the behavior.</p>
 
-                <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;">Semantic tokens like <code>--surface-raised</code> and <code>--text-critical</code>.</li>
-                    <li style="margin-bottom: 0.5rem;">Accessibility baked into tokens, not added after the fact.</li>
-                    <li style="margin-bottom: 0.5rem;">Contribution workflows with review gates for new components.</li>
+                <ul class="article-list">
+                    <li>Semantic tokens like <code>--surface-raised</code> and <code>--text-critical</code>.</li>
+                    <li>Accessibility baked into tokens, not added after the fact.</li>
+                    <li>Contribution workflows with review gates for new components.</li>
                 </ul>
 
                 <p>When the system is operational, not ornamental, it becomes a force multiplier. New features land faster, brand drift stops, and the product becomes easier to maintain.</p>
@@ -116,12 +114,12 @@
 
 
 
-            <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+            <footer class="article-footer">
                 <div class="share-actions">
-                    <span style="color: var(--primary-color); font-weight: 700;">SHARE_PACKET:</span>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fas fa-envelope"></i></a>
+                    <span class="share-label">SHARE_PACKET:</span>
+                    <a href="#" class="share-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="share-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </footer>
         </article>

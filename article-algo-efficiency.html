@@ -13,7 +13,7 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.1">
@@ -43,26 +43,24 @@
     <header>
         <nav class="container nav-layout">
             <a href="index.html" class="logo">{ DesignIt.pro }</a>
-            <a href="index.html#insights" class="secondary-button" style="padding: 0.5rem 1rem; font-size: 0.8rem;">&lt;
+            <a href="index.html#insights" class="secondary-button small">&lt;
                 RETURN_TO_BASE</a>
         </nav>
     </header>
 
     <main class="article-main">
-        <article class="container" style="max-width: 800px;">
-            <header class="article-header"
-                style="margin-bottom: 4rem; border-bottom: 1px solid var(--border-light); padding-bottom: 2rem;">
-                <span class="mono-label" style="margin-bottom: 0.5rem;">:: INSIGHT_LOG_004</span>
-                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">ALGORITHMIC_BUDGETS</h1>
-                <div class="article-meta"
-                    style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 2rem;">
+        <article class="article-shell">
+            <header class="article-header">
+                <span class="mono-label article-label">:: INSIGHT_LOG_004</span>
+                <h1 class="article-title">ALGORITHMIC_BUDGETS</h1>
+                <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-02-04</span>
                     <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-tag"></i> PERFORMANCE</span>
                 </div>
             </header>
 
-            <div class="article-content" style="font-size: 1.1rem; line-height: 1.8;">
+            <div class="article-content">
 
                 <p class="lead-text">Performance is not just a rendering problem. It is an algorithmic problem. Every extra loop, every unnecessary diff, and every hidden listener steals budget from the user.</p>
 
@@ -78,10 +76,10 @@
                 <h3>BACKGROUND_WORK</h3>
                 <p>Push expensive work off the critical path. Web Workers, idle callbacks, and precomputation keep the UI responsive while still delivering rich functionality.</p>
 
-                <ul style="margin: 2rem 0; padding-left: 2rem; color: var(--text-muted);">
-                    <li style="margin-bottom: 0.5rem;">Virtualize long lists and tables; never render what you cannot see.</li>
-                    <li style="margin-bottom: 0.5rem;">Use <code>requestIdleCallback</code> or workers for heavy transforms.</li>
-                    <li style="margin-bottom: 0.5rem;">Profile and remove listeners that fire on scroll and resize.</li>
+                <ul class="article-list">
+                    <li>Virtualize long lists and tables; never render what you cannot see.</li>
+                    <li>Use <code>requestIdleCallback</code> or workers for heavy transforms.</li>
+                    <li>Profile and remove listeners that fire on scroll and resize.</li>
                 </ul>
 
                 <p>Algorithmic efficiency is a UX feature. It preserves battery, reduces heat, and makes complex applications feel effortless.</p>
@@ -116,12 +114,12 @@
 
 
 
-            <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-light);">
+            <footer class="article-footer">
                 <div class="share-actions">
-                    <span style="color: var(--primary-color); font-weight: 700;">SHARE_PACKET:</span>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="margin-left: 1rem;"><i class="fas fa-envelope"></i></a>
+                    <span class="share-label">SHARE_PACKET:</span>
+                    <a href="#" class="share-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="share-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </footer>
         </article>

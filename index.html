@@ -24,7 +24,7 @@
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css?v=3.0">
@@ -57,7 +57,7 @@
 
     <main>
 
-        <section id="hero">
+        <section id="hero" class="section hero-section">
             <div class="container hero-grid">
                 <div class="hero-text">
                     <span class="mono-label">:: KNOWLEDGE_BASE_ONLINE</span>
@@ -84,7 +84,7 @@
             </div>
         </section>
 
-        <section id="topics">
+        <section id="topics" class="section">
             <div class="container">
                 <div class="section-header">
                     <h2>CORE_DOMAINS</h2>
@@ -119,46 +119,39 @@
 
 
 
-        <section id="methodology" style="padding: 8rem 0; border-bottom: 1px solid var(--border-light);">
+        <section id="methodology" class="section section-alt">
             <div class="container">
                 <div class="section-header">
                     <h2>PROCESS_LOGIC</h2>
                     <span class="line-decorator"></span>
                 </div>
 
-                <div class="method-steps"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div class="method-steps">
                     <div class="step">
-                        <span
-                            style="font-size: 3rem; color: var(--primary-color); opacity: 0.2; font-weight: 700;">01</span>
-                        <h3 style="margin: 1rem 0; font-size: 1.2rem;">DIAGNOSTIC</h3>
-                        <p style="font-size: 0.9rem;">Analysis of current system constraints and architectural
-                            bottlenecks.</p>
+                        <span class="step-num">01</span>
+                        <h3 class="step-title">DIAGNOSTIC</h3>
+                        <p class="step-desc">Analysis of current system constraints and architectural bottlenecks.</p>
                     </div>
                     <div class="step">
-                        <span
-                            style="font-size: 3rem; color: var(--primary-color); opacity: 0.2; font-weight: 700;">02</span>
-                        <h3 style="margin: 1rem 0; font-size: 1.2rem;">CALCULATION</h3>
-                        <p style="font-size: 0.9rem;">Development of optimal pathways and redundancy strategies.</p>
+                        <span class="step-num">02</span>
+                        <h3 class="step-title">CALCULATION</h3>
+                        <p class="step-desc">Development of optimal pathways and redundancy strategies.</p>
                     </div>
                     <div class="step">
-                        <span
-                            style="font-size: 3rem; color: var(--primary-color); opacity: 0.2; font-weight: 700;">03</span>
-                        <h3 style="margin: 1rem 0; font-size: 1.2rem;">EXECUTION</h3>
-                        <p style="font-size: 0.9rem;">Clean implementation with focus on semantic structure and
-                            performance.</p>
+                        <span class="step-num">03</span>
+                        <h3 class="step-title">EXECUTION</h3>
+                        <p class="step-desc">Clean implementation with focus on semantic structure and performance.</p>
                     </div>
                     <div class="step">
-                        <span
-                            style="font-size: 3rem; color: var(--primary-color); opacity: 0.2; font-weight: 700;">04</span>
-                        <h3 style="margin: 1rem 0; font-size: 1.2rem;">ITERATION</h3>
-                        <p style="font-size: 0.9rem;">Continuous monitoring and refinement based on user-flow data.</p>
+                        <span class="step-num">04</span>
+                        <h3 class="step-title">ITERATION</h3>
+                        <p class="step-desc">Continuous monitoring and refinement based on user-flow data.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="insights">
+        <section id="insights" class="section">
             <div class="container">
                 <div class="section-header">
                     <h2>LATEST_INSIGHTS</h2>
@@ -227,44 +220,40 @@
 
 
 
-        <section id="news"
-            style="padding: 4rem 0; border-top: 1px solid var(--border-light); background: rgba(0, 255, 65, 0.02);">
+        <section id="news" class="section section-muted">
             <div class="container">
                 <div class="section-header">
                     <h2>SYSTEM_LOG</h2>
                     <span class="line-decorator"></span>
                 </div>
 
-                <div class="news-feed"
-                    style="font-family: 'Space Mono', monospace; font-size: 0.9rem; color: var(--text-muted);">
-                    <div class="log-entry" style="margin-bottom: 1rem;">
-                        <span style="color: var(--primary-color);">[2026-02-04]</span> :: <a
-                            href="article-security-jwt.html"
-                            style="color: var(--text-color); text-decoration: underline; text-decoration-color: var(--primary-color);">SECURITY_ALERT:
-                            Zero-day vulnerability in legacy JWT
-                            libraries. Patch applied.</a>
+                <div class="news-feed">
+                    <div class="log-entry">
+                        <span class="log-date">[2026-02-04]</span>
+                        <span class="log-sep">::</span>
+                        <a href="article-security-jwt.html" class="log-link">SECURITY_ALERT: Zero-day vulnerability in
+                            legacy JWT libraries. Patch applied.</a>
                     </div>
-                    <div class="log-entry" style="margin-bottom: 1rem;">
-                        <span style="color: var(--primary-color);">[2026-02-04]</span> :: <a
-                            href="article-lifehacks-dev.html"
-                            style="color: var(--text-color); text-decoration: underline; text-decoration-color: var(--primary-color);">LIFEHACK:
-                            Use `ssh-copy-id` to avoid password fatigue.
-                            Key-based auth is mandatory.</a>
+                    <div class="log-entry">
+                        <span class="log-date">[2026-02-04]</span>
+                        <span class="log-sep">::</span>
+                        <a href="article-lifehacks-dev.html" class="log-link">LIFEHACK: Use `ssh-copy-id` to avoid
+                            password fatigue. Key-based auth is mandatory.</a>
                     </div>
-                    <div class="log-entry" style="margin-bottom: 1rem;">
-                        <span style="color: var(--primary-color);">[2026-02-03]</span> :: <span
-                            style="color: var(--text-color);">New insight added: "Future of CSS" uploaded to
-                            archive.</span>
+                    <div class="log-entry">
+                        <span class="log-date">[2026-02-03]</span>
+                        <span class="log-sep">::</span>
+                        <span class="log-text">New insight added: "Future of CSS" uploaded to archive.</span>
                     </div>
-                    <div class="log-entry" style="margin-bottom: 1rem;">
-                        <span style="color: var(--primary-color);">[2026-02-03]</span> :: <span
-                            style="color: var(--text-color);">TIP: Optimize your `.zshrc` aliases for 20% faster
-                            workflow.</span>
+                    <div class="log-entry">
+                        <span class="log-date">[2026-02-03]</span>
+                        <span class="log-sep">::</span>
+                        <span class="log-text">TIP: Optimize your `.zshrc` aliases for 20% faster workflow.</span>
                     </div>
-                    <div class="log-entry" style="margin-bottom: 1rem;">
-                        <span style="color: var(--primary-color);">[2026-02-02]</span> :: <span
-                            style="color: var(--text-color);">System maintenance complete. Redundancy protocols
-                            verified.</span>
+                    <div class="log-entry">
+                        <span class="log-date">[2026-02-02]</span>
+                        <span class="log-sep">::</span>
+                        <span class="log-text">System maintenance complete. Redundancy protocols verified.</span>
                     </div>
                 </div>
             </div>
@@ -275,11 +264,11 @@
     <footer>
         <div class="container footer-content">
             <p>&copy; 2026 DesignIt.pro // SYSTEM_ACTIVE</p>
-            <div style="margin-top: 1rem;">
-                <a href="privacy.html" style="margin: 0 10px; font-size: 0.75rem; color: var(--text-muted);">PRIVACY</a>
+            <div class="footer-links">
+                <a href="privacy.html">PRIVACY</a>
                 |
-                <a href="terms.html" style="margin: 0 10px; font-size: 0.75rem; color: var(--text-muted);">TERMS</a> |
-                <a href="cookies.html" style="margin: 0 10px; font-size: 0.75rem; color: var(--text-muted);">COOKIES</a>
+                <a href="terms.html">TERMS</a> |
+                <a href="cookies.html">COOKIES</a>
             </div>
         </div>
     </footer>
