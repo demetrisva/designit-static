@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Elements to animate
     const animatedElements = document.querySelectorAll(
-        "section, .service-card, .hero-text, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card"
+        "section, .service-card, .hero-text, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card, .impact-card, .project-card, .project-metrics .metric, .capability-card, .featured-insight"
     );
 
     const staggerGroups = [
@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { selector: ".related-grid .related-card", step: 0.06 },
         { selector: ".article-nav .article-nav-link", step: 0.06 },
         { selector: ".capabilities-grid .capability-card", step: 0.07 },
+        { selector: ".impact-grid .impact-card", step: 0.05 },
+        { selector: ".project-metrics .metric", step: 0.05 },
     ];
 
     staggerGroups.forEach(group => {
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Hover Glow Surfaces ---
     const glowTargets = document.querySelectorAll(
-        ".service-card, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card, .capability-card, .featured-insight"
+        ".service-card, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card, .capability-card, .featured-insight, .impact-card, .project-card, .metric"
     );
 
     glowTargets.forEach(el => {
@@ -175,5 +177,17 @@ document.addEventListener("DOMContentLoaded", () => {
         updateProgress();
         window.addEventListener("scroll", updateProgress, { passive: true });
         window.addEventListener("resize", updateProgress);
+    }
+
+    // --- Hero Toggle ---
+    const heroToggle = document.querySelector(".hero-toggle");
+    const heroImage = document.querySelector(".hero-illustration");
+    if (heroToggle && heroImage) {
+        const primary = heroToggle.dataset.heroPrimary;
+        const alt = heroToggle.dataset.heroAlt;
+        heroToggle.addEventListener("click", () => {
+            const current = heroImage.getAttribute("src");
+            heroImage.setAttribute("src", current === primary ? alt : primary);
+        });
     }
 });

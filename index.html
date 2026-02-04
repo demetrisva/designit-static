@@ -47,6 +47,7 @@
             <ul class="nav-links">
                 <li><a href="#topics">// TOPICS</a></li>
                 <li><a href="#capabilities">// CAPABILITIES</a></li>
+                <li><a href="#featured">// FEATURED</a></li>
                 <li><a href="contact.html" class="btn-link">[ CONNECT ]</a></li>
             </ul>
 
@@ -81,6 +82,28 @@
                     </div>
                     <img class="hero-illustration" src="assets/images/hero-structure.svg"
                         alt="Abstract architectural schematic with layered rings and beams">
+                    <button class="hero-toggle" type="button" aria-label="Swap hero view"
+                        data-hero-primary="assets/images/hero-structure.svg"
+                        data-hero-alt="assets/images/hero-structure-alt.svg">ALT_VIEW</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="section impact-section">
+            <div class="container">
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <span class="impact-value">17ms</span>
+                        <span class="impact-label">INTERACTION_BUDGET</span>
+                    </div>
+                    <div class="impact-card">
+                        <span class="impact-value">99.99%</span>
+                        <span class="impact-label">UPTIME_TARGET</span>
+                    </div>
+                    <div class="impact-card">
+                        <span class="impact-value">-35%</span>
+                        <span class="impact-label">BYTE_REDUCTION</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -180,6 +203,47 @@
             </div>
         </section>
 
+        <section id="featured" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>FEATURED_PROJECT</h2>
+                    <span class="line-decorator"></span>
+                </div>
+                <div class="project-card">
+                    <div class="project-copy">
+                        <span class="mono-label">CASE_FILE_047</span>
+                        <h3>ATLAS_NETWORK</h3>
+                        <p>A multi-region routing stack rebuilt for resilience. We redesigned the edge logic, tuned the
+                            data plane, and cut user-facing latency without sacrificing observability.</p>
+                        <div class="project-tags">
+                            <span>INFRA</span>
+                            <span>PERFORMANCE</span>
+                            <span>SECURITY</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">-62%</span>
+                                <span class="metric-label">LATENCY</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+31%</span>
+                                <span class="metric-label">THROUGHPUT</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">99.98%</span>
+                                <span class="metric-label">UPTIME</span>
+                            </div>
+                        </div>
+                        <a href="project-atlas.html" class="cta-button small">VIEW_CASE_STUDY</a>
+                    </div>
+                    <div class="project-media">
+                        <img src="assets/images/featured-project.svg"
+                            alt="Featured project schematic for Atlas Network">
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
         <section id="methodology" class="section section-alt">
@@ -209,6 +273,12 @@
                         <span class="step-num">04</span>
                         <h3 class="step-title">ITERATION</h3>
                         <p class="step-desc">Continuous monitoring and refinement based on user-flow data.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">05</span>
+                        <h3 class="step-title">HARDENING</h3>
+                        <p class="step-desc">Security reviews, reliability drills, and performance validation before
+                            release.</p>
                     </div>
                 </div>
             </div>
@@ -366,6 +436,21 @@
                         <span class="log-sep">::</span>
                         <span class="log-text">Accessibility review complete. Contrast and motion settings validated.</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="section cta-band">
+            <div class="container cta-content">
+                <div>
+                    <span class="mono-label">READY_TO_DEPLOY</span>
+                    <h2>SHIP A STRONGER SYSTEM</h2>
+                    <p>Tell us where performance, security, or UX is breaking down. We'll map a plan and execute with
+                        precision.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contact.html" class="cta-button">START PROJECT</a>
+                    <a href="project-atlas.html" class="secondary-button">VIEW CASE STUDY</a>
                 </div>
             </div>
         </section>

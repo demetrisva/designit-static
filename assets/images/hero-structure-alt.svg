@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <defs>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff7a59"/>
+      <stop offset="100%" stop-color="#2df3d5"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="rgba(255,122,89,0.4)"/>
+      <stop offset="70%" stop-color="rgba(255,122,89,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="640" fill="none"/>
+  <g opacity="0.3" stroke="rgba(255,255,255,0.08)" stroke-width="1">
+    <rect x="90" y="90" width="460" height="460" rx="32" fill="none"/>
+    <rect x="140" y="140" width="360" height="360" rx="28" fill="none"/>
+    <rect x="190" y="190" width="260" height="260" rx="22" fill="none"/>
+  </g>
+  <g opacity="0.25" stroke="rgba(255,255,255,0.1)" stroke-width="1">
+    <path d="M120 120 L520 520"/>
+    <path d="M520 120 L120 520"/>
+  </g>
+  <circle cx="320" cy="320" r="210" fill="url(#halo)"/>
+  <g stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none">
+    <path d="M200 230 L440 230 L480 320 L440 410 L200 410 L160 320 Z"/>
+    <path d="M240 260 L400 260 L430 320 L400 380 L240 380 L210 320 Z"/>
+  </g>
+  <circle cx="320" cy="320" r="52" fill="url(#core)"/>
+  <g stroke="url(#core)" stroke-width="3" fill="none" opacity="0.85">
+    <path d="M320 70 L320 200"/>
+    <path d="M320 440 L320 570"/>
+    <path d="M70 320 L200 320"/>
+    <path d="M440 320 L570 320"/>
+  </g>
+  <g fill="rgba(255,255,255,0.6)">
+    <circle cx="170" cy="210" r="4"/>
+    <circle cx="470" cy="200" r="3"/>
+    <circle cx="490" cy="450" r="4"/>
+    <circle cx="200" cy="470" r="3"/>
+  </g>
+</svg>

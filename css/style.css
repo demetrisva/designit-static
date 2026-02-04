@@ -1057,6 +1057,18 @@ header {
     position: relative;
     z-index: 2;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    animation: heroSpin 16s ease-in-out infinite;
+}
+
+@keyframes heroSpin {
+    0%,
+    100% {
+        transform: rotate(-2deg) scale(0.98);
+    }
+
+    50% {
+        transform: rotate(2deg) scale(1.02);
+    }
 }
 
 .hero-glow {
@@ -1207,6 +1219,111 @@ header {
     font-size: 1.1rem;
 }
 
+.impact-section {
+    padding: 3.5rem 0 1rem;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.impact-card {
+    padding: 1.5rem 1.8rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.impact-value {
+    font-size: 2rem;
+    color: var(--text-main);
+    font-family: var(--font-heading);
+}
+
+.impact-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2.5rem;
+    padding: 2.8rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.project-copy h3 {
+    margin: 0.8rem 0 1rem;
+    font-size: 1.7rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+}
+
+.project-tags span {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-light);
+}
+
+.project-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.metric {
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.metric-value {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+
+.metric-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+}
+
+.project-media img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
 .featured-insight {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -1253,6 +1370,119 @@ header {
     border-radius: 18px;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-light);
+}
+
+.hero-toggle {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+    background: rgba(8, 12, 18, 0.8);
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+.hero-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.cta-band {
+    background: linear-gradient(120deg, rgba(45, 243, 213, 0.12), rgba(255, 122, 89, 0.12));
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.cta-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-main {
+    padding-top: calc(var(--header-height) + 60px);
+    padding-bottom: 6rem;
+}
+
+.project-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 3rem;
+}
+
+.project-hero h1 {
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
+    margin: 1rem 0;
+}
+
+.project-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.project-hero-tags span {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-light);
+}
+
+.project-hero-media img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.project-panel {
+    padding: 2rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+}
+
+.project-flow {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.project-cta {
+    margin-bottom: 2rem;
 }
 
 .method-steps {
@@ -1325,6 +1555,13 @@ header {
     transition: opacity 0.25s ease;
     pointer-events: none;
     mix-blend-mode: screen;
+}
+
+.project-card,
+.impact-card,
+.capability-card,
+.metric {
+    position: relative;
 }
 
 .log-date {
@@ -1685,6 +1922,20 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .project-card {
+        grid-template-columns: 1fr;
+        padding: 2.2rem;
+    }
+
+    .project-hero {
+        grid-template-columns: 1fr;
+        padding: 2.4rem;
+    }
+
+    .cta-content {
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1727,6 +1978,22 @@ footer {
 
     .capability-card {
         padding: 1.8rem;
+    }
+
+    .impact-section {
+        padding: 3rem 0 0.5rem;
+    }
+
+    .project-card {
+        padding: 2rem;
+    }
+
+    .cta-band {
+        padding: 5rem 0;
+    }
+
+    .project-main {
+        padding-top: calc(var(--header-height) + 40px);
     }
 }
 
