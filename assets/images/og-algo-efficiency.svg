@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF5F1F"/>
+      <stop offset="100%" stop-color="#FF8F5F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#2a2a2a" stroke-width="1">
+    <path d="M0 90 H1200"/>
+    <path d="M0 180 H1200"/>
+    <path d="M0 270 H1200"/>
+    <path d="M0 360 H1200"/>
+    <path d="M0 450 H1200"/>
+    <path d="M0 540 H1200"/>
+    <path d="M120 0 V630"/>
+    <path d="M240 0 V630"/>
+    <path d="M360 0 V630"/>
+    <path d="M480 0 V630"/>
+    <path d="M600 0 V630"/>
+    <path d="M720 0 V630"/>
+    <path d="M840 0 V630"/>
+    <path d="M960 0 V630"/>
+    <path d="M1080 0 V630"/>
+  </g>
+  <rect x="70" y="70" width="1060" height="490" rx="18" fill="rgba(20,20,20,0.75)" stroke="#2a2a2a"/>
+  <text x="110" y="170" fill="#FF5F1F" font-size="28" font-family="Space Mono, monospace" letter-spacing="4">DESIGNIT.PRO</text>
+  <text x="110" y="250" fill="#FDFDFD" font-size="62" font-family="Space Mono, monospace" font-weight="700" letter-spacing="-2">ALGORITHMIC_BUDGETS</text>
+  <text x="110" y="330" fill="#A0A0A0" font-size="24" font-family="Space Mono, monospace">SYSTEM_LOG / 2026-02-04</text>
+  <rect x="110" y="370" width="260" height="6" fill="url(#accent)"/>
+  <text x="110" y="435" fill="#A0A0A0" font-size="20" font-family="Space Mono, monospace">designit.pro/insights</text>
+</svg>

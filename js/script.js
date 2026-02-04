@@ -112,4 +112,27 @@ document.addEventListener("DOMContentLoaded", () => {
         el.classList.add("fade-in-section"); // Add the helper class
         observer.observe(el);
     });
+
+    // --- Reading Progress Bar (Article Pages) ---
+    const article = document.querySelector("article");
+    if (article) {
+        const progress = document.createElement("div");
+        progress.className = "reading-progress";
+        progress.innerHTML = "<div class=\"reading-progress-bar\"></div>";
+        document.body.appendChild(progress);
+
+        const bar = progress.querySelector(".reading-progress-bar");
+        const updateProgress = () => {
+            const start = article.offsetTop;
+            const end = start + article.offsetHeight - window.innerHeight;
+            const pos = window.pageYOffset || document.documentElement.scrollTop;
+            const ratio = end > start ? (pos - start) / (end - start) : 0;
+            const clamped = Math.max(0, Math.min(1, ratio));
+            bar.style.width = `${clamped * 100}%`;
+        };
+
+        updateProgress();
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+    }
 });
