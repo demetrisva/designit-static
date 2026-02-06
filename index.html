@@ -310,9 +310,44 @@
                     </div>
                 </div>
 
-                <div class="services-grid">
+                <div class="insights-toolbar">
+                    <div class="insights-controls">
+                        <div class="insights-search-wrap">
+                            <label for="insight-search" class="sr-only">Search insights</label>
+                            <input id="insight-search" class="insights-search" type="search"
+                                placeholder="SEARCH_INSIGHTS..." data-insight-search autocomplete="off">
+                        </div>
+                        <div class="insights-sort-wrap">
+                            <label for="insight-sort" class="sr-only">Sort insights</label>
+                            <select id="insight-sort" class="insights-sort" data-insight-sort>
+                                <option value="latest">SORT: LATEST</option>
+                                <option value="title">SORT: TITLE</option>
+                                <option value="topic">SORT: TOPIC</option>
+                            </select>
+                        </div>
+                        <button type="button" class="insights-clear" data-insight-clear>Clear</button>
+                    </div>
+                    <p class="insights-shortcut">Press <kbd>/</kbd> to search</p>
+                    <div class="insight-filter-group" role="group" aria-label="Filter insights by category">
+                        <button type="button" class="insight-filter-chip is-active" data-insight-filter="all"
+                            aria-pressed="true">ALL</button>
+                        <button type="button" class="insight-filter-chip" data-insight-filter="frontend"
+                            aria-pressed="false">FRONTEND</button>
+                        <button type="button" class="insight-filter-chip" data-insight-filter="infrastructure"
+                            aria-pressed="false">INFRA</button>
+                        <button type="button" class="insight-filter-chip" data-insight-filter="security"
+                            aria-pressed="false">SECURITY</button>
+                        <button type="button" class="insight-filter-chip" data-insight-filter="performance"
+                            aria-pressed="false">PERFORMANCE</button>
+                        <button type="button" class="insight-filter-chip" data-insight-filter="operations"
+                            aria-pressed="false">OPERATIONS</button>
+                    </div>
+                    <p class="insight-results" data-insight-results aria-live="polite"></p>
+                </div>
+
+                <div class="services-grid" data-insights-grid>
                     <!-- This grid reuses the service-card class for consistency, but intended for articles -->
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="frontend architecture">
                         <div class="card-header">
                             <span class="svc-num">:: ART_01</span>
                         </div>
@@ -322,7 +357,7 @@
                         <a href="article-future-css.html" class="svc-link">READ ARTICLE ></a>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="infrastructure operations">
                         <div class="card-header">
                             <span class="svc-num">:: ART_02</span>
                         </div>
@@ -331,7 +366,7 @@
                             degradation.</p>
                         <a href="article-server-redundancy.html" class="svc-link">READ ARTICLE ></a>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="frontend design">
                         <div class="card-header">
                             <span class="svc-num">:: ART_03</span>
                         </div>
@@ -340,7 +375,7 @@
                         <a href="article-design-systems.html" class="svc-link">READ ARTICLE ></a>
                     </div>
                     <!-- New Articles -->
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="performance frontend">
                         <div class="card-header">
                             <span class="svc-num">:: ART_04</span>
                         </div>
@@ -349,7 +384,7 @@
                         <a href="article-algo-efficiency.html" class="svc-link">READ ARTICLE ></a>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="performance operations">
                         <div class="card-header">
                             <span class="svc-num">:: ART_05</span>
                         </div>
@@ -358,7 +393,7 @@
                         <a href="article-green-computing.html" class="svc-link">READ ARTICLE ></a>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="security operations">
                         <div class="card-header">
                             <span class="svc-num">:: ART_06</span>
                         </div>
@@ -367,7 +402,7 @@
                         <a href="article-data-sovereignty.html" class="svc-link">READ ARTICLE ></a>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="security infrastructure">
                         <div class="card-header">
                             <span class="svc-num">:: ART_07</span>
                         </div>
@@ -376,7 +411,7 @@
                         <a href="article-security-jwt.html" class="svc-link">READ ARTICLE ></a>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card" data-insight-card data-topic="operations productivity">
                         <div class="card-header">
                             <span class="svc-num">:: ART_08</span>
                         </div>
@@ -385,6 +420,8 @@
                         <a href="article-lifehacks-dev.html" class="svc-link">READ ARTICLE ></a>
                     </div>
                 </div>
+                <p class="insight-empty" data-insight-empty hidden>NO_MATCHES_FOUND. Adjust your filter or search query.
+                </p>
             </div>
         </section>
 

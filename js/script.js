@@ -190,4 +190,190 @@ document.addEventListener("DOMContentLoaded", () => {
             heroImage.setAttribute("src", current === primary ? alt : primary);
         });
     }
+
+    // --- Insights Search + Category Filters (Homepage) ---
+    const insightsSection = document.querySelector("#insights");
+    if (insightsSection) {
+        const searchInput = insightsSection.querySelector("[data-insight-search]");
+        const chips = [...insightsSection.querySelectorAll("[data-insight-filter]")];
+        const sortSelect = insightsSection.querySelector("[data-insight-sort]");
+        const clearButton = insightsSection.querySelector("[data-insight-clear]");
+        const grid = insightsSection.querySelector("[data-insights-grid]");
+        const cards = [...insightsSection.querySelectorAll("[data-insight-card]")];
+        const emptyState = insightsSection.querySelector("[data-insight-empty]");
+        const results = insightsSection.querySelector("[data-insight-results]");
+
+        if (searchInput && chips.length > 0 && sortSelect && clearButton && grid && cards.length > 0) {
+            let activeFilter = "all";
+            let activeSort = "latest";
+            const allowedFilters = new Set(chips.map((chip) => chip.dataset.insightFilter || "all"));
+            const allowedSorts = new Set(["latest", "title", "topic"]);
+
+            cards.forEach((card, index) => {
+                card.dataset.initialIndex = String(index);
+            });
+
+            const normalize = (value) => value.trim().toLowerCase();
+
+            const updateResults = (visibleCount) => {
+                if (!results) {
+                    return;
+                }
+                const visible = String(visibleCount).padStart(2, "0");
+                const total = String(cards.length).padStart(2, "0");
+                results.textContent = `${visible} / ${total} INSIGHTS_VISIBLE`;
+            };
+
+            const setActiveChipUI = () => {
+                chips.forEach((button) => {
+                    const value = button.dataset.insightFilter || "all";
+                    const isActive = value === activeFilter;
+                    button.classList.toggle("is-active", isActive);
+                    button.setAttribute("aria-pressed", String(isActive));
+                });
+            };
+
+            const updateClearButtonState = (query) => {
+                const isDefaultState = query.length === 0 && activeFilter === "all" && activeSort === "latest";
+                clearButton.disabled = isDefaultState;
+            };
+
+            const syncUrlState = (query) => {
+                const params = new URLSearchParams();
+                if (query) {
+                    params.set("q", query);
+                }
+                if (activeFilter !== "all") {
+                    params.set("topic", activeFilter);
+                }
+                if (activeSort !== "latest") {
+                    params.set("sort", activeSort);
+                }
+
+                const queryString = params.toString();
+                const nextUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ""}${window.location.hash}`;
+                window.history.replaceState(null, "", nextUrl);
+            };
+
+            const applyInsightFilters = () => {
+                const query = normalize(searchInput.value);
+                let visibleCount = 0;
+                const visibleCards = [];
+
+                cards.forEach((card) => {
+                    const topicTokens = normalize(card.dataset.topic || "")
+                        .split(/\s+/)
+                        .filter(Boolean);
+                    const title = normalize(card.querySelector("h3")?.textContent || "");
+                    const summary = normalize(card.querySelector("p")?.textContent || "");
+                    const searchable = `${title} ${summary} ${topicTokens.join(" ")}`;
+
+                    const matchesTopic = activeFilter === "all" || topicTokens.includes(activeFilter);
+                    const matchesQuery = query.length === 0 || searchable.includes(query);
+                    const isVisible = matchesTopic && matchesQuery;
+
+                    card.hidden = !isVisible;
+                    card.setAttribute("aria-hidden", String(!isVisible));
+
+                    if (isVisible) {
+                        visibleCount += 1;
+                        visibleCards.push(card);
+                    }
+                });
+
+                const titleFor = (card) => normalize(card.querySelector("h3")?.textContent || "");
+                const topicFor = (card) => normalize(card.dataset.topic || "").split(/\s+/).filter(Boolean)[0] || "";
+
+                const sortedCards = [...visibleCards].sort((a, b) => {
+                    if (activeSort === "title") {
+                        return titleFor(a).localeCompare(titleFor(b));
+                    }
+                    if (activeSort === "topic") {
+                        const topicCompare = topicFor(a).localeCompare(topicFor(b));
+                        return topicCompare !== 0 ? topicCompare : titleFor(a).localeCompare(titleFor(b));
+                    }
+                    return Number(a.dataset.initialIndex) - Number(b.dataset.initialIndex);
+                });
+
+                sortedCards.forEach((card) => {
+                    grid.appendChild(card);
+                });
+
+                if (emptyState) {
+                    emptyState.hidden = visibleCount > 0;
+                }
+                updateResults(visibleCount);
+                updateClearButtonState(query);
+                syncUrlState(query);
+            };
+
+            chips.forEach((chip) => {
+                chip.addEventListener("click", () => {
+                    activeFilter = chip.dataset.insightFilter || "all";
+                    setActiveChipUI();
+                    applyInsightFilters();
+                });
+            });
+
+            sortSelect.addEventListener("change", () => {
+                const nextSort = normalize(sortSelect.value);
+                activeSort = allowedSorts.has(nextSort) ? nextSort : "latest";
+                applyInsightFilters();
+            });
+
+            searchInput.addEventListener("input", applyInsightFilters);
+
+            clearButton.addEventListener("click", () => {
+                searchInput.value = "";
+                activeFilter = "all";
+                activeSort = "latest";
+                sortSelect.value = activeSort;
+                setActiveChipUI();
+                applyInsightFilters();
+                searchInput.focus();
+            });
+
+            const isEditableElement = (element) => {
+                if (!element || !(element instanceof HTMLElement)) {
+                    return false;
+                }
+                const tag = element.tagName;
+                return element.isContentEditable || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT";
+            };
+
+            document.addEventListener("keydown", (event) => {
+                if (event.defaultPrevented) {
+                    return;
+                }
+                if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) {
+                    return;
+                }
+                if (isEditableElement(event.target)) {
+                    return;
+                }
+
+                event.preventDefault();
+                searchInput.focus();
+                searchInput.select();
+            });
+
+            const params = new URLSearchParams(window.location.search);
+            const initialQuery = normalize(params.get("q") || "");
+            const initialFilter = normalize(params.get("topic") || "all");
+            const initialSort = normalize(params.get("sort") || "latest");
+
+            if (allowedFilters.has(initialFilter)) {
+                activeFilter = initialFilter;
+            }
+            if (allowedSorts.has(initialSort)) {
+                activeSort = initialSort;
+            }
+
+            searchInput.value = initialQuery;
+            sortSelect.value = activeSort;
+            setActiveChipUI();
+
+            applyInsightFilters();
+        }
+    }
 });
