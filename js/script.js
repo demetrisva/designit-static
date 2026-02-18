@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 const visible = String(visibleCount).padStart(2, "0");
                 const total = String(cards.length).padStart(2, "0");
-                results.textContent = `${visible} / ${total} INSIGHTS_VISIBLE`;
+                results.textContent = `${visible} / ${total} THREADS_VISIBLE`;
             };
 
             const setActiveChipUI = () => {
