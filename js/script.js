@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Check if the action URL is set
         if (form.action.includes("YOUR_ID_HERE") || form.action.includes("httpsIS-NOT-SET")) {
             if (formStatus) {
-                formStatus.innerHTML = "<b>Important:</b> Please set up your form endpoint in <code>index.html</code>.";
+                formStatus.innerHTML = "<b>Important:</b> Please set up your form endpoint in <code>contact.html</code>.";
                 formStatus.className = "error";
             }
             form.querySelector('button[type="submit"]').disabled = true;

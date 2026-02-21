@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JWT Incident Brief // DesignIt.pro</title>
-    <meta name="description" content="JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.">
+    <meta name="description" content="JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.">
     <link rel="canonical" href="https://designit.pro/article-security-jwt.html">
     <meta name="twitter:image:alt" content="DesignIt.pro thread report: JWT INCIDENT BRIEF">
     <meta property="og:image:alt" content="DesignIt.pro thread report: JWT INCIDENT BRIEF">
@@ -16,13 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css?v=3.1">
+    <link rel="stylesheet" href="css/style.css?v=3.2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="js/script.js?v=3.2" defer></script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
         crossorigin="anonymous"></script>
     <meta property="og:title" content="JWT INCIDENT BRIEF">
-    <meta property="og:description" content="JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.">
+    <meta property="og:description" content="JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="DesignIt.pro">
     <meta property="og:image" content="assets/images/og-security-jwt.svg">
@@ -30,10 +32,10 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JWT INCIDENT BRIEF">
-    <meta name="twitter:description" content="JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.">
+    <meta name="twitter:description" content="JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.">
     <meta name="twitter:image" content="assets/images/og-security-jwt.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "JWT INCIDENT BRIEF", "description": "JWTs without the risk: validate claims, rotate keys, and enforce strict verification rules.", "datePublished": "2026-02-04", "dateModified": "2026-02-04", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "JWT INCIDENT BRIEF", "description": "JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.", "datePublished": "2026-02-04", "dateModified": "2026-02-21", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -54,7 +56,7 @@
                 <span class="mono-label article-label label-danger">:: THREAD_REPORT_007</span>
                 <h1 class="article-title">JWT_INCIDENT_BRIEF</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-02-04</span>
+                    <span><i class="far fa-calendar"></i> 2026-02-21</span>
                     <span><i class="far fa-clock"></i> 3 MIN READ</span>
                     <span><i class="fas fa-shield-alt"></i> CRITICAL PATCH</span>
                 </div>
@@ -62,32 +64,32 @@
 
             <div class="article-content">
 
-                <p class="lead-text">JWTs are powerful, but they are not magic. They are portable claims, and every claim is a potential vulnerability unless you validate it with intent.</p>
+                <p class="lead-text">JWT incident response moved from patch alert to operational playbook: teams now have a concrete sequence for claim checks, key rotation windows, and rollback criteria.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">MOD_NOTE</span>
-                    <p>Tighten validation first. Enforce issuer, audience, and expiration checks before adding new features or providers.</p>
+                    <p>Start by enforcing claim validation and clock-skew bounds, then rotate signing keys in stages with explicit rollback checkpoints.</p>
                 </div>
 
-                <h2>CLAIMS_WITH_INTENT</h2>
-                <p>The most common JWT failures are not cryptographic. They are logical. Accepting the wrong issuer, skipping audience checks, or ignoring token expiration turns authentication into a best-effort guess.</p>
+                <h2>PATCH_SEQUENCE_CONFIRMED</h2>
+                <p>The biggest JWT failures were logical, not cryptographic. Accepting the wrong issuer, skipping audience checks, or treating expired tokens as soft failures turned authentication into a best-effort guess.</p>
 
-                <p>Always treat the header and payload as untrusted input. The signature only guarantees integrity if you verify it correctly and enforce the rules you expect.</p>
+                <p>Moderators confirmed the winning sequence: lock claim validation first, ship a key-set overlap window, and monitor replay/error spikes before removing old keys.</p>
 
                 <blockquote>
                     "Never trust a token you did not constrain."
                 </blockquote>
 
-                <h3>DEFENSE_IN_DEPTH</h3>
-                <p>Solid JWT handling is a stack of safeguards, not a single library call.</p>
+                <h3>ROLL_OUT_SAFELY</h3>
+                <p>Strong JWT operations are layered controls, not a single library toggle.</p>
 
                 <ul class="article-list">
-                    <li>Validate <code>iss</code>, <code>aud</code>, and <code>exp</code> on every request.</li>
-                    <li>Rotate signing keys and cache JWKS with a short TTL.</li>
-                    <li>Use short-lived access tokens with refresh token rotation.</li>
+                    <li>Validate <code>iss</code>, <code>aud</code>, <code>exp</code>, and acceptable clock skew on every request.</li>
+                    <li>Run phased key rotation with temporary dual-signing support and a clearly timed key sunset.</li>
+                    <li>Trigger rollback when auth error budgets are exceeded, then re-run rotation after root-cause validation.</li>
                 </ul>
 
-                <p>When JWTs are handled with discipline, they scale cleanly. When handled casually, they scale risk.</p>
+                <p>When JWT controls are explicit and rehearsed, incidents stay contained. When they are implicit, blast radius grows fast.</p>
             </div>
             <section class="related-articles">
                 <span class="related-label">RELATED_THREADS</span>
