@@ -614,6 +614,20 @@ header {
     text-align: center;
 }
 
+#form-status {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+#form-status.success {
+    color: var(--primary-color);
+}
+
+#form-status.error {
+    color: #ff8f8f;
+}
+
 /* --- FOOTER --- */
 footer {
     padding: 3rem 0;
