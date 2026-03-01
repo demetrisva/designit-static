@@ -1,3 +1,6 @@
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+
 document.addEventListener("DOMContentLoaded", () => {
 
     // --- Mobile Navigation Toggle ---
@@ -125,6 +128,63 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitButton.disabled = false;
                 submitButton.textContent = submitLabel;
             }
+        });
+    }
+
+    // --- Google Privacy Choices Entry Point ---
+    const privacyChoiceLinks = [];
+    const footerLinkGroups = document.querySelectorAll(".footer-links");
+
+    const revealPrivacyChoices = () => {
+        privacyChoiceLinks.forEach((link) => {
+            link.hidden = false;
+        });
+    };
+
+    footerLinkGroups.forEach((group) => {
+        if (group.querySelector("[data-privacy-choices-link]")) {
+            return;
+        }
+
+        const separator = document.createTextNode(" | ");
+        const link = document.createElement("a");
+        link.href = "#privacy-choices";
+        link.textContent = "PRIVACY_CHOICES";
+        link.hidden = true;
+        link.dataset.privacyChoicesLink = "true";
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            if (window.googlefc && typeof window.googlefc.showRevocationMessage === "function") {
+                window.googlefc.showRevocationMessage();
+            }
+        });
+
+        group.appendChild(separator);
+        group.appendChild(link);
+        privacyChoiceLinks.push(link);
+    });
+
+    if (window.googlefc && typeof window.googlefc.showRevocationMessage === "function") {
+        revealPrivacyChoices();
+    }
+
+    if (typeof window.googlefc.callbackQueue.push === "function") {
+        window.googlefc.callbackQueue.push({
+            CONSENT_API_READY: () => {
+                if (typeof window.__tcfapi === "function") {
+                    window.__tcfapi("addEventListener", 0, (tcData, success) => {
+                        if (success && tcData && tcData.gdprApplies) {
+                            revealPrivacyChoices();
+                        }
+                    });
+                    return;
+                }
+
+                if (typeof window.googlefc.showRevocationMessage === "function") {
+                    revealPrivacyChoices();
+                }
+            },
         });
     }
 
