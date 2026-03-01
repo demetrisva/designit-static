@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.">
     <meta name="twitter:image" content="assets/images/og-algo-efficiency.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "PERFORMANCE THREAD MATH", "description": "Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.", "datePublished": "2026-02-04", "dateModified": "2026-02-04", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-algo-efficiency.svg", "mainEntityOfPage": "https://designit.pro/article-algo-efficiency.html", "url": "https://designit.pro/article-algo-efficiency.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "PERFORMANCE THREAD MATH", "description": "Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.", "datePublished": "2026-02-04", "dateModified": "2026-03-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-algo-efficiency.svg", "mainEntityOfPage": "https://designit.pro/article-algo-efficiency.html", "url": "https://designit.pro/article-algo-efficiency.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -56,40 +56,40 @@
                 <span class="mono-label article-label">:: THREAD_REPORT_004</span>
                 <h1 class="article-title">PERFORMANCE_THREAD_MATH</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-02-04</span>
-                    <span><i class="far fa-clock"></i> 3 MIN READ</span>
+                    <span><i class="far fa-calendar"></i> 2026-03-01</span>
+                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
                     <span><i class="fas fa-tag"></i> PERFORMANCE</span>
                 </div>
             </header>
 
             <div class="article-content">
 
-                <p class="lead-text">Performance is not just a rendering problem. It is an algorithmic problem. Every extra loop, every unnecessary diff, and every hidden listener steals budget from the user.</p>
+                <p class="lead-text">Performance discussions have shifted from raw benchmarks to interaction budgets. Teams are measuring how much work happens before a tap, a filter, or a route change feels late, then stripping anything that competes with that budget.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">MOD_NOTE</span>
-                    <p>Lead with measurement. Define your frame budget, profile the main thread, and move anything expensive off the critical path.</p>
+                    <span class="callout-label">UPDATE_2026_03_01</span>
+                    <p>Measure interaction latency, not just page load. Expensive list diffs, synchronous parsing, and background tasks promoted to foreground work are still the biggest sources of avoidable jank.</p>
                 </div>
 
                 <h2>RENDER_BUDGETS</h2>
-                <p>Modern UIs are data-heavy, and the easiest mistake is to treat the DOM like a free resource. Virtualization keeps lists cheap. Memoization keeps components stable. And batching updates keeps the main thread breathing.</p>
+                <p>Modern interfaces are full of filters, live counts, and optimistic state. The easiest mistake is still treating the main thread like unmetered capacity. Virtualization, smaller diff surfaces, and deferred non-urgent work preserve headroom for the action the user actually started.</p>
 
-                <p>Think in budgets: a frame gives you about 16ms. Spend it on what the user can see and feel, not on work that can wait.</p>
+                <p>Budgeting changes product decisions. If a user opens a dense table, spend the first moments on visible rows, input responsiveness, and navigation affordances. Secondary calculations can wait until the interface is calm again.</p>
 
                 <blockquote>
                     "The fastest interaction is the one that never blocks the main thread."
                 </blockquote>
 
                 <h3>BACKGROUND_WORK</h3>
-                <p>Push expensive work off the critical path. Web Workers, idle callbacks, and precomputation keep the UI responsive while still delivering rich functionality.</p>
+                <p>Background work should stay background work. Precompute what you can, isolate heavy transforms, and avoid silent listeners that re-run layout or parsing every time the user scrolls or resizes.</p>
 
                 <ul class="article-list">
-                    <li>Virtualize long lists and tables; never render what you cannot see.</li>
-                    <li>Use <code>requestIdleCallback</code> or workers for heavy transforms.</li>
-                    <li>Profile and remove listeners that fire on scroll and resize.</li>
+                    <li>Virtualize dense lists and batch visible work around the current viewport.</li>
+                    <li>Move expensive parsing and transforms away from direct input handling.</li>
+                    <li>Profile scroll, resize, and observer callbacks for hidden layout churn.</li>
                 </ul>
 
-                <p>Algorithmic efficiency is a UX feature. It preserves battery, reduces heat, and makes complex applications feel effortless.</p>
+                <p>Algorithmic efficiency is still a UX feature, but it is also a reliability feature. Predictable performance keeps error rates, battery drain, and operator guesswork under control when the interface gets busy.</p>
             </div>
             <section class="related-articles">
                 <span class="related-label">RELATED_THREADS</span>

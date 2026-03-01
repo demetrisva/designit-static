@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="Resilience choreography: failure domains, automated failover, and drills that keep systems alive.">
     <meta name="twitter:image" content="assets/images/og-server-redundancy.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "OUTAGE PLAYBOOKS LIVE", "description": "Resilience choreography: failure domains, automated failover, and drills that keep systems alive.", "datePublished": "2026-02-04", "dateModified": "2026-02-04", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "OUTAGE PLAYBOOKS LIVE", "description": "Resilience choreography: failure domains, automated failover, and drills that keep systems alive.", "datePublished": "2026-02-04", "dateModified": "2026-03-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -56,40 +56,40 @@
                 <span class="mono-label article-label">:: THREAD_REPORT_002</span>
                 <h1 class="article-title">OUTAGE_PLAYBOOKS_LIVE</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-02-04</span>
-                    <span><i class="far fa-clock"></i> 3 MIN READ</span>
+                    <span><i class="far fa-calendar"></i> 2026-03-01</span>
+                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
                     <span><i class="fas fa-tag"></i> INFRA</span>
                 </div>
             </header>
 
             <div class="article-content">
 
-                <p class="lead-text">Redundancy is choreography. Systems stay alive not because they never fail, but because they fail in predictable, recoverable ways.</p>
+                <p class="lead-text">Reliability teams are treating redundancy less like extra capacity and more like a timed procedure. The question is no longer whether failover exists, but whether the sequence is observable, reversible, and rehearsed under pressure.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">MOD_NOTE</span>
-                    <p>Schedule a quarterly game day. Measure how long it takes to detect, decide, and recover — then tune your failover runbooks.</p>
+                    <span class="callout-label">UPDATE_2026_03_01</span>
+                    <p>Measure failover as an end-to-end workflow. Detection, operator confirmation, dependency readiness, and restore confidence all matter more than a single automated switch.</p>
                 </div>
 
                 <h2>FAILURE_DOMAINS</h2>
-                <p>Every architecture has fault lines: a database cluster, a region, a provider. The first step is mapping those domains and deciding how much blast radius you can tolerate. Multi-zone is table stakes; multi-region is a strategic decision.</p>
+                <p>Every platform still has hidden coupling: region-local queues, identity providers, DNS layers, backup stores, or a payment dependency that turns one partial outage into a full product stop. Mapping those seams is the real start of redundancy planning.</p>
 
-                <p>Once failure domains are explicit, you can design for graceful degradation. Features can dim instead of collapse, and user sessions can persist even while services rebalance.</p>
+                <p>Once the failure domains are explicit, graceful degradation becomes easier to design. Critical flows stay online, secondary work sheds load first, and operators can explain the plan without inventing it during the incident.</p>
 
                 <blockquote>
                     "Resilience is measured in minutes of confusion you avoid."
                 </blockquote>
 
                 <h3>AUTOMATION_AND_DRILLS</h3>
-                <p>Redundancy without automation is just inventory. Health checks, failover runbooks, and incident drills turn spare capacity into real resilience.</p>
+                <p>Redundancy without drills is still theory. Health checks, warm paths, restore tests, and timed decision points are what turn spare infrastructure into a system that can survive a real outage.</p>
 
                 <ul class="article-list">
-                    <li>Automated traffic shifts based on real latency, not just uptime.</li>
-                    <li>Load shedding to protect core paths when systems are stressed.</li>
-                    <li>Regular restore tests to validate backup integrity.</li>
+                    <li>Trigger traffic movement from user-facing latency and dependency health, not a single green check.</li>
+                    <li>Protect essential journeys with explicit load-shedding and read-only fallback modes.</li>
+                    <li>Run restore drills that verify data integrity, not just backup job completion.</li>
                 </ul>
 
-                <p>Redundancy works when it is tested, timed, and trusted. The goal is not zero outages. The goal is a system that knows how to heal.</p>
+                <p>Redundancy works when people trust the sequence. The goal is not mythical zero downtime. The goal is fast, legible recovery with fewer surprises for operators and customers.</p>
             </div>
             <section class="related-articles">
                 <span class="related-label">RELATED_THREADS</span>

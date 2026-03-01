@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.">
     <meta name="twitter:image" content="assets/images/og-security-jwt.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "JWT INCIDENT BRIEF", "description": "JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.", "datePublished": "2026-02-04", "dateModified": "2026-02-21", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "JWT INCIDENT BRIEF", "description": "JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.", "datePublished": "2026-02-04", "dateModified": "2026-03-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -56,40 +56,40 @@
                 <span class="mono-label article-label label-danger">:: THREAD_REPORT_007</span>
                 <h1 class="article-title">JWT_INCIDENT_BRIEF</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-02-21</span>
-                    <span><i class="far fa-clock"></i> 3 MIN READ</span>
+                    <span><i class="far fa-calendar"></i> 2026-03-01</span>
+                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
                     <span><i class="fas fa-shield-alt"></i> CRITICAL PATCH</span>
                 </div>
             </header>
 
             <div class="article-content">
 
-                <p class="lead-text">JWT incident response moved from patch alert to operational playbook: teams now have a concrete sequence for claim checks, key rotation windows, and rollback criteria.</p>
+                <p class="lead-text">JWT guidance has matured from emergency patch advice into release choreography. Teams are treating token validation, key inventory, and rollback thresholds as one operational sequence instead of scattered library settings.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">MOD_NOTE</span>
-                    <p>Start by enforcing claim validation and clock-skew bounds, then rotate signing keys in stages with explicit rollback checkpoints.</p>
+                    <span class="callout-label">UPDATE_2026_03_01</span>
+                    <p>Start by constraining trust boundaries first: strict issuer and audience checks, bounded clock skew, and a documented key overlap window before any old signing key is retired.</p>
                 </div>
 
                 <h2>PATCH_SEQUENCE_CONFIRMED</h2>
-                <p>The biggest JWT failures were logical, not cryptographic. Accepting the wrong issuer, skipping audience checks, or treating expired tokens as soft failures turned authentication into a best-effort guess.</p>
+                <p>The recurring JWT failures were logical, not mathematical. Accepting the wrong issuer, skipping audience checks, or treating expiry as advisory turned authentication into guesswork with a signed wrapper.</p>
 
-                <p>Moderators confirmed the winning sequence: lock claim validation first, ship a key-set overlap window, and monitor replay/error spikes before removing old keys.</p>
+                <p>The stable rollout sequence is now clearer: lock claim validation first, inventory every verifier, ship a temporary key-set overlap window, and watch replay or auth-error spikes before removing old material.</p>
 
                 <blockquote>
                     "Never trust a token you did not constrain."
                 </blockquote>
 
                 <h3>ROLL_OUT_SAFELY</h3>
-                <p>Strong JWT operations are layered controls, not a single library toggle.</p>
+                <p>Strong JWT operations are layered controls, not a single middleware toggle. Teams need explicit trust boundaries, predictable rollout stages, and rehearsed rollback criteria when clients lag or verifiers drift.</p>
 
                 <ul class="article-list">
-                    <li>Validate <code>iss</code>, <code>aud</code>, <code>exp</code>, and acceptable clock skew on every request.</li>
-                    <li>Run phased key rotation with temporary dual-signing support and a clearly timed key sunset.</li>
-                    <li>Trigger rollback when auth error budgets are exceeded, then re-run rotation after root-cause validation.</li>
+                    <li>Validate <code>iss</code>, <code>aud</code>, <code>exp</code>, and bounded clock skew on every request path.</li>
+                    <li>Track every signer and verifier before rotation so no stale consumer is left outside the overlap window.</li>
+                    <li>Trigger rollback when auth error budgets or replay indicators cross the planned threshold.</li>
                 </ul>
 
-                <p>When JWT controls are explicit and rehearsed, incidents stay contained. When they are implicit, blast radius grows fast.</p>
+                <p>JWT incidents stay small when the controls are explicit and rehearsed. When trust rules are implicit, one missed verifier or one permissive fallback expands the blast radius fast.</p>
             </div>
             <section class="related-articles">
                 <span class="related-label">RELATED_THREADS</span>
