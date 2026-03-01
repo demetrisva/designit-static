@@ -52,20 +52,25 @@
             <form id="contact-form" action="https://formspree.io/f/meovjkay" method="POST">
                 <div class="form-group">
                     <label for="name">NAME</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
+                    <input type="text" id="name" name="name" required maxlength="120" autocomplete="name" placeholder="Your name">
                 </div>
                 <div class="form-group">
                     <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" placeholder="you@example.com">
+                </div>
+                <div class="form-group form-honeypot" aria-hidden="true">
+                    <label for="website">WEBSITE</label>
+                    <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="message">MESSAGE</label>
-                    <textarea id="message" name="message" rows="6" required
+                    <textarea id="message" name="message" rows="6" required minlength="20" maxlength="4000"
                         placeholder="Tell us what you need help with."></textarea>
                 </div>
                 <button type="submit" class="cta-button full-width">SEND_MESSAGE</button>
             </form>
             <p id="form-status" aria-live="polite"></p>
+            <p class="contact-note">By sending this form, you agree that we can use your details to review and reply to the request. See our <a href="privacy.html">Privacy Policy</a> and <a href="cookies.html">Cookies Policy</a>.</p>
         </div>
     </main>
 

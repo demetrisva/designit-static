@@ -122,6 +122,14 @@ a {
     box-shadow: 0 0 15px var(--primary-color);
 }
 
+.cta-button:disabled,
+.secondary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .secondary-button {
     border: 1px solid var(--text-muted);
     color: var(--text-muted);
@@ -2004,6 +2012,24 @@ header {
 .contact-intro {
     margin-bottom: 2.5rem;
     color: var(--text-muted);
+}
+
+.contact-note {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.contact-note a {
+    color: var(--primary-color);
+}
+
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .form-group label {

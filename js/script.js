@@ -44,18 +44,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const formStatus = document.getElementById("form-status");
 
     if (form) {
+        const submitButton = form.querySelector('button[type="submit"]');
+        const submitLabel = submitButton ? submitButton.textContent : "";
+        const honeypotField = form.querySelector('input[name="_gotcha"]');
+        const messageField = form.querySelector("#message");
+
+        const setFormStatus = (type, message) => {
+            if (!formStatus) {
+                return;
+            }
+
+            formStatus.textContent = message;
+            formStatus.className = type;
+        };
+
         // Check if the action URL is set
         if (form.action.includes("YOUR_ID_HERE") || form.action.includes("httpsIS-NOT-SET")) {
-            if (formStatus) {
-                formStatus.innerHTML = "<b>Important:</b> Please set up your form endpoint in <code>contact.html</code>.";
-                formStatus.className = "error";
+            setFormStatus("error", "Important: Please set up your form endpoint in contact.html.");
+            if (submitButton) {
+                submitButton.disabled = true;
             }
-            form.querySelector('button[type="submit"]').disabled = true;
         }
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
+
+            if (!submitButton || submitButton.disabled) {
+                return;
+            }
+
+            if (honeypotField && honeypotField.value.trim() !== "") {
+                form.reset();
+                setFormStatus("success", "Thanks! Your message has been sent.");
+                return;
+            }
+
+            if (messageField && messageField.value.trim().length < 20) {
+                setFormStatus("error", "Please add a bit more detail so we can review the request.");
+                messageField.focus();
+                return;
+            }
+
             const data = new FormData(form);
+            submitButton.disabled = true;
+            submitButton.textContent = "SENDING...";
+            setFormStatus("", "Submitting...");
 
             try {
                 const response = await fetch(form.action, {
@@ -67,13 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 if (response.ok) {
-                    if (formStatus) {
-                        formStatus.innerHTML = "Thanks! Your message has been sent.";
-                        formStatus.className = "success";
-                    }
+                    setFormStatus("success", "Thanks! Your message has been sent.");
                     form.reset();
                 } else {
-                    const responseData = await response.json();
+                    let responseData = null;
+
+                    try {
+                        responseData = await response.json();
+                    } catch (_error) {
+                        responseData = null;
+                    }
+
                     if (responseData && typeof responseData === 'object' && 'errors' in responseData) {
                         throw new Error(responseData["errors"].map(error => error["message"]).join(", "));
                     } else {
@@ -81,10 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             } catch (error) {
-                if (formStatus) {
-                    formStatus.innerHTML = `<b>Error:</b> ${error.message}`;
-                    formStatus.className = "error";
-                }
+                const fallbackMessage = "Oops! There was a problem submitting your form.";
+                const message = error instanceof Error && error.message ? error.message : fallbackMessage;
+                setFormStatus("error", `Error: ${message}`);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = submitLabel;
             }
         });
     }
