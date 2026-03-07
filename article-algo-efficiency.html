@@ -7,8 +7,8 @@
     <title>Performance Thread Math // DesignIt.pro</title>
     <meta name="description" content="Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.">
     <link rel="canonical" href="https://designit.pro/article-algo-efficiency.html">
-    <meta name="twitter:image:alt" content="DesignIt.pro thread report: PERFORMANCE THREAD MATH">
-    <meta property="og:image:alt" content="DesignIt.pro thread report: PERFORMANCE THREAD MATH">
+    <meta name="twitter:image:alt" content="DesignIt.pro report: PERFORMANCE THREAD MATH">
+    <meta property="og:image:alt" content="DesignIt.pro report: PERFORMANCE THREAD MATH">
 
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,26 +53,26 @@
     <main class="article-main">
         <article class="article-shell">
             <header class="article-header">
-                <span class="mono-label article-label">:: THREAD_REPORT_004</span>
+                <span class="mono-label article-label">:: PERFORMANCE_NOTE_004</span>
                 <h1 class="article-title">PERFORMANCE_THREAD_MATH</h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-03-07</span>
-                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
+                    <span><i class="far fa-clock"></i> 5 MIN READ</span>
                     <span><i class="fas fa-tag"></i> PERFORMANCE</span>
                 </div>
             </header>
 
             <div class="article-content">
 
-                <p class="lead-text">Performance discussions have shifted from raw benchmarks to interaction budgets. Teams are measuring how much work happens before a tap, a filter, or a route change feels late, then stripping anything that competes with that budget.</p>
+                <p class="lead-text">Performance work gets more honest when the discussion moves away from synthetic scores and toward user actions. What matters is whether filtering, scrolling, editing, and navigating still feel stable when the interface is under real load.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">UPDATE_2026_03_07</span>
-                    <p>Measure interaction latency, not just page load. Expensive list diffs, synchronous parsing, and background tasks promoted to foreground work are still the biggest sources of avoidable jank.</p>
+                    <p>Plenty of products with acceptable page-load numbers still feel slow because interaction work is badly sequenced. Heavy list diffs, synchronous parsing, and background jobs promoted into the foreground are still common causes.</p>
                 </div>
 
                 <h2>RENDER_BUDGETS</h2>
-                <p>Modern interfaces are full of filters, live counts, and optimistic state. The easiest mistake is still treating the main thread like unmetered capacity. Virtualization, smaller diff surfaces, and deferred non-urgent work preserve headroom for the action the user actually started.</p>
+                <p>Modern interfaces are full of filters, live counts, optimistic updates, and secondary computations. The easiest mistake is still treating the main thread like unmetered capacity. Virtualization, smaller diff surfaces, and deferred non-urgent work preserve headroom for the action the user actually started.</p>
 
                 <p>Budgeting changes product decisions. If a user opens a dense table, spend the first moments on visible rows, input responsiveness, and navigation affordances. Secondary calculations can wait until the interface is calm again.</p>
 

@@ -7,8 +7,8 @@
     <title>Outage Playbooks Live // DesignIt.pro</title>
     <meta name="description" content="Resilience choreography: failure domains, automated failover, and drills that keep systems alive.">
     <link rel="canonical" href="https://designit.pro/article-server-redundancy.html">
-    <meta name="twitter:image:alt" content="DesignIt.pro thread report: OUTAGE PLAYBOOKS LIVE">
-    <meta property="og:image:alt" content="DesignIt.pro thread report: OUTAGE PLAYBOOKS LIVE">
+    <meta name="twitter:image:alt" content="DesignIt.pro report: OUTAGE PLAYBOOKS LIVE">
+    <meta property="og:image:alt" content="DesignIt.pro report: OUTAGE PLAYBOOKS LIVE">
 
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,26 +53,26 @@
     <main class="article-main">
         <article class="article-shell">
             <header class="article-header">
-                <span class="mono-label article-label">:: THREAD_REPORT_002</span>
+                <span class="mono-label article-label">:: FIELD_REPORT_002</span>
                 <h1 class="article-title">OUTAGE_PLAYBOOKS_LIVE</h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-03-07</span>
-                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
+                    <span><i class="far fa-clock"></i> 6 MIN READ</span>
                     <span><i class="fas fa-tag"></i> INFRA</span>
                 </div>
             </header>
 
             <div class="article-content">
 
-                <p class="lead-text">Reliability teams are treating redundancy less like extra capacity and more like a timed procedure. The question is no longer whether failover exists, but whether the sequence is observable, reversible, and rehearsed under pressure.</p>
+                <p class="lead-text">Redundancy looks impressive on architecture diagrams, but recovery quality is usually decided by much less glamorous details: dependency mapping, restore confidence, operator timing, and whether the fallback path has ever been exercised under stress.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">UPDATE_2026_03_07</span>
-                    <p>Measure failover as an end-to-end workflow. Detection, operator confirmation, dependency readiness, and restore confidence all matter more than a single automated switch.</p>
+                    <p>Teams still overestimate what an automatic failover switch actually proves. Detection, dependency readiness, data integrity, and operator confidence all matter just as much as the switch itself.</p>
                 </div>
 
                 <h2>FAILURE_DOMAINS</h2>
-                <p>Every platform still has hidden coupling: region-local queues, identity providers, DNS layers, backup stores, or a payment dependency that turns one partial outage into a full product stop. Mapping those seams is the real start of redundancy planning.</p>
+                <p>Every platform still has hidden coupling somewhere: region-local queues, DNS, identity providers, payment rails, backups, or an internal service that quietly sits in the critical path. Redundancy planning starts by finding those seams instead of assuming the cloud diagram is accurate.</p>
 
                 <p>Once the failure domains are explicit, graceful degradation becomes easier to design. Critical flows stay online, secondary work sheds load first, and operators can explain the plan without inventing it during the incident.</p>
 

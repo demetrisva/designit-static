@@ -7,8 +7,8 @@
     <title>JWT Incident Brief // DesignIt.pro</title>
     <meta name="description" content="JWT hardening playbook: strict claim validation, staged key rotation, and rollback-safe incident response.">
     <link rel="canonical" href="https://designit.pro/article-security-jwt.html">
-    <meta name="twitter:image:alt" content="DesignIt.pro thread report: JWT INCIDENT BRIEF">
-    <meta property="og:image:alt" content="DesignIt.pro thread report: JWT INCIDENT BRIEF">
+    <meta name="twitter:image:alt" content="DesignIt.pro report: JWT INCIDENT BRIEF">
+    <meta property="og:image:alt" content="DesignIt.pro report: JWT INCIDENT BRIEF">
 
     <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,28 +53,28 @@
     <main class="article-main">
         <article class="article-shell">
             <header class="article-header">
-                <span class="mono-label article-label label-danger">:: THREAD_REPORT_007</span>
+                <span class="mono-label article-label label-danger">:: SECURITY_BRIEF_007</span>
                 <h1 class="article-title">JWT_INCIDENT_BRIEF</h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> 2026-03-07</span>
-                    <span><i class="far fa-clock"></i> 4 MIN READ</span>
+                    <span><i class="far fa-clock"></i> 6 MIN READ</span>
                     <span><i class="fas fa-shield-alt"></i> CRITICAL PATCH</span>
                 </div>
             </header>
 
             <div class="article-content">
 
-                <p class="lead-text">JWT guidance has matured from emergency patch advice into release choreography. Teams are treating token validation, key inventory, and rollback thresholds as one operational sequence instead of scattered library settings.</p>
+                <p class="lead-text">JWT problems rarely come from the token format itself. They come from uneven verifier behavior, rushed key rotation, and authentication changes that get deployed service by service without a clear rollback plan.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">UPDATE_2026_03_07</span>
-                    <p>Start by constraining trust boundaries first: strict issuer and audience checks, bounded clock skew, and a documented key overlap window before any old signing key is retired.</p>
+                    <p>The safest sequence is still the boring one: document every verifier, enforce strict issuer and audience checks, introduce a bounded overlap window, and only then retire old signing material.</p>
                 </div>
 
                 <h2>PATCH_SEQUENCE_CONFIRMED</h2>
-                <p>The recurring JWT failures were logical, not mathematical. Accepting the wrong issuer, skipping audience checks, or treating expiry as advisory turned authentication into guesswork with a signed wrapper.</p>
+                <p>The recurring failures were operational rather than cryptographic. Teams accepted the wrong issuer, relaxed audience checks, left legacy verifiers untracked, or treated expiry as a soft suggestion instead of an enforcement point.</p>
 
-                <p>The stable rollout sequence is now clearer: lock claim validation first, inventory every verifier, ship a temporary key-set overlap window, and watch replay or auth-error spikes before removing old material.</p>
+                <p>The reliable rollout sequence is now well understood: tighten claim validation first, inventory every verifier, introduce a temporary overlap window for keys, and monitor authentication errors before removing old material.</p>
 
                 <blockquote>
                     "Never trust a token you did not constrain."
