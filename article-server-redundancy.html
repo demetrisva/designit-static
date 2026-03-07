@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="Resilience choreography: failure domains, automated failover, and drills that keep systems alive.">
     <meta name="twitter:image" content="assets/images/og-server-redundancy.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "OUTAGE PLAYBOOKS LIVE", "description": "Resilience choreography: failure domains, automated failover, and drills that keep systems alive.", "datePublished": "2026-02-04", "dateModified": "2026-03-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "OUTAGE PLAYBOOKS LIVE", "description": "Resilience choreography: failure domains, automated failover, and drills that keep systems alive.", "datePublished": "2026-02-04", "dateModified": "2026-03-07", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -67,7 +67,7 @@
                 <p class="lead-text">Reliability teams are treating redundancy less like extra capacity and more like a timed procedure. The question is no longer whether failover exists, but whether the sequence is observable, reversible, and rehearsed under pressure.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">UPDATE_2026_03_01</span>
+                    <span class="callout-label">UPDATE_2026_03_07</span>
                     <p>Measure failover as an end-to-end workflow. Detection, operator confirmation, dependency readiness, and restore confidence all matter more than a single automated switch.</p>
                 </div>
 
@@ -90,6 +90,24 @@
                 </ul>
 
                 <p>Redundancy works when people trust the sequence. The goal is not mythical zero downtime. The goal is fast, legible recovery with fewer surprises for operators and customers.</p>
+
+                <h2>DRILL_AND_RESPONSE_CHECKLIST</h2>
+                <p>Most outage plans fail in the handoff between automation and operator judgment. Teams with strong recovery posture define owner roles, decision thresholds, and rollback triggers before the incident starts. They also rehearse these playbooks on a schedule, not only after production failures.</p>
+                <ul class="article-list">
+                    <li>Map every critical dependency to a failure domain and an owner with on-call authority.</li>
+                    <li>Set quantitative failover and rollback thresholds tied to SLO burn, not intuition.</li>
+                    <li>Test restore integrity from backups quarterly with documented verification evidence.</li>
+                </ul>
+
+                <h2>WHO_THIS_REPORT_IS_FOR</h2>
+                <p>This report is intended for practitioners making implementation decisions in live systems. It is not legal advice and it is not a product endorsement. Use it as a technical briefing, then validate choices against your architecture, risk profile, and user constraints before rollout.</p>
+
+                <h2>PRIMARY_REFERENCES</h2>
+                <ul class="article-list">
+                    <li><a href="https://sre.google/sre-book/service-level-objectives/" target="_blank" rel="noopener noreferrer">Google SRE Book: Service Level Objectives</a></li>
+                    <li><a href="https://sre.google/sre-book/emergency-response/" target="_blank" rel="noopener noreferrer">Google SRE Book: Emergency Response</a></li>
+                    <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework</a></li>
+                </ul>
             </div>
             <section class="related-articles">
                 <span class="related-label">RELATED_THREADS</span>

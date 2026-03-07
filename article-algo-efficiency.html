@@ -35,7 +35,7 @@
     <meta name="twitter:description" content="Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.">
     <meta name="twitter:image" content="assets/images/og-algo-efficiency.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "PERFORMANCE THREAD MATH", "description": "Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.", "datePublished": "2026-02-04", "dateModified": "2026-03-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-algo-efficiency.svg", "mainEntityOfPage": "https://designit.pro/article-algo-efficiency.html", "url": "https://designit.pro/article-algo-efficiency.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "PERFORMANCE THREAD MATH", "description": "Performance as an algorithmic budget: virtualization, batching, and background work for smooth UI.", "datePublished": "2026-02-04", "dateModified": "2026-03-07", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-algo-efficiency.svg", "mainEntityOfPage": "https://designit.pro/article-algo-efficiency.html", "url": "https://designit.pro/article-algo-efficiency.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -67,7 +67,7 @@
                 <p class="lead-text">Performance discussions have shifted from raw benchmarks to interaction budgets. Teams are measuring how much work happens before a tap, a filter, or a route change feels late, then stripping anything that competes with that budget.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">UPDATE_2026_03_01</span>
+                    <span class="callout-label">UPDATE_2026_03_07</span>
                     <p>Measure interaction latency, not just page load. Expensive list diffs, synchronous parsing, and background tasks promoted to foreground work are still the biggest sources of avoidable jank.</p>
                 </div>
 
@@ -90,6 +90,24 @@
                 </ul>
 
                 <p>Algorithmic efficiency is still a UX feature, but it is also a reliability feature. Predictable performance keeps error rates, battery drain, and operator guesswork under control when the interface gets busy.</p>
+
+                <h2>PERFORMANCE_ROLLOUT_CHECKLIST</h2>
+                <p>High-performing teams connect optimization work to user-visible outcomes, not synthetic benchmarks alone. They define latency budgets for key actions, track regressions in CI and production, and refuse changes that increase interaction delay without clear value.</p>
+                <ul class="article-list">
+                    <li>Define interaction budgets (input, update, render) for your top 3 user flows.</li>
+                    <li>Track INP and long tasks in production telemetry, not only local profiling.</li>
+                    <li>Require a fallback strategy before shipping heavy client-side computation.</li>
+                </ul>
+
+                <h2>WHO_THIS_REPORT_IS_FOR</h2>
+                <p>This report is intended for practitioners making implementation decisions in live systems. It is not legal advice and it is not a product endorsement. Use it as a technical briefing, then validate choices against your architecture, risk profile, and user constraints before rollout.</p>
+
+                <h2>PRIMARY_REFERENCES</h2>
+                <ul class="article-list">
+                    <li><a href="https://web.dev/inp/" target="_blank" rel="noopener noreferrer">web.dev: Interaction to Next Paint (INP)</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming" target="_blank" rel="noopener noreferrer">MDN: Long Tasks API</a></li>
+                    <li><a href="https://web.dev/rail/" target="_blank" rel="noopener noreferrer">web.dev: RAIL Performance Model</a></li>
+                </ul>
             </div>
             <section class="related-articles">
                 <span class="related-label">RELATED_THREADS</span>
