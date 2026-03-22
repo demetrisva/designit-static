@@ -209,32 +209,32 @@
                 <div class="project-card">
                     <div class="project-copy">
                         <span class="mono-label">EDITOR_PICK</span>
-                        <h3>JWT_ROLLOUT_MISTAKES_TEAMS_KEEP_REPEATING</h3>
-                        <p>This report focuses on the operational part of JWT hardening: verifier inventory, algorithm pinning, overlap windows for key rotation, and what usually breaks during a rushed rollout.</p>
+                        <h3>RETRY_STORM_CONTROL_PLANE</h3>
+                        <p>This report maps how retry storms form in real incidents and how timeout budgets, jitter, and overload-safe response behavior keep failure from cascading.</p>
                         <div class="project-tags">
-                            <span>SECURITY</span>
-                            <span>ROLL_OUT</span>
-                            <span>AUTH</span>
+                            <span>INFRA</span>
+                            <span>LATENCY</span>
+                            <span>RESILIENCE</span>
                         </div>
                         <div class="project-metrics">
                             <div class="metric">
-                                <span class="metric-value">RFC</span>
-                                <span class="metric-label">7519_AND_8725</span>
+                                <span class="metric-value">HTTP</span>
+                                <span class="metric-label">RETRY_AFTER_AND_429</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-value">OWASP</span>
-                                <span class="metric-label">IMPLEMENTATION_GUIDANCE</span>
+                                <span class="metric-value">SRE</span>
+                                <span class="metric-label">CASCADING_FAILURE_PATTERNS</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-value">CHECKLIST</span>
-                                <span class="metric-label">ROLLBACK_SAFE_CHANGES</span>
+                                <span class="metric-value">PLAYBOOK</span>
+                                <span class="metric-label">RETRY_BUDGET_CONTROLS</span>
                             </div>
                         </div>
-                        <a href="article-security-jwt.html" class="cta-button small">READ REPORT</a>
+                        <a href="article-retry-storms.html" class="cta-button small">READ REPORT</a>
                     </div>
                     <div class="project-media">
-                        <img src="assets/images/featured-project.svg"
-                            alt="Featured report artwork for incident response analysis">
+                        <img src="assets/images/og-retry-storms.svg"
+                            alt="Featured report artwork for retry storm control analysis">
                     </div>
                 </div>
             </div>
@@ -304,18 +304,18 @@
                 <div class="featured-insight">
                     <div class="featured-copy">
                         <span class="mono-label">FEATURED_REPORT</span>
-                        <h3>FRONTEND_RELEASE_WATCH</h3>
-                        <p>A practical look at container queries, cascade layers, and the migration work teams usually underestimate.</p>
+                        <h3>RETRY_STORM_CONTROL_PLANE</h3>
+                        <p>How retry budgets, timeout discipline, and jittered backoff prevent outages from amplifying under load.</p>
                         <div class="featured-chips">
-                            <span>FRONTEND</span>
-                            <span>LAYOUT</span>
-                            <span>2026-03-14</span>
+                            <span>INFRA</span>
+                            <span>RELIABILITY</span>
+                            <span>2026-03-22</span>
                         </div>
-                        <a href="article-future-css.html" class="cta-button small">READ REPORT</a>
+                        <a href="article-retry-storms.html" class="cta-button small">READ REPORT</a>
                     </div>
                     <div class="featured-art">
-                        <img src="assets/images/og-future-css.svg"
-                            alt="Featured report artwork for Frontend Release Watch">
+                        <img src="assets/images/og-retry-storms.svg"
+                            alt="Featured report artwork for Retry Storm Control Plane">
                     </div>
                 </div>
 
@@ -356,9 +356,18 @@
 
                 <div class="services-grid" data-insights-grid>
                     <!-- This grid reuses the service-card class for consistency, but intended for reports -->
-                    <div class="service-card" data-insight-card data-topic="frontend architecture">
+                    <div class="service-card" data-insight-card data-topic="infrastructure operations performance">
                         <div class="card-header">
                             <span class="svc-num">:: ART_01</span>
+                        </div>
+                        <h3>RETRY_STORM_CONTROL_PLANE</h3>
+                        <p>Why retries should be budgeted load, with timeout limits and jitter to prevent cascading failure waves.</p>
+                        <a href="article-retry-storms.html" class="svc-link">READ REPORT ></a>
+                    </div>
+
+                    <div class="service-card" data-insight-card data-topic="frontend architecture">
+                        <div class="card-header">
+                            <span class="svc-num">:: ART_02</span>
                         </div>
                         <h3>FRONTEND_RELEASE_WATCH</h3>
                         <p>What changes when responsive behavior moves from page breakpoints to component boundaries.</p>
@@ -367,7 +376,7 @@
 
                     <div class="service-card" data-insight-card data-topic="infrastructure operations">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_02</span>
+                            <span class="svc-num">:: ART_03</span>
                         </div>
                         <h3>OUTAGE_PLAYBOOKS_LIVE</h3>
                         <p>Failure domains, restore drills, and the operational details that separate redundancy plans from recovery plans.</p>
@@ -375,7 +384,7 @@
                     </div>
                     <div class="service-card" data-insight-card data-topic="frontend design">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_03</span>
+                            <span class="svc-num">:: ART_04</span>
                         </div>
                         <h3>UI_GOVERNANCE_THREAD</h3>
                         <p>Why mature design systems behave more like release infrastructure than a static component library.</p>
@@ -384,7 +393,7 @@
                     <!-- New Articles -->
                     <div class="service-card" data-insight-card data-topic="performance frontend">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_04</span>
+                            <span class="svc-num">:: ART_05</span>
                         </div>
                         <h3>PERFORMANCE_THREAD_MATH</h3>
                         <p>Interaction budgets, main-thread pressure, and the performance decisions that still matter after Core Web Vitals dashboards go green.</p>
@@ -393,7 +402,7 @@
 
                     <div class="service-card" data-insight-card data-topic="performance operations">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_05</span>
+                            <span class="svc-num">:: ART_06</span>
                         </div>
                         <h3>SUSTAINABLE_STACK_ROUNDUP</h3>
                         <p>How lean delivery, caching discipline, and runtime restraint make sustainability measurable instead of rhetorical.</p>
@@ -402,7 +411,7 @@
 
                     <div class="service-card" data-insight-card data-topic="security operations">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_06</span>
+                            <span class="svc-num">:: ART_07</span>
                         </div>
                         <h3>REGIONAL_DATA_THREAD</h3>
                         <p>What data sovereignty means in practice once portability, processor access, and third-party resilience are part of the design conversation.</p>
@@ -411,7 +420,7 @@
 
                     <div class="service-card" data-insight-card data-topic="security infrastructure">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_07</span>
+                            <span class="svc-num">:: ART_08</span>
                         </div>
                         <h3>JWT_INCIDENT_BRIEF</h3>
                         <p>JWT hardening guidance focused on verifier inventory, rollout sequencing, and rollback-safe authentication changes.</p>
@@ -420,7 +429,7 @@
 
                     <div class="service-card" data-insight-card data-topic="operations productivity">
                         <div class="card-header">
-                            <span class="svc-num">:: ART_08</span>
+                            <span class="svc-num">:: ART_09</span>
                         </div>
                         <h3>WORKFLOW_TIPS_BOARD</h3>
                         <p>Practical workflow habits for cleaner handoffs, faster recovery, and fewer avoidable mistakes in daily engineering work.</p>
@@ -442,6 +451,11 @@
                 </div>
 
                 <div class="news-feed">
+                    <div class="log-entry">
+                        <span class="log-date">[2026-03-22]</span>
+                        <span class="log-sep">::</span>
+                        <a href="article-retry-storms.html" class="log-link">PUBLISH: New reliability report on retry storms, timeout budgets, jitter strategy, and overload-safe service behavior.</a>
+                    </div>
                     <div class="log-entry">
                         <span class="log-date">[2026-03-14]</span>
                         <span class="log-sep">::</span>
@@ -495,7 +509,7 @@
                 </div>
                 <div class="cta-actions">
                     <a href="contact.html" class="cta-button">CONTACT_EDITORIAL</a>
-                    <a href="article-security-jwt.html" class="secondary-button">VIEW SAMPLE REPORT</a>
+                    <a href="article-retry-storms.html" class="secondary-button">VIEW SAMPLE REPORT</a>
                     <a href="article.html" class="secondary-button">EDITORIAL STANDARDS</a>
                 </div>
             </div>
