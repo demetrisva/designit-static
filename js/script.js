@@ -7,38 +7,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelector(".nav-links");
 
-    if (navToggle) {
-        navToggle.addEventListener("click", () => {
-            // Toggle menu active class
-            navLinks.classList.toggle("active");
+    if (navToggle && navLinks) {
+        navToggle.setAttribute("aria-expanded", "false");
 
-            // Toggle body scroll
-            document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "auto";
-
-            // Toggle icon (bars to times)
+        const closeMenu = () => {
+            navLinks.classList.remove("active");
+            document.body.style.overflow = "auto";
+            navToggle.setAttribute("aria-expanded", "false");
             const icon = navToggle.querySelector("i");
-            if (icon.classList.contains("fa-bars")) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-times");
-                icon.style.color = 'white'; // Ensure 'X' is white
-            } else {
+            if (icon) {
                 icon.classList.remove("fa-times");
                 icon.classList.add("fa-bars");
-                icon.style.color = 'white'; // Ensure 'bars' are white
+                icon.style.color = "white";
+            }
+        };
+
+        navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            const isActive = navLinks.classList.contains("active");
+            document.body.style.overflow = isActive ? "hidden" : "auto";
+            navToggle.setAttribute("aria-expanded", String(isActive));
+            const icon = navToggle.querySelector("i");
+            if (icon && icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times");
+                icon.style.color = "white";
+            } else {
+                closeMenu();
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                    const icon = navToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    closeMenu();
                 }
             });
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && navLinks.classList.contains("active")) {
+                closeMenu();
+                navToggle.focus();
+            }
         });
     }
 
