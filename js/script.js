@@ -319,6 +319,39 @@ document.addEventListener("DOMContentLoaded", () => {
             const allowedFilters = new Set(chips.map((chip) => chip.dataset.insightFilter || "all"));
             const allowedSorts = new Set(["latest", "title", "topic"]);
 
+            cards.forEach((card) => {
+                const link = card.querySelector(".svc-link");
+                if (!link) {
+                    return;
+                }
+
+                card.tabIndex = 0;
+                card.setAttribute("role", "link");
+
+                card.addEventListener("click", (event) => {
+                    const target = event.target;
+                    if (target instanceof Element && target.closest("a, button, input, select, textarea")) {
+                        return;
+                    }
+
+                    link.click();
+                });
+
+                card.addEventListener("keydown", (event) => {
+                    if (event.key !== "Enter" && event.key !== " ") {
+                        return;
+                    }
+
+                    const target = event.target;
+                    if (target instanceof Element && target.closest("a, button, input, select, textarea")) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    link.click();
+                });
+            });
+
             cards.forEach((card, index) => {
                 card.dataset.initialIndex = String(index);
             });

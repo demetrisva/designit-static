@@ -1257,6 +1257,7 @@ header {
     position: absolute;
     inset: 0;
     border-radius: 18px;
+    pointer-events: none;
     padding: 1px;
     background: linear-gradient(140deg, rgba(136, 255, 240, 0.42), rgba(255, 191, 105, 0.42));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -1282,6 +1283,11 @@ header {
 .service-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.6rem;
+}
+
+.service-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .svc-num {
