@@ -7,6 +7,7 @@
     <title>Resilience Drills Under DORA // DesignIt.pro</title>
     <meta name="description" content="Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-server-redundancy.html">
     <meta property="og:url" content="https://designit.pro/article-server-redundancy.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: RESILIENCE DRILLS UNDER DORA">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.">
     <meta name="twitter:image" content="assets/images/og-server-redundancy.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "RESILIENCE DRILLS UNDER DORA", "description": "Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.", "datePublished": "2026-03-27", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "RESILIENCE DRILLS UNDER DORA", "description": "Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.", "datePublished": "2026-03-27", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label">:: FIELD_REPORT_002</span>
                 <h1 class="article-title">RESILIENCE_DRILLS_UNDER_DORA</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 6 MIN READ</span>
                     <span><i class="fas fa-tag"></i> RESILIENCE</span>
                 </div>
@@ -66,48 +67,44 @@
 
             <div class="article-content">
 
-                <p class="lead-text">DORA raises the bar on resilience by making tested recovery more important than confident architecture language. A failover path that has never been exercised is not strong evidence. It is a hope.</p>
+                <p class="lead-text">DORA has been in force for fifteen months. The Regulation's position is clear: resilience is not a diagram on a slide, it is evidence of tested recovery. Teams that understood this early have built drills, documentation, and third-party evidence into ordinary operations. Teams that treated DORA as a future planning exercise are now catching up under active regulatory scrutiny.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">WHY_THIS_MATTERS</span>
-                    <p>DORA has applied since 17 January 2025. The organizations adapting best are the ones treating resilience as an evidence-producing operating routine rather than a once-a-year architecture review.</p>
+                    <span class="callout-label">THE_REGULATORY_PICTURE</span>
+                    <p>DORA has applied since 17 January 2025. The ESAs — EBA, EIOPA, and ESMA — have published final regulatory technical standards covering ICT risk management, incident classification, threat-led penetration testing, and third-party risk register requirements. Those standards are now in force and are what supervisory examinations will test against.</p>
                 </div>
 
-                <h2>FAILURE_DOMAINS</h2>
-                <p>Every platform still has hidden coupling somewhere: region-local queues, DNS, identity providers, payment rails, backups, or an internal service that quietly sits in the critical path. Redundancy planning starts by finding those seams instead of assuming the cloud diagram is accurate.</p>
+                <h2>WHERE_ARCHITECTURE_ASSUMPTIONS_BREAK</h2>
+                <p>Every platform has hidden coupling that the architecture diagram does not show. DNS resolvers, identity providers, shared payment rails, internal certificate authorities, backup storage endpoints. These become visible when something fails. The objective under DORA is to find them before regulators or customers do.</p>
 
-                <p>Once the failure domains are explicit, graceful degradation becomes easier to design. Critical flows stay online, secondary work sheds load first, and operators can explain the plan without inventing it during the incident.</p>
+                <p>Explicit failure domains make graceful degradation achievable rather than theoretical. When you know which dependencies sit in the critical path of which customer journeys, you can make reasonable decisions about load shedding, read-only fallback modes, and what a meaningful partial outage looks like compared to a total one.</p>
 
                 <blockquote>
-                    "Resilience is measured in minutes of confusion you avoid."
+                    "Resilience is measured in minutes of confusion you avoid, not years of uptime you claim."
                 </blockquote>
 
-                <h3>AUTOMATION_AND_DRILLS</h3>
-                <p>Redundancy without drills is still theory. Health checks, warm paths, restore tests, and timed decision points are what turn spare infrastructure into a system that can survive a real outage.</p>
+                <h3>TESTED_RECOVERY_IS_THE_EVIDENCE</h3>
+                <p>Under the DORA technical standards, tested resilience is a documented output, not a verbal assurance. Restore tests need to demonstrate actual data integrity, not just successful backup job completion. Failover drills need timestamps and decision logs. ICT third-party risk registers need to cover not just who the providers are, but concentration risk, substitutability, and what a realistic transition plan would require in practice.</p>
 
                 <ul class="article-list">
-                    <li>Trigger traffic movement from user-facing latency and dependency health, not a single green check.</li>
-                    <li>Protect essential journeys with explicit load-shedding and read-only fallback modes.</li>
-                    <li>Run restore drills that verify data integrity, not just backup job completion.</li>
+                    <li>Trigger traffic movement based on real user-facing signals, not a single-node health check that misses dependency failures upstream.</li>
+                    <li>Protect the highest-priority journeys explicitly with defined load-shedding sequences — secondary work should degrade first, in a documented order.</li>
+                    <li>Run backup restoration drills with verification steps that confirm data integrity, not just a successful restore command that completes without error.</li>
+                    <li>Keep ICT third-party risk registers current — if the list of critical providers changes, the register needs to reflect it before the next supervisory review.</li>
                 </ul>
 
-                <p>Redundancy works when people trust the sequence. The goal is not mythical zero downtime. The goal is fast, legible recovery with fewer surprises for operators and customers.</p>
-
-                <h2>DRILL_AND_RESPONSE_CHECKLIST</h2>
-                <p>Most outage plans fail in the handoff between automation and operator judgment. Teams with strong recovery posture define owner roles, decision thresholds, and rollback triggers before the incident starts. They also rehearse these playbooks on a schedule, not only after production failures.</p>
+                <h2>THE_OPERATOR_OWNERSHIP_PROBLEM</h2>
+                <p>Most incident plans fail at the handoff between automation and human judgment. Automation handles clean failover. It cannot decide when to roll back a deployment that is degrading slowly, when to escalate to a supplier, or when to invoke a disaster recovery site. Those decisions need named owners with on-call authority and written thresholds — not intuition developed in real time during the incident itself.</p>
                 <ul class="article-list">
-                    <li>Map every critical dependency to a failure domain and an owner with on-call authority.</li>
-                    <li>Set quantitative failover and rollback thresholds tied to SLO burn, not intuition.</li>
-                    <li>Test restore integrity from backups quarterly with documented verification evidence.</li>
+                    <li>Map every critical dependency to a named owner with authority to act, not just awareness of the failure.</li>
+                    <li>Set quantitative rollback and escalation thresholds in writing, tied to SLO burn rates rather than gut feel.</li>
+                    <li>Run tabletop exercises on the scenarios that are hardest to automate, not just the ones you already have runbooks for.</li>
                 </ul>
-
-                <h2>WHO_THIS_REPORT_IS_FOR</h2>
-                <p>This report is intended for practitioners making implementation decisions in live systems. It is not legal advice and it is not a product endorsement. Use it as a technical briefing, then validate choices against your architecture, risk profile, and user constraints before rollout.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
+                    <li><a href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer">DORA Regulation (EU) 2022/2554</a></li>
                     <li><a href="https://sre.google/sre-book/service-level-objectives/" target="_blank" rel="noopener noreferrer">Google SRE Book: Service Level Objectives</a></li>
-                    <li><a href="https://sre.google/sre-book/emergency-response/" target="_blank" rel="noopener noreferrer">Google SRE Book: Emergency Response</a></li>
                     <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework</a></li>
                 </ul>
             </div>

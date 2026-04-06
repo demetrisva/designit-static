@@ -7,6 +7,7 @@
     <title>Design Systems For Regulated Releases // DesignIt.pro</title>
     <meta name="description" content="How design systems turn accessibility and policy requirements into reusable release rules instead of one-off clean-up work.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-design-systems.html">
     <meta property="og:url" content="https://designit.pro/article-design-systems.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: DESIGN SYSTEMS FOR REGULATED RELEASES">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="How design systems turn accessibility and policy requirements into reusable release rules instead of one-off clean-up work.">
     <meta name="twitter:image" content="assets/images/og-design-systems.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "DESIGN SYSTEMS FOR REGULATED RELEASES", "description": "How design systems turn accessibility and policy requirements into reusable release rules instead of one-off clean-up work.", "datePublished": "2026-03-27", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-design-systems.svg", "mainEntityOfPage": "https://designit.pro/article-design-systems.html", "url": "https://designit.pro/article-design-systems.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "DESIGN SYSTEMS FOR REGULATED RELEASES", "description": "How design systems turn accessibility and policy requirements into reusable release rules instead of one-off clean-up work.", "datePublished": "2026-03-27", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-design-systems.svg", "mainEntityOfPage": "https://designit.pro/article-design-systems.html", "url": "https://designit.pro/article-design-systems.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label">:: EDITORIAL_003</span>
                 <h1 class="article-title">DESIGN_SYSTEMS_FOR_REGULATED_RELEASES</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 5 MIN READ</span>
                     <span><i class="fas fa-tag"></i> DESIGN OPS</span>
                 </div>
@@ -66,49 +67,40 @@
 
             <div class="article-content">
 
-                <p class="lead-text">A design system becomes strategically valuable when it stops behaving like a component gallery and starts acting like release infrastructure. That is where accessibility and other regulated requirements become repeatable instead of expensive one-offs.</p>
+                <p class="lead-text">A design system earns its place in a regulated product environment by answering governance questions early — before the audit, before the release candidate, before someone files a complaint. That is a different job than being a component library, and teams that have not made the distinction tend to find out at the worst possible time.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">WHAT_CHANGED</span>
-                    <p>The pressure on design systems is higher once accessibility and disclosure obligations become enforceable. Governance has to happen before merge, not after a release candidate already exists.</p>
+                    <span class="callout-label">THE_CURRENT_STANDARD</span>
+                    <p>The governing accessibility standard for products covered by the European Accessibility Act is EN 301 549 v3.3.1, which maps substantially to WCAG 2.1 Level AA. In practice, teams should be building to WCAG 2.2 now. The newer success criteria — Focus Appearance (SC 2.4.11, 2.4.12), Dragging Movements (SC 2.5.7), and Target Size Minimum (SC 2.5.8) — address real interaction patterns that WCAG 2.1 left unresolved.</p>
                 </div>
 
-                <h2>GOVERNANCE_OVER_GALLERY</h2>
-                <p>Most systems lose authority when they behave like asset libraries instead of control planes. A useful system answers review questions early: which primitive to start from, which states are already supported, and what evidence justifies another variant.</p>
+                <h2>GOVERNANCE_BEFORE_GALLERY</h2>
+                <p>The pathology is familiar. The design system starts as a component library, grows into a gallery of variants, and eventually becomes a design asset repository with no real authority over what ships. Product squads fork primitives when existing ones don't quite fit. Accessibility criteria live in a spreadsheet somewhere, not attached to the components. The system stops being useful for compliance work because nobody consults it before decisions get made.</p>
 
-                <p>That changes the team conversation. Instead of asking "Which component looks close enough?" people ask "Which product state is being represented, and does the system already encode it?" The result is fewer forks and cleaner ownership.</p>
+                <p>The fix is not more components. It is earlier decisions: what state does this represent, which primitive does it start from, what accessibility evidence does it require before it can be used in production. That turns the system from a reference document into a release checkpoint.</p>
 
                 <blockquote>
                     "A design system is a decision pipeline, not a UI kit."
                 </blockquote>
 
-                <h3>TOKENS_AS_CONTRACT</h3>
-                <p>Tokens only help when they describe intent clearly enough to survive redesigns, audits, and multiple codebases. Naming the job instead of the visual outcome keeps the system stable while the brand evolves.</p>
+                <h3>TOKENS_AS_A_GOVERNING_LAYER</h3>
+                <p>Tokens that describe intent rather than appearance hold up better across redesigns, codebases, and regulatory reviews. "Color feedback error" tells you what the token does and survives a rebrand. "Red 600" tells you nothing useful the moment a brand evolves or a dark mode is added. The naming discipline is not pedantic — it is what makes a token system auditable and semantically stable over time.</p>
 
                 <ul class="article-list">
-                    <li>Semantic tokens that describe purpose, state, and contrast expectations.</li>
-                    <li>Accessibility acceptance criteria attached to primitives, not bolted on in product squads.</li>
-                    <li>Contribution workflows that require usage guidance before a new component is accepted.</li>
+                    <li>Semantic token names that describe purpose, state, and contrast requirements — not visual outcomes.</li>
+                    <li>WCAG 2.2 acceptance criteria defined at the primitive level, before product-level composition begins.</li>
+                    <li>Contribution workflows that require written usage guidance before a new component enters the system.</li>
+                    <li>Monthly token audits to catch naming drift and semantic boundary creep before they compound.</li>
                 </ul>
 
-                <p>When a design system becomes operational infrastructure, it speeds delivery and reduces debate. Review cycles shrink because teams are no longer inventing policy mid-flight.</p>
-
-                <h2>IMPLEMENTATION_CHECKLIST</h2>
-                <p>The highest-signal systems treat governance as a release gate. Every new component requires accessibility criteria, token usage notes, and migration guidance for existing surfaces. This prevents the system from drifting into a design gallery with weak operational value.</p>
-                <ul class="article-list">
-                    <li>Require a written "use this / do not use this" rule in every component proposal.</li>
-                    <li>Attach accessibility acceptance criteria to primitives before product-level composition starts.</li>
-                    <li>Track token churn monthly to identify naming debt and unstable semantic boundaries.</li>
-                </ul>
-
-                <h2>WHO_THIS_REPORT_IS_FOR</h2>
-                <p>This report is intended for practitioners making implementation decisions in live systems. It is not legal advice and it is not a product endorsement. Use it as a technical briefing, then validate choices against your architecture, risk profile, and user constraints before rollout.</p>
+                <h2>THE_EVIDENCE_QUESTION</h2>
+                <p>When an accessibility complaint arrives or a market surveillance authority requests documentation, the useful thing to have is evidence that accessibility requirements were built into the delivery process — not a recent audit report that is already out of date the moment the next sprint ships. Design systems that require accessibility acceptance criteria as a release gate create that evidence as a side effect of normal development. That is worth considerably more than a quarterly accessibility sprint that fights fires after the fact.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C: WCAG 2.2</a></li>
-                    <li><a href="https://www.nngroup.com/articles/design-systems-101/" target="_blank" rel="noopener noreferrer">Nielsen Norman Group: Design Systems</a></li>
-                    <li><a href="https://www.designsystems.com/" target="_blank" rel="noopener noreferrer">Design Systems Handbook</a></li>
+                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.03.01_60/en_301549v030301p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.3.1</a></li>
+                    <li><a href="https://www.nngroup.com/articles/design-systems-101/" target="_blank" rel="noopener noreferrer">Nielsen Norman Group: Design Systems 101</a></li>
                 </ul>
             </div>
             <section class="related-articles">

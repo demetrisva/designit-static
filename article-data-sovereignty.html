@@ -7,6 +7,7 @@
     <title>Data Act After Go-Live // DesignIt.pro</title>
     <meta name="description" content="What changed after the EU Data Act application date and how portability, switching, NIS2, and DORA now meet in day-to-day operations.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-data-sovereignty.html">
     <meta property="og:url" content="https://designit.pro/article-data-sovereignty.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: DATA ACT AFTER GO-LIVE">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="What changed after the EU Data Act application date and how portability, switching, NIS2, and DORA now meet in day-to-day operations.">
     <meta name="twitter:image" content="assets/images/og-data-sovereignty.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "DATA ACT AFTER GO-LIVE", "description": "What changed after the EU Data Act application date and how portability, switching, NIS2, and DORA now meet in day-to-day operations.", "datePublished": "2026-03-28", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-data-sovereignty.svg", "mainEntityOfPage": "https://designit.pro/article-data-sovereignty.html", "url": "https://designit.pro/article-data-sovereignty.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "DATA ACT AFTER GO-LIVE", "description": "What changed after the EU Data Act application date and how portability, switching, NIS2, and DORA now meet in day-to-day operations.", "datePublished": "2026-03-28", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-data-sovereignty.svg", "mainEntityOfPage": "https://designit.pro/article-data-sovereignty.html", "url": "https://designit.pro/article-data-sovereignty.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label">:: REGULATION_BRIEF_006</span>
                 <h1 class="article-title">DATA_ACT_AFTER_GO_LIVE</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 7 MIN READ</span>
                     <span><i class="fas fa-tag"></i> REGULATION</span>
                 </div>
@@ -66,49 +67,39 @@
 
             <div class="article-content">
 
-                <p class="lead-text">The EU Data Act stopped being a future planning item on 12 September 2025. If your team still treats portability and switching as procurement promises rather than product capabilities, you are already late.</p>
+                <p class="lead-text">Seven months after the EU Data Act started applying, the picture is clearer about where the real work sits. The gap between a data-residency diagram and a working exit strategy is wider than most teams expected when they first read the Regulation.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">WHY_THIS_CHANGED</span>
-                    <p>The operational picture tightened across several EU instruments at once: the Data Act applies from 12 September 2025, DORA has applied since 17 January 2025, and NIS2 required Member States to adopt and publish national measures by 17 October 2024.</p>
+                    <span class="callout-label">WHERE_THINGS_STAND</span>
+                    <p>The Data Act has applied since 12 September 2025. DORA since 17 January 2025. NIS2 national measures were due by 17 October 2024, with varying levels of national transposition across Member States. The pressure these instruments create overlaps in ways that make compartmentalizing the legal workstream a risky strategy.</p>
                 </div>
 
-                <h2>RESIDENCY_IS_NOT_THE_WHOLE_JOB</h2>
-                <p>Teams often answer data-governance questions with a region selector and a storage diagram. That is not enough anymore. The real risk sits in exports, support access, backup restoration, analytics copies, logging, and the practical ability to leave a provider without a destructive rewrite.</p>
+                <h2>THE_RESIDENCY_DIAGRAM_IS_NOT_ENOUGH</h2>
+                <p>Most teams initially answered data-governance questions with a storage region selector and a subprocessor list. That answered the GDPR-era question: where does the data live? The Data Act asks something different: can you move it, can you prove it, and can you exit without destroying the service?</p>
 
-                <p>When these pathways are undocumented, the business discovers too late that the data may be local but the operational dependency is not.</p>
+                <p>The real friction sits in export quality. A portability export that is complete, machine-readable, and usable without interpretation is genuinely hard to produce for most complex products. Logs, backups, analytics copies, and support tooling often contain customer data and operational context that nobody governed as carefully as the primary database. Those are the pathways that tend to fail in a portability exercise.</p>
 
                 <blockquote>
                     "If you cannot move the data cleanly, you do not really control the service."
                 </blockquote>
 
-                <h3>WHAT_THE_DATA_ACT_CHANGES_IN_PRACTICE</h3>
-                <p>The Data Act pushes portability and switching out of the nice-to-have column. For many teams that means building export jobs that work at production scale, defining handover boundaries between controller and processor roles, and proving that a service can be exited without losing business continuity.</p>
+                <h3>WHAT_PORTABILITY_MEANS_IN_PRACTICE</h3>
+                <p>Article 23 of the Data Act requires data holders to take reasonable technical measures to ensure portability. The practical consequence is that export needs to be a first-class product feature, not a migration script someone last tested in 2023. Export jobs need to run at production scale. The output needs to be documented. The handover boundary between controller and processor roles needs to be explicit before anyone requests a porting.</p>
 
-                <p>The engineering consequence is simple: logs, backups, support tooling, and recovery workflows need to be treated as governed copies of the service, not as side systems that escape review because the main database sits in the right region.</p>
+                <p>Teams that have run switching exercises recently find the same pattern: the primary data moves without much trouble, but the operational context does not. Configuration, support history, access logs, restoration state — those are the parts that make a real exit painful and slow.</p>
 
-                <h3>WHERE_DORA_AND_NIS2_ENTER</h3>
-                <p>DORA makes this operational for financial entities and their ICT supply chains by focusing on resilience, dependency oversight, and evidence. NIS2 does something similar for covered entities through national law, especially around risk-management measures and incident handling. The important point is not that the texts are identical. It is that the combined pressure removes the excuse for undocumented third-party dependence.</p>
+                <h3>WHERE_DORA_AND_NIS2_CREATE_EXTRA_PRESSURE</h3>
+                <p>DORA adds a resilience dimension for financial entities and their ICT supply chains. ICT third-party risk registers, contractual resilience requirements, and evidence of tested recovery paths are now obligatory rather than best practice. NIS2 does something analogous for covered entities under national implementation, particularly around supply chain risk and incident evidence chains.</p>
 
                 <ul class="article-list">
-                    <li>Keep a current map of where production data, backups, logs, and support access actually live.</li>
-                    <li>Test export quality, not just export existence. Broken or partial exports are not an exit strategy.</li>
-                    <li>Document provider dependencies, fallback routes, and the people who own cutover decisions.</li>
-                    <li>Make incident evidence, restoration steps, and communication duties part of the same operating model.</li>
+                    <li>Keep a current and auditable map of where customer data, backups, logs, and support access actually live — not where they are supposed to live according to the architecture diagram.</li>
+                    <li>Run export tests against production-scale data, not a sanitized subset. Partial exports are not an exit strategy.</li>
+                    <li>Document provider dependencies, fallback routes, and who owns cutover decisions before an event forces the answer under pressure.</li>
+                    <li>Treat incident evidence, restoration runbooks, and communication duties as part of the same operating model — not as separate compliance artifacts.</li>
                 </ul>
 
-                <p>Portability is no longer just a customer-rights talking point. It is now tangled up with resilience, supplier concentration, and how quickly an organization can recover under pressure.</p>
-
-                <h2>WHAT_TO_FIX_NEXT</h2>
-                <p>Most teams do not need a grand re-architecture first. They need a cleaner inventory and a more honest drill schedule. Start with the service boundaries that would matter during a provider change, a major outage, or a customer portability request.</p>
-                <ul class="article-list">
-                    <li>Maintain a live map of data classes, region boundaries, subprocessors, and operational access paths.</li>
-                    <li>Run export and migration exercises as part of recovery drills rather than treating them as procurement paperwork.</li>
-                    <li>Define who owns evidence collection, incident notice inputs, and supplier coordination before a real event forces the answer.</li>
-                </ul>
-
-                <h2>WHO_SHOULD_READ_THIS</h2>
-                <p>This article is for teams that build or operate data-heavy services and need to connect legal dates with implementation work. It is not legal advice. It is a planning brief for the people who own product architecture, platform operations, procurement evidence, and provider exit readiness.</p>
+                <h2>THE_PRACTICAL_NEXT_STEP</h2>
+                <p>Start with the three provider relationships that would be hardest to exit under pressure. Map what you would need to have produced, tested, and documented to make that exit plausible within 90 days. That exercise surfaces the real risk faster than any compliance gap analysis, and it gives product, engineering, and operations a concrete shared picture of where the gaps actually are.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">

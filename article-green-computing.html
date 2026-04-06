@@ -7,6 +7,7 @@
     <title>Efficiency Is An Operating Decision // DesignIt.pro</title>
     <meta name="description" content="Performance, runtime restraint, and repeat-download waste as operating decisions that affect cost, accessibility, and resilience.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-green-computing.html">
     <meta property="og:url" content="https://designit.pro/article-green-computing.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: EFFICIENCY IS AN OPERATING DECISION">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="Performance, runtime restraint, and repeat-download waste as operating decisions that affect cost, accessibility, and resilience.">
     <meta name="twitter:image" content="assets/images/og-green-computing.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "EFFICIENCY IS AN OPERATING DECISION", "description": "Performance, runtime restraint, and repeat-download waste as operating decisions that affect cost, accessibility, and resilience.", "datePublished": "2026-03-26", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-green-computing.svg", "mainEntityOfPage": "https://designit.pro/article-green-computing.html", "url": "https://designit.pro/article-green-computing.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "EFFICIENCY IS AN OPERATING DECISION", "description": "Performance, runtime restraint, and repeat-download waste as operating decisions that affect cost, accessibility, and resilience.", "datePublished": "2026-03-26", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-green-computing.svg", "mainEntityOfPage": "https://designit.pro/article-green-computing.html", "url": "https://designit.pro/article-green-computing.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label">:: PRACTICE_NOTE_005</span>
                 <h1 class="article-title">EFFICIENCY_IS_AN_OPERATING_DECISION</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 5 MIN READ</span>
                     <span><i class="fas fa-tag"></i> OPERATIONS</span>
                 </div>
@@ -66,46 +67,38 @@
 
             <div class="article-content">
 
-                <p class="lead-text">Efficiency matters because it changes operating cost, user experience, accessibility, and resilience at the same time. Repeat-download waste and unnecessary runtime work are rarely just performance issues.</p>
+                <p class="lead-text">Performance is not a feature. It is an operating cost that compounds in multiple directions at once: infrastructure spend, accessibility failures for users on slow networks or older hardware, and resilience margins that shrink every time an unnecessary script adds latency to an already pressured request path.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">UPDATE_2026_03_14</span>
-                    <p>If you want measurable improvement, start with repeat traffic rather than marketing statements. Cache hit rate, image discipline, and avoiding unnecessary recomputation still deliver the fastest gains.</p>
+                    <span class="callout-label">UPDATE_2026_04_06</span>
+                    <p>The fastest efficiency gains still come from repeat-visit behavior. If users are redownloading large assets on every visit because cache policies were never set deliberately, both your infrastructure bill and your environmental footprint scale linearly with traffic. Cache hit rate is the leading indicator to fix first.</p>
                 </div>
 
-                <h2>LEAN_DELIVERY</h2>
-                <p>Static delivery, resilient caching, and tighter media rules cut waste at the source. Every redundant request, oversized image, autoplay loop, and needless hydration step creates extra network, CPU, and battery work for no meaningful user benefit.</p>
+                <h2>THE_REAL_COST_OF_REPEAT_DOWNLOADS</h2>
+                <p>Most web products waste more bandwidth on repeat visits than on first loads. Fonts, stylesheets, and JavaScript bundles get redownloaded because someone set <code>Cache-Control: no-cache</code> conservatively during a debugging session and nobody reverted it. Images that could be served at the rendered viewport size are served at design source dimensions. Decorative animations run on every page visit, consuming CPU and battery on behalf of no perceivable user benefit.</p>
 
-                <p>That is why sustainable delivery often looks boring in the best way: smaller payloads, calmer pages, fewer scripts, and predictable cache behavior. Speed is the visible benefit. Lower waste is the invisible one.</p>
+                <p>These are not small marginal costs. On high-traffic products, they translate to real infrastructure spend, measurable battery drain on mobile devices, and worse performance for users on constrained connections. Accessibility and sustainability share a cause here — lighter, calmer pages help everyone.</p>
 
                 <blockquote>
                     "A performance budget is also a carbon budget."
                 </blockquote>
 
-                <h3>SUSTAINABLE_RUNTIME</h3>
-                <p>Browser sustainability is mostly runtime restraint. Leaner hydration, fewer background timers, and image policies tied to actual container size reduce both heat and needless compute.</p>
+                <h3>THE_INP_SHIFT_AND_WHAT_IT_CATCHES</h3>
+                <p>Google replaced FID with INP (Interaction to Next Paint) as a Core Web Vital in March 2024. INP measures responsiveness across all interactions during a page visit, not just the first one. Teams that optimized for FID may have pages that score poorly on INP despite looking fine under old metrics. Long tasks blocking the main thread are the usual culprit — animation loops, heavy synchronous computations, or third-party tag managers firing on every interaction.</p>
 
                 <ul class="article-list">
-                    <li>Ship responsive media sized to the rendered surface, not the design source file.</li>
-                    <li>Defer non-essential scripts and remove decorative motion that burns CPU without adding value.</li>
-                    <li>Set cache policies that protect repeat visits from avoidable redownloads.</li>
+                    <li>Serve images at the dimensions they will actually be displayed — not design source size, and not 2x when the rendered container is small.</li>
+                    <li>Audit third-party scripts quarterly and remove any that have no clear measurable benefit. The tag that seemed useful during evaluation rarely gets removed when it turns out to be expensive.</li>
+                    <li>Review cache policies for static assets — fonts, icons, versioned stylesheets, and versioned JavaScript should have long max-age values with cache busting on deploy.</li>
+                    <li>Break up long tasks on the main thread: anything above 50ms that could be deferred, chunked, or moved to a worker should be investigated.</li>
                 </ul>
 
-                <p>Sustainability becomes real when it is built into delivery rules, not campaign copy. Simpler stacks last longer, cost less to operate, and fail more gracefully on constrained devices.</p>
-
-                <h2>SUSTAINABLE_DELIVERY_CHECKLIST</h2>
-                <p>Teams that make sustainability measurable usually start with repeat traffic because it reveals operational waste quickly. If users re-download large assets or rerun heavy scripts on every visit, both cost and environmental impact scale in the wrong direction.</p>
-                <ul class="article-list">
-                    <li>Measure repeat-visit transfer and target aggressive cache-hit improvements.</li>
-                    <li>Set image and video budgets by viewport size, then enforce them in build checks.</li>
-                    <li>Audit third-party scripts quarterly and remove non-essential runtime overhead.</li>
-                </ul>
-
-                <h2>WHO_THIS_REPORT_IS_FOR</h2>
-                <p>This report is intended for practitioners making implementation decisions in live systems. It is not legal advice and it is not a product endorsement. Use it as a technical briefing, then validate choices against your architecture, risk profile, and user constraints before rollout.</p>
+                <h2>SIMPLER_STACKS_LAST_LONGER</h2>
+                <p>Not every team needs to go to extreme lengths. Most have several high-return efficiency improvements sitting in the backlog that nobody has prioritized because there is no shared denominator. A performance and efficiency budget provides that denominator. Treat it the same way you would treat a financial budget — not as a target to hit once, but as a constraint that governs tradeoffs continuously. Simpler stacks also tend to fail more gracefully on constrained devices, which improves both resilience and accessibility at the same time.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
+                    <li><a href="https://web.dev/articles/inp" target="_blank" rel="noopener noreferrer">web.dev: Interaction to Next Paint (INP)</a></li>
                     <li><a href="https://web.dev/learn/performance/" target="_blank" rel="noopener noreferrer">web.dev: Learn Performance</a></li>
                     <li><a href="https://www.thegreenwebfoundation.org/tools/" target="_blank" rel="noopener noreferrer">The Green Web Foundation Tools</a></li>
                     <li><a href="https://w3c.github.io/sustainableweb-wsg/" target="_blank" rel="noopener noreferrer">W3C Web Sustainability Guidelines (draft)</a></li>

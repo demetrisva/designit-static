@@ -7,6 +7,7 @@
     <title>Accessibility After June 2025 // DesignIt.pro</title>
     <meta name="description" content="What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-future-css.html">
     <meta property="og:url" content="https://designit.pro/article-future-css.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: ACCESSIBILITY AFTER JUNE 2025">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.">
     <meta name="twitter:image" content="assets/images/og-future-css.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "ACCESSIBILITY AFTER JUNE 2025", "description": "What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.", "datePublished": "2026-03-28", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-future-css.svg", "mainEntityOfPage": "https://designit.pro/article-future-css.html", "url": "https://designit.pro/article-future-css.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "ACCESSIBILITY AFTER JUNE 2025", "description": "What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.", "datePublished": "2026-03-28", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-future-css.svg", "mainEntityOfPage": "https://designit.pro/article-future-css.html", "url": "https://designit.pro/article-future-css.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label">:: ACCESSIBILITY_BRIEF_001</span>
                 <h1 class="article-title">ACCESSIBILITY_AFTER_JUNE_2025</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 7 MIN READ</span>
                     <span><i class="fas fa-tag"></i> ACCESSIBILITY</span>
                 </div>
@@ -66,45 +67,42 @@
 
             <div class="article-content">
 
-                <p class="lead-text">The European Accessibility Act began applying on 28 June 2025. For frontend teams, that means accessibility is no longer a promised clean-up phase. It is a release condition.</p>
+                <p class="lead-text">The European Accessibility Act has been in force since 28 June 2025. Ten months in, the conversation has shifted from "what does this require" to "what does enforcement actually look like." National market surveillance authorities are now active in several Member States, and teams without documented compliance work are in a much harder position than they would have been a year ago.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">CURRENT_BASELINE</span>
-                    <p>The Act applies to covered products and services including e-commerce and a range of consumer digital services. For many teams, the visible impact lands in websites, apps, account journeys, and support-heavy forms.</p>
+                    <span class="callout-label">THE_TECHNICAL_STANDARD</span>
+                    <p>The harmonised standard supporting the EAA is EN 301 549, currently at version 3.3.1. For web content and applications, EN 301 549 maps substantially to WCAG 2.1 Level AA at its core — but teams should be working to WCAG 2.2 now. The newer success criteria address real interaction patterns that WCAG 2.1 left unresolved, including Focus Appearance, Dragging Movements, and Target Size Minimum.</p>
                 </div>
 
-                <h2>WHAT_CHANGED_FOR_FRONTEND_WORK</h2>
-                <p>The change is bigger than semantic markup or a one-time audit. Accessibility now needs to live inside the delivery system: component rules, content standards, QA scripts, sign-off checklists, and evidence collected before release.</p>
+                <h2>WHAT_ENFORCEMENT_LOOKS_LIKE_NOW</h2>
+                <p>The practical pattern so far has been complaints-driven: a user or advocacy organisation files a complaint with a national authority, the authority investigates and contacts the organisation, and the pressure lands on whoever owns the product roadmap. The Act gives national authorities power to require remediation, impose penalties for persistent non-compliance, and in some cases withdraw products from the market.</p>
 
-                <p>Teams that still treat accessibility as a final specialist pass usually find the same problem: the defects were introduced much earlier by shared patterns, unclear ownership, and missing release gates.</p>
+                <p>One nuance worth noting: there is an exemption for microenterprises providing services — fewer than 10 employees and annual turnover or balance sheet below €2 million. Organisations above that threshold do not have that relief, and most digital product companies do not qualify.</p>
 
                 <blockquote>
                     "Accessibility failures are usually process failures before they become code failures."
                 </blockquote>
 
-                <h3>WHERE_THE_WORK_SHOWS_UP</h3>
-                <p>The most durable response is to treat accessibility as shared infrastructure. That means defining acceptable component behavior, testing it in the same places you test regressions, and giving product teams a repeatable way to prove the result.</p>
+                <h3>WHERE_THE_DURABLE_FIX_LIVES</h3>
+                <p>The audit-and-fix approach is losing credibility. It tends to produce a point-in-time clean bill of health while the same issues reappear under a different page name or framework update. The durable fix is making accessibility part of the delivery system: component criteria, QA scripts, release conditions, and evidence collected before sign-off.</p>
+
+                <p>Teams that have moved fastest are the ones that embedded WCAG 2.2 acceptance criteria into their design system primitives — and who treat keyboard navigation and screen reader testing as part of the same QA workflow as visual regression, not as a separate specialist audit pass conducted after the code is already merged.</p>
 
                 <ul class="article-list">
-                    <li>Define accessible states for forms, dialogs, menus, notifications, and checkout steps in the design system itself.</li>
-                    <li>Test keyboard flow, visible focus, zoom behavior, and error recovery in the real customer journeys.</li>
-                    <li>Attach accessibility evidence to release signoff instead of treating it as a separate exercise after approval.</li>
+                    <li>Work to WCAG 2.2 Level AA, not 2.1 — this is what the harmonised standard now points toward for covered services.</li>
+                    <li>Prioritize the flows that generate revenue first: checkout, login, password reset, account management, support forms.</li>
+                    <li>Attach accessibility evidence to release sign-off so a future audit or complaint investigation has something to look at beyond the current state of the product.</li>
+                    <li>Test keyboard flow, visible focus at all interaction states, zoom behavior at 200%, and error handling with screen readers — these fail silently in most design-system-driven products.</li>
                 </ul>
 
-                <p>The teams improving fastest are not the ones with the prettiest audit deck. They are the ones whose shared components stop reintroducing the same problem under a new page name.</p>
-
-                <h2>WHAT_TO_REVIEW_NEXT</h2>
-                <p>If your service touches EU consumers, start with the flows that generate revenue, support tickets, or compliance anxiety. Those are usually the same places where inaccessible controls, weak focus handling, and unclear validation messages hurt people first.</p>
-                <ul class="article-list">
-                    <li>Checkout, onboarding, login, password reset, account settings, and payments.</li>
-                    <li>Reusable form controls, modal patterns, and any component that handles errors or time limits.</li>
-                    <li>Mobile navigation, zoomed layouts, and content that relies on color or position alone.</li>
-                </ul>
+                <h2>THE_DESIGN_SYSTEM_ANGLE</h2>
+                <p>If shared components reintroduce the same accessibility issues across every new page that uses them, individual page audits will never close the gap. The fix needs to live at the primitive level: color contrast tokens, focus states, error messaging patterns, touch target sizes. Everything above that either inherits the fix or introduces new debt that surfaces in the next complaint.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L0882" target="_blank" rel="noopener noreferrer">Directive (EU) 2019/882, the European Accessibility Act</a></li>
-                    <li><a href="https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=oj%3AJOL_2019_151_R_0003" target="_blank" rel="noopener noreferrer">EUR-Lex summary of the European Accessibility Act</a></li>
+                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.03.01_60/en_301549v030301p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.3.1 (harmonised standard)</a></li>
+                    <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C WCAG 2.2</a></li>
                 </ul>
             </div>
             <section class="related-articles">

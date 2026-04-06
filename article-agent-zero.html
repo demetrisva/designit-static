@@ -7,11 +7,13 @@
     <title>Agent Zero After v0.9.8 // DesignIt.pro</title>
     <meta name="description" content="Agent Zero's public release trail shows a fast platform shift: memory controls, project isolation, skills, Git projects, new providers, and a much broader plugin surface.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-agent-zero.html">
     <meta property="og:url" content="https://designit.pro/article-agent-zero.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: AGENT ZERO AFTER V0.9.8">
     <meta property="og:image:alt" content="DesignIt.pro report: AGENT ZERO AFTER V0.9.8">
 
+    <!-- Space Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Sora:wght@400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap"
@@ -36,7 +38,7 @@
     <meta name="twitter:description" content="Agent Zero's public release trail shows a fast platform shift: memory controls, project isolation, skills, Git projects, new providers, and a much broader plugin surface.">
     <meta name="twitter:image" content="assets/images/og-agent-zero.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "AGENT ZERO AFTER V0.9.8", "description": "Agent Zero's public release trail shows a fast platform shift: memory controls, project isolation, skills, Git projects, new providers, and a much broader plugin surface.", "datePublished": "2026-03-28", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-agent-zero.svg", "mainEntityOfPage": "https://designit.pro/article-agent-zero.html", "url": "https://designit.pro/article-agent-zero.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "AGENT ZERO AFTER V0.9.8", "description": "Agent Zero's public release trail shows a fast platform shift: memory controls, project isolation, skills, Git projects, new providers, and a much broader plugin surface.", "datePublished": "2026-03-28", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-agent-zero.svg", "mainEntityOfPage": "https://designit.pro/article-agent-zero.html", "url": "https://designit.pro/article-agent-zero.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -57,7 +59,7 @@
                 <span class="mono-label article-label">:: AGENT_REPORT_010</span>
                 <h1 class="article-title">AGENT_ZERO_AFTER_V0_9_8</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 6 MIN READ</span>
                     <span><i class="fas fa-robot"></i> AI TOOLS</span>
                 </div>
@@ -65,49 +67,39 @@
 
             <div class="article-content">
 
-                <p class="lead-text">Agent Zero is no longer interesting only because it is open source and agent-native. The real story in the current public release trail is how quickly it has been turning into a fuller operating environment: memory controls, project isolation, skills, Git-backed workspaces, remote access, and a much wider provider surface.</p>
+                <p class="lead-text">Agent Zero has been moving faster than most open-source agent frameworks, and the gap between its stated architecture goals and what it can actually ship has been narrowing. The public release trail from October 2025 through February 2026 makes that story readable without access to internal build notes.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">PUBLIC_RELEASE_LINE</span>
-                    <p>As of March 28, 2026, the official public changelog shows <strong>v0.9.6</strong> on October 2, 2025, <strong>v0.9.7</strong> on November 19, 2025, and <strong>v0.9.8</strong> in February 2026. References to newer 1.x builds were not yet reflected in the public changelog at the time of writing, so this report is anchored to the official release notes that are currently published.</p>
+                    <span class="callout-label">SCOPE_NOTE</span>
+                    <p>As of 6 April 2026, the official public changelog through <strong>v0.9.8</strong> remains the verified baseline for this report. Community discussions reference a v1.x development line, but no official documentation confirms a released version. This report covers what is documented, not what is anticipated.</p>
                 </div>
 
-                <h2>WHY_THIS_RELEASE_RUN_MATTERS</h2>
-                <p>A lot of agent projects still look like model wrappers with a task loop attached. Agent Zero's recent public updates point in a different direction. The product is moving toward persistent operational context, explicit project boundaries, and a UI that treats multi-step execution like something people need to inspect and steer rather than just watch scroll by.</p>
+                <h2>WHY_THE_PLATFORM_FRAMING_MATTERS</h2>
+                <p>Most things called "AI agents" are still model wrappers with a task loop attached. That works for isolated runs but falls apart when the work grows more complex: context bleeds between sessions, failures disappear silently, there is no clear project boundary, and nothing to inspect when the output is wrong. Agent Zero's recent releases address several of these failure modes rather than routing around them.</p>
+
+                <p>The memory management dashboard shipped in v0.9.6 is a good example. The ability to search, edit, export, and back up memory is not cosmetic. Long-running agent systems fail in consistent ways when their memory is opaque and sticky in the wrong places. Making it inspectable and movable is real platform infrastructure, not a UI nicety.</p>
 
                 <blockquote>
-                    "The interesting shift is not just better prompts. It is the move from chat window to working environment."
+                    "The shift from chat window to working environment changes what the system is actually good for."
                 </blockquote>
 
-                <h2>THE_THREE_STEP_PLATFORM_SHIFT</h2>
-                <p>The October 2, 2025 release, <strong>v0.9.6</strong>, introduced a memory management dashboard with search, editing, export, backup, and multiple memory folders. That matters because long-running agent systems fail when memory is opaque or sticky in the wrong places. Agent Zero's answer was to make memory inspectable and movable.</p>
-                <p>The November 19, 2025 release, <strong>v0.9.7</strong>, added a projects management system with per-project instructions, integrated memory and files, project-specific secrets, and a dedicated wait tool. That turns context isolation into a product feature instead of a naming convention.</p>
-                <p>The February 2026 release, <strong>v0.9.8</strong>, is the biggest public jump. It replaces the legacy instruments model with a skills framework, redesigns the UI around process groups and real-time WebSocket state sync, adds a message queue, Git-based projects, an in-browser file editor, subagents, more providers, and support that extends projects into MCP, A2A, and external API workflows.</p>
+                <h2>THE_THREE_RELEASES_AND_WHAT_EACH_ONE_CHANGED</h2>
+                <p><strong>v0.9.6</strong> (October 2, 2025) gave users memory they could manage: search, edit, export, backup, and multiple memory folders. Agent memory had been effectively write-only before this — useful until it wasn't, with no clean path to inspect or correct what the agent was working from.</p>
+                <p><strong>v0.9.7</strong> (November 19, 2025) added proper project isolation: per-project instructions, per-project files, and per-project secrets. On paper that sounds like a convenience feature. In practice it is the difference between a tool one person uses carefully and a tool a small team can use without constantly contaminating each other's context.</p>
+                <p><strong>v0.9.8</strong> (February 2026) replaced the legacy instruments model with a skills framework, redesigned the UI around process groups with real-time WebSocket state sync, added a message queue, an in-browser file editor, Git-based projects, subagents, and expanded provider and API connectivity. It is a significant architectural jump, and the breadth of changes suggests a lot was held back until the supporting infrastructure was stable.</p>
 
-                <h2>WHY_SKILLS_AND_PROJECTS_CHANGE_THE_STAKES</h2>
-                <p>The skills system is more than a rename. A <code>SKILL.md</code>-style capability model makes agent behavior easier to package, share, inspect, and review across environments. Combined with Git projects and per-project secrets, it makes Agent Zero look less like a demo shell and more like a coordination layer for real work.</p>
+                <h2>WHAT_SKILLS_AND_GIT_PROJECTS_ACTUALLY_CHANGE</h2>
+                <p>The skills framework replaces implicit model behavior with named, shareable, inspectable capabilities. A <code>SKILL.md</code>-style capability model creates a surface teams can review, version, and approve — rather than trying to characterize behavior from outputs alone. Combined with Git-based projects, this starts to look like a real handoff model: here is the working context, the skills in play, and how to continue the work.</p>
                 <ul class="article-list">
-                    <li>Memory controls reduce context bleed and make corrections possible after bad retrieval or stale instructions.</li>
-                    <li>Projects create a cleaner security and workflow boundary for client work, experiments, and internal operations.</li>
-                    <li>Skills, MCP support, and external API hooks widen the plugin surface without forcing every capability into one hard-coded tool list.</li>
-                    <li>Git-based projects and the in-browser editor make the product more credible for coding and operations use cases.</li>
+                    <li>Memory controls reduce context bleed between sessions and make it possible to correct a system working from stale or incorrect state.</li>
+                    <li>Project isolation means work on different clients, environments, or topics doesn't contaminate each other.</li>
+                    <li>Skills and the wider plugin surface let the system work across repositories, remote systems, and external APIs without hardcoding every capability into a fixed tool list.</li>
+                    <li>Git-backed projects and the in-browser editor give the product real credibility for development and operations workflows beyond the demo use case.</li>
                 </ul>
 
-                <h2>WHAT_LOOKS_MOST_INTERESTING_FROM_HERE</h2>
-                <p>The strongest signal in the public notes is orchestration maturity. Real-time state sync, message queueing, process grouping, subagents, wait controls, and multiple providers all point to a system that expects users to supervise parallel work instead of treating every run as a single uninterrupted monologue.</p>
-                <p>That matters because the next wave of useful agent products will not win on chat polish alone. They will win on inspectability, project hygiene, plugin depth, and how safely they let users mix repositories, secrets, local tools, remote access, and outside services.</p>
-
-                <h2>WHAT_TO_VERIFY_BEFORE_ADOPTION</h2>
-                <p>If you are evaluating Agent Zero for actual team use, the questions are operational rather than promotional. Look closely at permission boundaries, secrets handling, auditability of skill and tool behavior, rollback paths, and how the system behaves when models, tools, or external services fail mid-run.</p>
-                <ul class="article-list">
-                    <li>Test whether project isolation truly limits accidental cross-context leakage.</li>
-                    <li>Review how imported skills and external connectors are governed before opening them to a wider team.</li>
-                    <li>Check how Git authentication, remote tunnels, and browser tooling fit your threat model.</li>
-                    <li>Validate logs, transcripts, and state history if you need reproducibility or reviewable evidence.</li>
-                </ul>
-
-                <h2>WHO_THIS_REPORT_IS_FOR</h2>
-                <p>This report is intended for teams tracking the agent tooling ecosystem with an operations mindset. It is not an endorsement and it is not a benchmark. It is a brief for people who care about platform shape, extensibility, workflow safety, and whether the product is becoming more useful than a demo.</p>
+                <h2>THE_QUESTIONS_WORTH_ASKING_BEFORE_WIDER_ADOPTION</h2>
+                <p>For teams thinking beyond solo experimentation, the evaluation questions are operational. Does project isolation actually hold under adversarial input, or does it rely on the agent and user following the expected path? How are per-project secrets stored and scoped? What happens to a long-running task when a model call fails or a tool errors mid-sequence? What does a replay or audit trail look like for a completed run?</p>
+                <p>None of these have obvious answers from the public documentation alone. They require testing in environments representative of real team use — not the examples that appear in the getting-started guide.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">

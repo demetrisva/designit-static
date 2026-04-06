@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i '' 's|<i class=\"far fa-calendar\"></i> 2026-03-28</span>|<i class=\"far fa-calendar\"></i> 2026-04-06</span>|g' article-*.html)",
+      "Bash(sed -i '' 's|\"dateModified\": \"2026-03-28\"|\"dateModified\": \"2026-04-06\"|g' article-*.html article.html)",
+      "Bash(grep -l \"rel=\\\\\"icon\\\\\"\" *.html)",
+      "Bash(grep -l \"Space Mono Font\" article-*.html)",
+      "Bash(grep -rn \"UPDATE_2026_03_14\" *.html)",
+      "Bash(grep -h \"fa-calendar.*2026\" article-*.html)"
+    ]
+  }
+}

@@ -7,6 +7,7 @@
     <title>CRA Shipping Calendar // DesignIt.pro</title>
     <meta name="description" content="The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-security-jwt.html">
     <meta property="og:url" content="https://designit.pro/article-security-jwt.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: CRA SHIPPING CALENDAR">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.">
     <meta name="twitter:image" content="assets/images/og-security-jwt.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "CRA SHIPPING CALENDAR", "description": "The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.", "datePublished": "2026-03-25", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "CRA SHIPPING CALENDAR", "description": "The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.", "datePublished": "2026-03-25", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label label-danger">:: SECURITY_BRIEF_007</span>
                 <h1 class="article-title">CRA_SHIPPING_CALENDAR</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 7 MIN READ</span>
                     <span><i class="fas fa-shield-alt"></i> PRODUCT SECURITY</span>
                 </div>
@@ -66,44 +67,39 @@
 
             <div class="article-content">
 
-                <p class="lead-text">The Cyber Resilience Act is now something product teams can schedule against, not just a future legal acronym. The important dates are no longer vague: vulnerability reporting obligations arrive earlier, and the broader regime follows after that.</p>
+                <p class="lead-text">The CRA vulnerability reporting obligation starts on 11 September 2026. That is five months away. The reporting timeline under Article 14 is demanding: a 24-hour early warning when a vulnerability is actively exploited, a 72-hour notification with initial details, and a final report within a month of discovery. Teams without a working vulnerability intake and classification process will not meet that cadence.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">KEY_DATES</span>
-                    <p>Under the CRA, manufacturers' reporting obligations for actively exploited vulnerabilities and severe incidents apply from 11 September 2026, while most of the wider requirements apply from 11 December 2027.</p>
+                    <p>CRA Article 14 reporting obligations for actively exploited vulnerabilities and severe incidents apply from 11 September 2026. Most other manufacturer obligations apply from 11 December 2027. The September date is the better forcing function because it requires a working process, not just a policy document.</p>
                 </div>
 
-                <h2>WHY_THE_CALENDAR_MATTERS_NOW</h2>
-                <p>Teams tend to hear 2027 and assume there is plenty of time. In practice, the hard work lands much earlier: asset inventories, vulnerability intake, SBOM discipline, release evidence, and a documented path from product issue to reportable event.</p>
+                <h2>WHAT_THE_REPORTING_TIMELINE_ACTUALLY_REQUIRES</h2>
+                <p>The 24-hour early warning is the hard one. It assumes your team can identify that a vulnerability is being actively exploited, classify it as significant, and file an initial report to ENISA — within one working day of discovery, not within one working day of completing the investigation. That requires a detection path, a written classification criteria document, and clear ownership for who initiates the filing. Most organisations do not have that sequence documented today.</p>
 
-                <p>By the time the deadline arrives, the organization will need more than a policy PDF. It will need working process, named owners, and a product architecture that can answer basic questions about components, dependencies, and remediation state.</p>
+                <p>The 72-hour notification expands on the early warning with a description of the vulnerability, an initial severity assessment, and available mitigation information. The 30-day final report then requires the full picture: timeline, root cause, complete impact scope, and remediation steps taken.</p>
 
                 <blockquote>
                     "Regulation lands as workflow long before it lands as paperwork."
                 </blockquote>
 
-                <h3>WHAT_MANUFACTURERS_AND_TEAMS_SHOULD_BE_BUILDING</h3>
-                <p>The CRA asks for product security that is visible across the lifecycle, not hidden inside specialist teams. For software organizations, that means being able to trace what shipped, what was vulnerable, who owned the fix, and whether customers or authorities need notice.</p>
+                <h3>SBOM_AND_ASSET_INVENTORY</h3>
+                <p>ENISA has published guidance on SBOM practices in the context of the CRA. The practical requirement is being able to identify which of your products contain a given component when a vulnerability in that component is publicly disclosed. Without SBOM practice, finding out which products are affected by a new CVE is a manual archaeology exercise that takes days. With one, it is a query against a maintained list.</p>
 
                 <ul class="article-list">
-                    <li>Maintain a live inventory of products, supported versions, dependencies, and externally reachable components.</li>
-                    <li>Define how vulnerability intake, triage, remediation, and public communication work in one workflow.</li>
-                    <li>Keep release evidence that shows security fixes were assessed, shipped, and tied to the right product version.</li>
+                    <li>Maintain a live inventory of products, supported versions, and their component dependencies — not a static document from the last major release cycle.</li>
+                    <li>Define what "actively exploited vulnerability" means in your classification criteria now, before the first real event forces a judgment call under pressure.</li>
+                    <li>Document the intake-to-report escalation path with named owners at each decision point, including who can approve a regulatory filing.</li>
+                    <li>Run a tabletop exercise against the Article 14 reporting timeline before September 2026 — not after.</li>
                 </ul>
 
-                <p>The organizations that will struggle are not necessarily the least technical ones. They are the ones where product, security, legal, and support are all holding different pieces of the same incident without a shared operating map.</p>
-
-                <h2>WHAT_TO_DO_BEFORE_2026</h2>
-                <p>The 2026 reporting milestone is the better forcing function than the later general application date. If your internal escalation path cannot already identify a serious product-security issue, classify it, and decide whether reporting is triggered, the calendar is shorter than it looks.</p>
-                <ul class="article-list">
-                    <li>Build product and dependency inventories that product, engineering, and security all trust.</li>
-                    <li>Write incident criteria and reporting paths that do not depend on a single person remembering the law from memory.</li>
-                    <li>Rehearse who gathers evidence, who approves notice, and who owns customer communications.</li>
-                </ul>
+                <h2>THE_2027_WORK_STARTS_NOW</h2>
+                <p>The December 2027 general obligations require security by design, secure defaults, documented update mechanisms, and formalized post-sale support commitments. Most software organizations have not yet written those down in a form that would survive a conformity assessment. Starting the product documentation, vulnerability handling policy, and secure development evidence now creates a much cleaner path to that milestone than treating it as a separate compliance program in late 2026.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" target="_blank" rel="noopener noreferrer">Cyber Resilience Act, Regulation (EU) 2024/2847</a></li>
+                    <li><a href="https://www.enisa.europa.eu/topics/cybersecurity-policy/cyber-resilience-act" target="_blank" rel="noopener noreferrer">ENISA: Cyber Resilience Act resources</a></li>
                     <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20" target="_blank" rel="noopener noreferrer">Consolidated CRA text on EUR-Lex</a></li>
                 </ul>
             </div>

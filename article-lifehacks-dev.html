@@ -7,6 +7,7 @@
     <title>Documentation That Survives Audit // DesignIt.pro</title>
     <meta name="description" content="How teams should write runbooks, decision logs, and control inventories so handoffs, incidents, and audits do not turn into archaeology.">
     <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
     <link rel="canonical" href="https://designit.pro/article-lifehacks-dev.html">
     <meta property="og:url" content="https://designit.pro/article-lifehacks-dev.html">
     <meta name="twitter:image:alt" content="DesignIt.pro report: DOCUMENTATION THAT SURVIVES AUDIT">
@@ -37,7 +38,7 @@
     <meta name="twitter:description" content="How teams should write runbooks, decision logs, and control inventories so handoffs, incidents, and audits do not turn into archaeology.">
     <meta name="twitter:image" content="assets/images/og-lifehacks-dev.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "DOCUMENTATION THAT SURVIVES AUDIT", "description": "How teams should write runbooks, decision logs, and control inventories so handoffs, incidents, and audits do not turn into archaeology.", "datePublished": "2026-03-24", "dateModified": "2026-03-28", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-lifehacks-dev.svg", "mainEntityOfPage": "https://designit.pro/article-lifehacks-dev.html", "url": "https://designit.pro/article-lifehacks-dev.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "DOCUMENTATION THAT SURVIVES AUDIT", "description": "How teams should write runbooks, decision logs, and control inventories so handoffs, incidents, and audits do not turn into archaeology.", "datePublished": "2026-03-24", "dateModified": "2026-04-06", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-lifehacks-dev.svg", "mainEntityOfPage": "https://designit.pro/article-lifehacks-dev.html", "url": "https://designit.pro/article-lifehacks-dev.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                 <span class="mono-label article-label label-accent">:: WORKING_NOTE_008</span>
                 <h1 class="article-title">DOCUMENTATION_THAT_SURVIVES_AUDIT</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-03-28</span>
+                    <span><i class="far fa-calendar"></i> 2026-04-06</span>
                     <span><i class="far fa-clock"></i> 5 MIN READ</span>
                     <span><i class="fas fa-terminal"></i> GOVERNANCE</span>
                 </div>
@@ -66,52 +67,47 @@
 
             <div class="article-content">
 
-                <p class="lead-text">The documentation that matters most is usually written under pressure: handovers, runbooks, decision logs, exception notes, and control inventories. If those records cannot survive an audit or incident review, the team will end up re-learning the same facts at the worst possible moment.</p>
+                <p class="lead-text">Regulatory audit documentation and operational runbooks have more in common than most teams realize. Both need to answer the same basic questions: what was the system doing, who made the decision, when, and what happened next. Teams that find audits least disruptive are usually the ones that already write documentation for incidents and handovers as if an external reviewer might read it later.</p>
 
                 <div class="article-callout">
-                    <span class="callout-label">WHY_THIS_MATTERS</span>
-                    <p>The strongest operational teams do not rely on memory or private chats. They leave behind records that another person can trust without reverse-engineering the whole context.</p>
+                    <span class="callout-label">WHAT_THE_REGULATIONS_EXPECT</span>
+                    <p>CRA Article 13 and Annex I Part II require manufacturers to document security properties, update mechanisms, and vulnerability handling procedures. AI Act Article 11 requires technical documentation for high-risk AI systems covering system purpose, architecture, and human oversight mechanisms. DORA Article 17 requires ICT incident logs with timestamps, classification, and evidence of the response taken. These are not separate document types — they are the same operational records, written with enough structure to survive external review.</p>
                 </div>
 
-                <h2>REMOTE_ACCESS_WITH_LESS_DRAG</h2>
-                <p>Remote work still slows down when infrastructure access lives in chat history or memory. Per-environment keys, named SSH entries, and checked-in runbooks turn an individual habit into a team capability.</p>
+                <h2>WHAT_SURVIVES_AUDIT</h2>
+                <p>Documentation that fails under scrutiny is usually documentation written primarily to satisfy an internal review process. It uses internal abbreviations, assumes prior context, and describes outcomes without explaining decisions. An auditor or incident responder coming in cold cannot reconstruct what happened. Neither can a team member who joins six months after the original author left.</p>
+
+                <p>Documentation that holds up is written for a reader with no ambient context: clear statements of what the system does, why a decision was made rather than just what was decided, what state the system was in at a given point, and who was responsible for each step. That sounds simple. It is not common.</p>
+
+                <blockquote>
+                    "Good documentation is shared memory with structure attached."
+                </blockquote>
+
+                <h3>RUNBOOKS_THAT_WORK</h3>
+                <p>Runbooks fail when they skip steps that seem obvious to the author. During an incident, obvious is not available. Write runbooks with explicit verification steps, expected outputs at each stage, and decision criteria for when to proceed versus escalate. Per-environment configuration differences should be stated explicitly, not referenced from a separate system that might not be accessible during the outage.</p>
 
                 <pre class="code-block"><code>Host staging
   HostName 192.168.1.10
   User deploy
   IdentityFile ~/.ssh/id_ed25519_staging</code></pre>
 
-                <p>Pair that with a lightweight bootstrap checklist and new contributors can reach the same systems without DM archaeology or risky credential sharing.</p>
+                <p>A checked-in SSH config is a small example of operationally useful documentation: it reduces friction for new contributors, survives staff rotation, and does not live in a chat window that gets archived. The same principle applies to environment bootstrap sequences, rollback commands, and log query patterns.</p>
 
-                <h3>TERMINAL_LEVERAGE</h3>
-                <p>The shell is still the highest-leverage surface because it compresses navigation, search, and recovery into a few stable habits.</p>
+                <h3>DECISION_LOGS</h3>
+                <p>For regulated systems, the most valuable document is often the one that explains why a design decision was made — not just what was built. Under the AI Act, DORA, and the CRA, you may need to demonstrate that you understood the risks of a particular approach and chose it deliberately. A short decision log entry with the date, the options considered, the reasons for the choice, and the person who approved it is worth far more than a technically accurate architecture diagram with no context attached.</p>
 
                 <ul class="article-list">
-                    <li><code>rg</code> and file pickers for fast codebase search without context switching.</li>
-                    <li><code>git worktree</code> for parallel fixes that keep review state separated.</li>
-                    <li>Terminal multiplexers or persistent tabs so incidents survive disconnects.</li>
-                    <li>Short checked-in scripts for common build, log, and rollback paths.</li>
+                    <li>Keep common operational commands in reviewed scripts inside the repository, not in chat history that may be archived or lost.</li>
+                    <li>Write runbooks with explicit verification steps and expected outputs at each stage — not just the happy path.</li>
+                    <li>Document decisions with dates, alternatives considered, and the reasoning behind the choice — especially for security, data handling, and AI system design.</li>
+                    <li>Use <code>git worktree</code> conventions that keep urgent fixes and ongoing feature work in clearly separated contexts.</li>
                 </ul>
-
-                <blockquote>
-                    "Good workflow is shared memory with shortcuts attached."
-                </blockquote>
-
-                <h2>TEAM_WORKFLOW_CHECKLIST</h2>
-                <p>Workflow quality is not about personal aliases alone. It improves when repeatable paths are documented, versioned, and tested by multiple contributors. The main goal is reducing recovery time during handoff, incident response, and context switching.</p>
-                <ul class="article-list">
-                    <li>Keep common operational commands in reviewed scripts inside the repository.</li>
-                    <li>Use branch/worktree conventions so urgent fixes and feature work stay isolated.</li>
-                    <li>Document environment bootstrap steps in a single runbook with verification commands.</li>
-                </ul>
-
-                <h2>WHO_THIS_REPORT_IS_FOR</h2>
-                <p>This report is intended for practitioners making implementation decisions in live systems. It is not legal advice and it is not a product endorsement. Use it as a technical briefing, then validate choices against your architecture, risk profile, and user constraints before rollout.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
+                    <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" target="_blank" rel="noopener noreferrer">CRA Annex I Part II: Security and vulnerability handling requirements</a></li>
+                    <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener noreferrer">AI Act Article 11: Technical documentation</a></li>
                     <li><a href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener noreferrer">Git Documentation: git-worktree</a></li>
-                    <li><a href="https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md" target="_blank" rel="noopener noreferrer">ripgrep Guide</a></li>
                     <li><a href="https://man.openbsd.org/ssh_config" target="_blank" rel="noopener noreferrer">OpenSSH Manual: ssh_config</a></li>
                 </ul>
             </div>
