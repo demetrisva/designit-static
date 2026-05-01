@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building A PSIRT For Small Product Teams // DesignIt.pro</title>
+    <meta name="description" content="How small product teams can build a Product Security Incident Response capability that meets CRA reporting obligations without a dedicated security department.">
+    <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
+    <link rel="canonical" href="https://designit.pro/article-psirt-setup.html">
+    <meta property="og:url" content="https://designit.pro/article-psirt-setup.html">
+    <meta name="twitter:image:alt" content="DesignIt.pro report: BUILDING A PSIRT FOR SMALL TEAMS">
+    <meta property="og:image:alt" content="DesignIt.pro report: BUILDING A PSIRT FOR SMALL TEAMS">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css?v=3.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="js/script.js?v=3.2" defer></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
+        crossorigin="anonymous"></script>
+    <meta property="og:title" content="BUILDING A PSIRT FOR SMALL TEAMS">
+    <meta property="og:description" content="How small product teams can build a Product Security Incident Response capability that meets CRA reporting obligations without a dedicated security department.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="DesignIt.pro">
+    <meta property="og:image" content="assets/images/og-home.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BUILDING A PSIRT FOR SMALL TEAMS">
+    <meta name="twitter:description" content="How small product teams can build a Product Security Incident Response capability that meets CRA reporting obligations without a dedicated security department.">
+    <meta name="twitter:image" content="assets/images/og-home.svg">
+
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "BUILDING A PSIRT FOR SMALL TEAMS", "description": "How small product teams can build a Product Security Incident Response capability that meets CRA reporting obligations without a dedicated security department.", "datePublished": "2026-05-01", "dateModified": "2026-05-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-home.svg", "mainEntityOfPage": "https://designit.pro/article-psirt-setup.html", "url": "https://designit.pro/article-psirt-setup.html", "inLanguage": "en"}</script>
+</head>
+
+<body>
+
+    <div class="grid-background"></div>
+
+    <header>
+        <nav class="container nav-layout">
+            <a href="index.html" class="logo">{ DesignIt.pro }</a>
+            <a href="index.html#insights" class="secondary-button small">&lt;
+                RETURN_TO_REPORTS</a>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="article-shell">
+            <header class="article-header">
+                <span class="mono-label article-label label-danger">:: SECURITY_BRIEF_012</span>
+                <h1 class="article-title">BUILDING_A_PSIRT_FOR_SMALL_TEAMS</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 2026-05-01</span>
+                    <span><i class="far fa-clock"></i> 9 MIN READ</span>
+                    <span><i class="fas fa-shield-alt"></i> PRODUCT SECURITY</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+
+                <p class="lead-text">The Cyber Resilience Act's vulnerability reporting obligations apply from 11 September 2026. Meeting the 24-hour early warning and 72-hour notification timelines requires a functioning product security incident response process — not a policy document, but a working capability with named owners, documented procedures, and at least one dry run. Small product teams that have not started building this can still get there before September. Teams that wait until August cannot.</p>
+
+                <div class="article-callout">
+                    <span class="callout-label">WHAT_A_PSIRT_ACTUALLY_IS</span>
+                    <p>A Product Security Incident Response Team (PSIRT) is the function responsible for receiving, triaging, and coordinating the response to security vulnerabilities in your products. It does not need to be a separate team or a dedicated headcount. It needs to be a defined capability: someone receives vulnerability reports, someone triages them, someone coordinates the fix, and someone handles the regulatory reporting when the threshold is met. Those four roles can be held by two or three people in a small organisation — but they need to be assigned, documented, and reachable.</p>
+                </div>
+
+                <h2>THE_FOUR_CAPABILITIES_YOU_NEED</h2>
+                <p>The CRA reporting timeline requires four capabilities that most small product teams do not have explicitly defined even when they have the underlying knowledge to perform them. First, a vulnerability intake path: a way for external researchers, customers, and internal teams to report potential security issues that routes reliably to someone who acts on it, not to a generic support inbox that may or may not be reviewed by someone with security context. Second, a triage and classification process: a documented set of criteria that determines whether a reported issue constitutes an actively exploited vulnerability, a severe incident, or something below the reporting threshold. Third, a response coordination process: who does what when a significant vulnerability is confirmed. Fourth, the regulatory reporting capability: who files the ENISA report, in what system, with what content, within what deadline.</p>
+                <p>The triage and classification process is the capability most teams underestimate. Under the CRA, the 24-hour early warning clock starts when the team knows a vulnerability is being actively exploited — not when an investigation is complete. That means the classification decision is made under time pressure, with incomplete information, by whoever is handling the report when it comes in. If the classification criteria are not documented and the decision authority is not assigned in advance, the 24-hour window closes before anyone can agree on what the situation requires.</p>
+
+                <blockquote>
+                    "A PSIRT is not a team. It is a process with named owners."
+                </blockquote>
+
+                <h3>SETTING_UP_VULNERABILITY_INTAKE</h3>
+                <p>The minimum viable vulnerability intake path is a dedicated security email address (conventionally <code>security@yourdomain.com</code>), a published security.txt file at the well-known URI, and a process that ensures reports sent to that address reach someone who can act on them within hours, not days. The security.txt standard (RFC 9116) specifies the format and fields for publishing security contact information in a machine-readable way that security researchers and automated tools can find reliably.</p>
+                <p>Security email addresses fail in practice when they route to shared inboxes with no clear owner, when they are monitored only during business hours, or when they route to a customer support team without security context. A researcher who reports a critical vulnerability on a Friday evening and receives no response for 72 hours will typically assume the report was not received and escalate — either publicly or to a regulatory body. Setting up the intake correctly prevents those scenarios without requiring 24/7 security staffing.</p>
+                <ul class="article-list">
+                    <li>Publish a <code>security.txt</code> file at <code>https://yourdomain.com/.well-known/security.txt</code> with your contact address, PGP key if available, and preferred language.</li>
+                    <li>Ensure the security email address routes to someone with authority to act — not to a shared support inbox. The routing should be tested before it is published.</li>
+                    <li>Set up an auto-acknowledgement for security reports with an expected response timeline. Researchers filing valid reports deserve to know their report was received.</li>
+                    <li>Define what information you need in a vulnerability report to begin triage, and include that in your security.txt or linked policy page.</li>
+                </ul>
+
+                <h2>TRIAGE_AND_CLASSIFICATION_CRITERIA</h2>
+                <p>The classification decision for CRA reporting purposes has two thresholds. An actively exploited vulnerability that meets the significance criteria triggers the 24-hour early warning and 72-hour notification. A severe incident affecting the security of the product triggers the same timeline. Both require a judgment call made quickly — and the quality of that judgment depends on having documented criteria before the event, not improvising them during it.</p>
+                <p>The criteria document should specify: what "actively exploited" means in operational terms for your product context (typically: evidence of exploitation in the wild, confirmed or reasonably suspected from threat intelligence, security research disclosure, or observed attack patterns); what severity thresholds trigger the reporting obligation (typically mapped to CVSS scores and the specific Annex I Part I properties affected); and what evidence standard is required to confirm exploitation before the 24-hour window expires.</p>
+                <p>The evidence standard question is where teams most frequently struggle. Waiting for absolute confirmation before filing the early warning is a risk — the 24-hour window can pass while the investigation is still in progress. The CRA allows for initial reports to be updated as more information becomes available. The safe approach is to file the early warning as soon as active exploitation is reasonably suspected, with a note that the investigation is ongoing, and update the notification as the picture becomes clearer.</p>
+                <ul class="article-list">
+                    <li>Write the classification criteria document before the first real event. Include worked examples for borderline cases — they make faster decisions under pressure.</li>
+                    <li>Assign decision authority explicitly: who can authorize filing an early warning, and who covers that role when the primary owner is unavailable.</li>
+                    <li>Map your CVSS scoring practice to the CRA severity thresholds so that severity assessments feed directly into reporting decisions without additional translation.</li>
+                    <li>Define the escalation path when classification is uncertain: who resolves the uncertainty, in how long, and what happens if the person responsible is unreachable.</li>
+                </ul>
+
+                <h2>COORDINATING_THE_FIX</h2>
+                <p>Vulnerability response coordination for small teams can be a simple linear process: confirmed significant vulnerability goes to the engineer who owns the affected component, fix is developed and reviewed under a confidential branch or in a private fork, a patch release is prepared and tested, and the release is coordinated with the regulatory notification timeline if applicable. The key constraint is confidentiality before the fix is available: a publicly disclosed vulnerability in a product without an available patch creates immediate risk for users.</p>
+                <p>The coordination with the reporter matters more than most product teams expect. Security researchers who have found and reported a valid vulnerability have an implicit expectation of coordinated disclosure: they will not publish their findings while you are working on a fix, within a reasonable timeframe, and you will acknowledge their contribution in the release notes or advisory. Research community norms around coordinated disclosure are well established. Teams that ignore them — either by failing to respond or by releasing a fix without any acknowledgement — damage their ability to receive future responsible disclosures.</p>
+                <p>For teams receiving their first significant vulnerability report, the practical process is: acknowledge within 24 hours, provide an initial assessment and expected fix timeline within 72 hours, keep the reporter updated at each significant development, coordinate the disclosure date, and publish a security advisory with the fix that credits the reporter. Most researchers are cooperative with that process.</p>
+
+                <h2>THE_ENISA_REPORTING_PROCESS</h2>
+                <p>ENISA is establishing the single reporting point for CRA Article 14 notifications. The reporting format will include: product identification, vulnerability description, affected versions, exploitation status and evidence, initial severity assessment, available mitigations, and the steps taken or planned for remediation. Teams that have not yet identified where and how to file the report should monitor ENISA's CRA implementation guidance, which is being updated ahead of the September 2026 application date.</p>
+                <p>The 30-day final report is the document that closes the incident from a regulatory perspective. It needs to include the complete timeline from discovery to remediation, the root cause analysis, the full scope of impact, and the specific technical and process changes made to prevent recurrence. For small teams, the most important thing about the 30-day report is writing it while the incident is still fresh — not reconstructing it from partial records after the engineering team has moved on to the next sprint.</p>
+
+                <h2>PRIMARY_REFERENCES</h2>
+                <ul class="article-list">
+                    <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" target="_blank" rel="noopener noreferrer">Cyber Resilience Act, Regulation (EU) 2024/2847</a></li>
+                    <li><a href="https://www.enisa.europa.eu/topics/cybersecurity-policy/cyber-resilience-act" target="_blank" rel="noopener noreferrer">ENISA: CRA implementation resources</a></li>
+                    <li><a href="https://datatracker.ietf.org/doc/html/rfc9116" target="_blank" rel="noopener noreferrer">RFC 9116: A File Format to Aid in Security Vulnerability Disclosure (security.txt)</a></li>
+                    <li><a href="https://www.first.org/cvss/" target="_blank" rel="noopener noreferrer">FIRST: Common Vulnerability Scoring System (CVSS)</a></li>
+                    <li><a href="https://www.first.org/global/sigs/psirt/guidelines/" target="_blank" rel="noopener noreferrer">FIRST: PSIRT Services Framework</a></li>
+                </ul>
+            </div>
+
+            <section class="related-articles">
+                <span class="related-label">RELATED_THREADS</span>
+                <div class="related-grid">
+                    <a href="article-security-jwt.html" class="related-card">
+                        <div class="related-title">CRA_SHIPPING_CALENDAR</div>
+                        <p class="related-desc">The full CRA milestone timeline teams need to plan around.</p>
+                    </a>
+                    <a href="article-lifehacks-dev.html" class="related-card">
+                        <div class="related-title">DOCUMENTATION_THAT_SURVIVES_AUDIT</div>
+                        <p class="related-desc">Record-keeping practices that make regulatory reporting faster.</p>
+                    </a>
+                    <a href="article-server-redundancy.html" class="related-card">
+                        <div class="related-title">RESILIENCE_DRILLS_UNDER_DORA</div>
+                        <p class="related-desc">Incident response testing for financial entities under DORA.</p>
+                    </a>
+                </div>
+            </section>
+
+            <nav class="article-nav">
+                <a class="article-nav-link prev" href="article-gdpr-enforcement-2026.html">
+                    <span class="article-nav-label">PREV</span>
+                    <span class="article-nav-title">GDPR_ENFORCEMENT_IN_2026</span>
+                </a>
+                <a class="article-nav-link next" href="article-wcag22-checklist.html">
+                    <span class="article-nav-label">NEXT</span>
+                    <span class="article-nav-title">WCAG_2_2_IMPLEMENTATION_CHECKLIST</span>
+                </a>
+            </nav>
+
+            <footer class="article-footer">
+                <div class="share-actions">
+                    <span class="share-label">SHARE_THREAD:</span>
+                    <a href="https://x.com/intent/tweet?url=https://designit.pro/article-psirt-setup.html&text=Read%20this%20report%20on%20DesignIt.pro" class="share-link" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://designit.pro/article-psirt-setup.html" class="share-link" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:?subject=DesignIt.pro%20Report&body=https://designit.pro/article-psirt-setup.html" class="share-link" aria-label="Share by email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 DesignIt.pro</p>
+            <div class="footer-links">
+                <a href="about.html">ABOUT</a> |
+                <a href="editorial-team.html">TEAM</a> |
+                <a href="contact.html">CONTACT</a> |
+                <a href="privacy.html">PRIVACY</a> |
+                <a href="terms.html">TERMS</a> |
+                <a href="cookies.html">COOKIES</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -96,6 +96,22 @@
                 <h2>THE_EVIDENCE_QUESTION</h2>
                 <p>When an accessibility complaint arrives or a market surveillance authority requests documentation, the useful thing to have is evidence that accessibility requirements were built into the delivery process — not a recent audit report that is already out of date the moment the next sprint ships. Design systems that require accessibility acceptance criteria as a release gate create that evidence as a side effect of normal development. That is worth considerably more than a quarterly accessibility sprint that fights fires after the fact.</p>
 
+                <h2>RUNNING_A_TOKEN_AUDIT</h2>
+                <p>Token audits are where naming discipline reveals itself. The audit process is simple: export the full token list, categorize each token by its semantic purpose, and flag any token whose name could mean different things in different contexts or whose name does not survive a rebrand without losing meaning. "Blue primary" fails both tests. "Color interactive default" passes both.</p>
+                <p>The second part of the audit is contrast coverage: for every foreground-background token pairing used in production components, verify the contrast ratio at minimum and that the combination is annotated with its WCAG conformance level. This is the step that exposes assumptions baked in at the earliest design stage — often when a designer used a visually appealing combination without checking conformance, and that combination then propagated into every component built from that token.</p>
+                <p>The third part is usage scope: for each token, verify that the components using it are using it for the semantic purpose the token name describes. Tokens get misappropriated when a team cannot find an exact match for a new use case and reaches for the closest visual approximation instead. The resulting drift is invisible in visual review and only surfaces under semantic audit or compliance examination.</p>
+                <ul class="article-list">
+                    <li>Run token audits on a defined cadence — quarterly is reasonable for active design systems. More frequently after major redesigns or component library migrations.</li>
+                    <li>Track contrast ratios for all foreground-background pairings in a machine-readable format, not just in design tool annotations that do not survive component handoff.</li>
+                    <li>Flag and review tokens used outside their documented semantic scope before they are promoted to a stable release of the design system.</li>
+                    <li>Include token audit results in the design system changelog so downstream teams know what changed and why.</li>
+                </ul>
+
+                <h2>CONTRIBUTION_WORKFLOW_FOR_REGULATED_ENVIRONMENTS</h2>
+                <p>Design systems in regulated product environments need contribution workflows that produce evidence, not just components. The evidence requirement is straightforward: for each component entering the system, there should be a record of what accessibility criteria were tested, what tools were used, who reviewed and approved the result, and when. That record does not need to be complex — a short written summary attached to the pull request that introduced the component is sufficient — but it needs to exist and be retrievable.</p>
+                <p>The part of the contribution workflow most teams skip is usage guidance. A component without documented usage constraints is a component that will be used incorrectly. The usage guidance does not need to be exhaustive, but it needs to answer the question a product team will have when they reach for the component: what state does this represent, in what context should it be used, and what states or contexts should it not be used in. That constraint documentation is what prevents a design system from expanding the scope of non-conformance as it scales.</p>
+                <p>The review step before a component enters the system is also the cheapest place to catch accessibility problems. Accessibility defects found at the component contribution stage cost a fraction of what they cost when found after a component has been deployed into fifty pages and an enforcement complaint triggers a full audit.</p>
+
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C: WCAG 2.2</a></li>

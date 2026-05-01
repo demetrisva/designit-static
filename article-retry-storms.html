@@ -100,6 +100,30 @@
                     <li>Test overload behavior explicitly: does your service emit useful signals under load, and do your clients correctly interpret and act on them?</li>
                 </ul>
 
+                <h2>CIRCUIT_BREAKERS_AND_THE_HALF_OPEN_STATE</h2>
+                <p>A circuit breaker is a state machine between a caller and a dependency. In the closed state, calls pass through normally. When failures exceed a threshold, the circuit trips to open and fails fast without contacting the dependency at all. After a configurable wait, it enters half-open and allows a single probe request. If the probe succeeds the circuit closes; if it fails it opens again with a fresh timer.</p>
+                <p>The half-open state is where most circuit breaker implementations diverge in practice. Some allow a configurable number of simultaneous probes; others block until a single probe resolves. The right behavior depends on whether the dependency can handle burst traffic immediately after recovery, and whether a failed probe during half-open should reset the open timer or apply a separate backoff multiplier. Neither answer is wrong in every case, but the defaults in most libraries were chosen for the library's maintainer's use case — not yours. Verify what your implementation does before relying on it under pressure.</p>
+                <ul class="article-list">
+                    <li>Set open circuit duration to match the typical recovery time of the dependency, not a constant copied from a tutorial.</li>
+                    <li>Log circuit state transitions with timestamps so responders can correlate circuit trips with upstream failure events in the same timeline.</li>
+                    <li>Make circuit breaker state visible in your operations dashboards — a tripped circuit that nobody can see is not helping anyone.</li>
+                    <li>Test half-open behavior explicitly in a staging environment under realistic load. Probe failures during half-open can cause oscillation rather than recovery if the timer resets incorrectly.</li>
+                </ul>
+
+                <h2>INSTRUMENTATION_THAT_REVEALS_STORM_RISK</h2>
+                <p>Retry behavior is invisible unless you make it visible. The minimum useful instrumentation is retry attempt count per request logged alongside the final outcome, and a circuit breaker state metric exported to your metrics pipeline. Without these, incident responders diagnosing a storm spend most of their time establishing baseline behavior that should already be known.</p>
+                <p>Retry-after compliance is a particularly useful signal. When clients obey server-specified backoff windows, you see it in the request rate distribution — traffic drops after a 429 and resumes after the specified interval. When clients ignore the header or the server is not emitting one, synchronized retry bursts appear in the request histogram. That pattern is distinctive and easy to identify once you know what to look for.</p>
+                <p>The most actionable metric for storm risk is retry rate as a fraction of total requests. Under normal conditions this should be low and stable. A rising retry fraction ahead of a full degradation event is an early warning that something in the dependency graph is straining. Alerting on retry fraction gives operations teams a leading indicator rather than a lagging one — the difference between intervening before a storm and diagnosing one after it has run its course.</p>
+                <ul class="article-list">
+                    <li>Export retry attempt count as a labeled metric, not just a log line. You need to aggregate and alert on it, not search for it during an incident.</li>
+                    <li>Set an alert on rising retry fraction — not just error rate — so the signal reaches on-call before the customer-facing impact is visible.</li>
+                    <li>Include retry context in distributed trace spans: which attempt number, what the previous outcome was, and what backoff interval was applied.</li>
+                </ul>
+
+                <h2>MAKING_THE_CONFIGURATION_DEPLOYABLE</h2>
+                <p>The fastest intervention during a live retry storm is rarely a code change. It is deploying a configuration change that reduces retry limits, increases backoff floors, and widens jitter ranges. If that configuration does not exist as a deployable artifact before the incident starts, it is much harder to produce, review, and push to production under the time and communication pressure of a live event.</p>
+                <p>The operational preparation is to define a "retry emergency profile" as a first-class config artifact — one that has been reviewed, tested in staging, and is deployable without a full code release pipeline. Knowing that this lever exists and where it lives reduces the time between "we are in a storm" and "we have reduced the load on the degraded dependency" from tens of minutes to under five.</p>
+
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/" target="_blank" rel="noopener noreferrer">AWS Builders Library: Timeouts, retries, and backoff with jitter</a></li>

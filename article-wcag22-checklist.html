@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG 2.2 Implementation Checklist For Frontend Teams // DesignIt.pro</title>
+    <meta name="description" content="A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.">
+    <meta name="google-adsense-account" content="ca-pub-6942670124765473">
+    <link rel="icon" type="image/png" href="assets/images/designit_logo.png">
+    <link rel="canonical" href="https://designit.pro/article-wcag22-checklist.html">
+    <meta property="og:url" content="https://designit.pro/article-wcag22-checklist.html">
+    <meta name="twitter:image:alt" content="DesignIt.pro report: WCAG 2.2 IMPLEMENTATION CHECKLIST">
+    <meta property="og:image:alt" content="DesignIt.pro report: WCAG 2.2 IMPLEMENTATION CHECKLIST">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css?v=3.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="js/script.js?v=3.2" defer></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6942670124765473"
+        crossorigin="anonymous"></script>
+    <meta property="og:title" content="WCAG 2.2 IMPLEMENTATION CHECKLIST">
+    <meta property="og:description" content="A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="DesignIt.pro">
+    <meta property="og:image" content="assets/images/og-home.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WCAG 2.2 IMPLEMENTATION CHECKLIST">
+    <meta name="twitter:description" content="A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.">
+    <meta name="twitter:image" content="assets/images/og-home.svg">
+
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "WCAG 2.2 IMPLEMENTATION CHECKLIST", "description": "A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.", "datePublished": "2026-05-01", "dateModified": "2026-05-01", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-home.svg", "mainEntityOfPage": "https://designit.pro/article-wcag22-checklist.html", "url": "https://designit.pro/article-wcag22-checklist.html", "inLanguage": "en"}</script>
+</head>
+
+<body>
+
+    <div class="grid-background"></div>
+
+    <header>
+        <nav class="container nav-layout">
+            <a href="index.html" class="logo">{ DesignIt.pro }</a>
+            <a href="index.html#insights" class="secondary-button small">&lt;
+                RETURN_TO_REPORTS</a>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="article-shell">
+            <header class="article-header">
+                <span class="mono-label article-label">:: ACCESSIBILITY_BRIEF_013</span>
+                <h1 class="article-title">WCAG_2_2_IMPLEMENTATION_CHECKLIST</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 2026-05-01</span>
+                    <span><i class="far fa-clock"></i> 10 MIN READ</span>
+                    <span><i class="fas fa-tag"></i> ACCESSIBILITY</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+
+                <p class="lead-text">WCAG 2.2 has been the W3C recommendation since October 2023, and it is the standard that the European Accessibility Act's harmonised technical standard EN 301 549 v3.3.1 points toward for web content and applications. Teams that built their accessibility practice against WCAG 2.1 have work to do — four new success criteria at Level AA and the removal of one criterion that was often misapplied. This checklist covers what changed and how to implement it.</p>
+
+                <div class="article-callout">
+                    <span class="callout-label">WHAT_CHANGED_FROM_2_1</span>
+                    <p>WCAG 2.2 adds nine new success criteria across Levels A, AA, and AAA, and removes SC 4.1.1 Parsing (which was made obsolete by modern browser handling of HTML errors). For teams working to Level AA — the level required by the EAA — the practically significant changes are four new criteria: Focus Appearance (AA), Dragging Movements (AA), Target Size Minimum (AA), and Focus Not Obscured (AA). Three additional criteria are at AAA: Focus Appearance (enhanced), Accessible Authentication (no cognitive function test), and Redundant Entry (reduced).</p>
+                </div>
+
+                <h2>SC_2_4_11_FOCUS_NOT_OBSCURED_MINIMUM</h2>
+                <p>This criterion requires that when a component receives keyboard focus, the component is not entirely hidden by author-created content. The failure case is a sticky header, cookie banner, or chat widget that sits on top of focused elements and obscures the focus indicator. The criterion is at minimum level — the focused component should not be entirely hidden, though it may be partially obscured. SC 2.4.12 Focus Not Obscured (Enhanced, AAA) requires that the focused component is not obscured at all.</p>
+                <p>The implementation fix for most products is ensuring that the scroll margin or scroll padding values on focusable elements account for the height of any sticky positioned content. CSS <code>scroll-margin-top</code> can compensate for a sticky header. For cookie banners and chat widgets that appear unpredictably, the fix requires either ensuring the focusable elements in the banner are in the DOM order before the affected page content, or using z-index management that keeps focused page elements visible above the overlay content.</p>
+                <ul class="article-list">
+                    <li>Identify all sticky-positioned and fixed-positioned elements in your layout that could obscure focused page content.</li>
+                    <li>Navigate every page with keyboard-only and verify that no focused element is entirely hidden by a sticky header, footer, banner, or overlay.</li>
+                    <li>Apply <code>scroll-margin-top</code> values matching your sticky header heights to interactive elements that appear in scrollable containers.</li>
+                    <li>Test with the cookie consent banner visible, since that is the common failure case on first page load.</li>
+                </ul>
+
+                <h2>SC_2_4_12_FOCUS_APPEARANCE_MINIMUM</h2>
+                <p>This criterion requires that the keyboard focus indicator meets minimum size and contrast thresholds. The focus indicator must have an area of at least the perimeter of the unfocused component multiplied by 2 CSS pixels, and the focus indicator color must have a contrast ratio of at least 3:1 against adjacent colors. The criterion provides an alternative: a focus indicator that has sufficient area and sufficient contrast against any adjacent color meets the requirement.</p>
+                <p>In practice, this catches focus rings that are present but functionally invisible: a 1px outline in a color that barely contrasts against the background, or a focus state that changes only the background color of a button without adding a visible indicator against the page background. The most reliable implementation is a composite focus indicator — an outline with sufficient contrast against both the component background and the page background — that does not rely on a single color being legible across all the contexts where the component appears.</p>
+                <p>The minimum area calculation is not a practical bar for most well-designed focus indicators. A standard 2px solid outline around a 200px wide button creates far more than the minimum area. The criterion is designed to catch degenerate focus indicators — single-pixel lines, near-invisible color changes — not to require elaborate focus styling for components that already have reasonable focus states.</p>
+                <ul class="article-list">
+                    <li>Audit every interactive component for focus state: verify that the focus indicator is visible against the component's resting background and against the page background.</li>
+                    <li>Check focus state contrast in both light and dark mode if your product supports both. A dark focus ring that is visible on a light background may be invisible on a dark background.</li>
+                    <li>Remove or replace focus styles that use only color change without a positional indicator — color alone is not sufficient for users who cannot distinguish the colors reliably.</li>
+                    <li>Test focus appearance in high contrast mode (Windows High Contrast, macOS Increase Contrast). Custom focus styles often fail in high contrast mode.</li>
+                </ul>
+
+                <h2>SC_2_5_7_DRAGGING_MOVEMENTS</h2>
+                <p>This criterion requires that any functionality using dragging can be achieved with a single pointer without a dragging movement, unless dragging is essential or the dragging motion is determined by the user agent and not modified by the author. The practically significant cases are drag-and-drop sorting in lists and tables, resizable panels split by drag handles, and slider controls where dragging is the primary input method.</p>
+                <p>The requirement is not to remove dragging — it is to provide an alternative that does not require path-based gesture. For a drag-sortable list, the alternative is typically a move button or a keyboard shortcut that repositions items. For a resizable panel, the alternative is a numeric input field or increment/decrement buttons that adjust the split position. For a range slider, the alternative is already provided by the native <code>&lt;input type="range"&gt;</code> element's keyboard handling — products that replace this with custom slider components need to implement equivalent keyboard interaction.</p>
+                <ul class="article-list">
+                    <li>Inventory all drag interactions in your product: list sorting, panel resizing, canvas interactions, map panning, slider controls.</li>
+                    <li>For each drag interaction, document the single-pointer alternative and verify it is implemented and discoverable.</li>
+                    <li>Test alternative interactions with keyboard-only and with a switch access device simulation. The alternative should not require more steps than the drag interaction it replaces.</li>
+                    <li>For new component development, design the non-drag alternative at the same time as the drag interaction, not as an afterthought once the drag implementation is complete.</li>
+                </ul>
+
+                <h2>SC_2_5_8_TARGET_SIZE_MINIMUM</h2>
+                <p>This criterion requires interactive targets to be at least 24 by 24 CSS pixels, with exceptions for inline text links (where changing the size would reflow text), targets where sufficient spacing exists around them (spacing to adjacent targets of at least the difference between the 24px minimum and the actual target size), and targets that are determined by the user agent and not resized by the author.</p>
+                <p>The spacing exception makes this criterion considerably more practical than a strict minimum size requirement. A 16x16 icon button can meet the criterion if it has at least 4px of clear space on each side with no other interactive target within that space. This means redesigning every small icon button is not necessarily required — adjusting spacing and ensuring no other targets are adjacent may be sufficient. The important thing is to verify, not assume.</p>
+                <p>The failure cases that cannot be resolved with spacing are icon buttons in dense UI contexts where multiple small targets are adjacent to each other — icon toolbars, table row actions, and tag cloud components. In those cases, the targets need to be enlarged, combined into a menu, or the layout redesigned to provide the required spacing. The choice between these options is a product decision, but the choice needs to be made consciously, not deferred until a complaint investigation forces it.</p>
+                <ul class="article-list">
+                    <li>Identify all icon-only buttons and controls under 24px in your product and measure their actual rendered size in the browser, not the design source size.</li>
+                    <li>For targets below 24x24 CSS pixels, assess whether the spacing exception applies: measure the distance to adjacent interactive targets and calculate whether the gap meets the spacing requirement.</li>
+                    <li>Prioritize target size fixes in high-frequency flows: navigation, checkout, form submission, account management. These are the flows most likely to appear in complaint investigations.</li>
+                    <li>Add target size to your design system acceptance criteria so new components are assessed before they enter production.</li>
+                </ul>
+
+                <h2>EMBEDDING_WCAG_2_2_IN_DELIVERY</h2>
+                <p>Treating WCAG 2.2 compliance as an audit outcome rather than a delivery input produces a cycle of remediation that never closes. Audits find issues, issues are fixed, new features introduce new issues, the audit finds them at the next cycle. The cycle breaks when accessibility criteria become release conditions: a component cannot be promoted to the design system without documented accessibility testing, a feature cannot be merged without keyboard navigation testing, a page cannot be released without automated scan results reviewed and addressed.</p>
+                <p>The enforcement pressure from the EAA makes the business case for embedding accessibility clearer than it was under the previous voluntary compliance environment. Evidence that accessibility was built into the delivery process is what matters in enforcement proceedings — not an accessibility statement asserting conformance, but testing records that demonstrate the process was operating before the complaint was filed. The process creates the evidence as a side effect, at no additional documentation cost, provided the testing happens at the right point in the delivery cycle.</p>
+                <p>The minimum embedding that produces defensible evidence is: automated accessibility testing in CI (axe-core or equivalent) with failures blocking merge; keyboard navigation testing as a defined step in QA for every new and modified component; screen reader testing for interactive components on the highest-traffic user journeys; and a visible accessibility testing summary in each release or sprint review. That is achievable without specialist staffing for teams that have already built baseline accessibility competence in the engineering team.</p>
+
+                <h2>PRIMARY_REFERENCES</h2>
+                <ul class="article-list">
+                    <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C WCAG 2.2 Recommendation</a></li>
+                    <li><a href="https://www.w3.org/TR/WCAG22/#new-features-in-wcag-2-2" target="_blank" rel="noopener noreferrer">W3C: New features in WCAG 2.2</a></li>
+                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.03.01_60/en_301549v030301p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.3.1</a></li>
+                    <li><a href="https://github.com/dequelabs/axe-core" target="_blank" rel="noopener noreferrer">axe-core: Accessibility testing engine</a></li>
+                    <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L0882" target="_blank" rel="noopener noreferrer">Directive (EU) 2019/882: European Accessibility Act</a></li>
+                </ul>
+            </div>
+
+            <section class="related-articles">
+                <span class="related-label">RELATED_THREADS</span>
+                <div class="related-grid">
+                    <a href="article-future-css.html" class="related-card">
+                        <div class="related-title">ACCESSIBILITY_AFTER_JUNE_2025</div>
+                        <p class="related-desc">EAA enforcement in practice and what teams need to document.</p>
+                    </a>
+                    <a href="article-design-systems.html" class="related-card">
+                        <div class="related-title">DESIGN_SYSTEMS_FOR_REGULATED_RELEASES</div>
+                        <p class="related-desc">Embedding accessibility criteria at the component level.</p>
+                    </a>
+                    <a href="article-algo-efficiency.html" class="related-card">
+                        <div class="related-title">AI_ACT_READINESS_MAP</div>
+                        <p class="related-desc">Other deadline-driven compliance work running in parallel.</p>
+                    </a>
+                </div>
+            </section>
+
+            <nav class="article-nav">
+                <a class="article-nav-link prev" href="article-psirt-setup.html">
+                    <span class="article-nav-label">PREV</span>
+                    <span class="article-nav-title">BUILDING_A_PSIRT_FOR_SMALL_TEAMS</span>
+                </a>
+                <a class="article-nav-link next" href="article-gdpr-enforcement-2026.html">
+                    <span class="article-nav-label">NEXT</span>
+                    <span class="article-nav-title">GDPR_ENFORCEMENT_IN_2026</span>
+                </a>
+            </nav>
+
+            <footer class="article-footer">
+                <div class="share-actions">
+                    <span class="share-label">SHARE_THREAD:</span>
+                    <a href="https://x.com/intent/tweet?url=https://designit.pro/article-wcag22-checklist.html&text=Read%20this%20report%20on%20DesignIt.pro" class="share-link" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://designit.pro/article-wcag22-checklist.html" class="share-link" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:?subject=DesignIt.pro%20Report&body=https://designit.pro/article-wcag22-checklist.html" class="share-link" aria-label="Share by email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 DesignIt.pro</p>
+            <div class="footer-links">
+                <a href="about.html">ABOUT</a> |
+                <a href="editorial-team.html">TEAM</a> |
+                <a href="contact.html">CONTACT</a> |
+                <a href="privacy.html">PRIVACY</a> |
+                <a href="terms.html">TERMS</a> |
+                <a href="cookies.html">COOKIES</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
