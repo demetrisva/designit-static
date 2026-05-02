@@ -279,8 +279,8 @@ header {
     width: 100%;
     z-index: 1000;
     background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
     padding: 1.5rem 0;
     min-height: var(--header-height);
@@ -533,6 +533,7 @@ header {
 
 .service-card:hover {
     background: var(--surface-color);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-color: var(--primary-dim);
     transform: translateY(-5px);
@@ -1133,6 +1134,10 @@ header {
 
 .hero-actions {
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
 }
 
 .hero-text {
@@ -1255,6 +1260,7 @@ header {
     padding: 2.8rem 2.3rem;
     box-shadow: var(--shadow-soft);
     overflow: hidden;
+    -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
 }
 
@@ -1299,6 +1305,45 @@ header {
 .svc-num {
     font-family: var(--font-mono);
     letter-spacing: 0.2em;
+}
+
+.card-date {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.log-overflow {
+    display: grid;
+    gap: 1rem;
+}
+
+.log-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px dashed var(--border-light);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.log-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .svc-link {
@@ -1500,6 +1545,7 @@ header {
     box-shadow: var(--shadow-soft);
     position: relative;
     overflow: hidden;
+    -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
 }
 
@@ -1553,6 +1599,7 @@ header {
     flex-direction: column;
     gap: 0.5rem;
     overflow: hidden;
+    -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
 
@@ -1580,6 +1627,7 @@ header {
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-soft);
     overflow: hidden;
+    -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
 }
 
@@ -1620,6 +1668,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -1859,6 +1908,7 @@ header {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-light);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 }
 
@@ -1917,6 +1967,7 @@ header {
     background: linear-gradient(180deg, rgba(13, 23, 35, 0.96), rgba(18, 30, 44, 0.9));
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-soft);
+    -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
 }
 

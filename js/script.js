@@ -301,6 +301,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Update Log Toggle ---
+    const logToggle = document.querySelector("[data-log-toggle]");
+    const logOverflow = document.querySelector(".log-overflow");
+    if (logToggle && logOverflow) {
+        const count = logOverflow.querySelectorAll(".log-entry").length;
+        logToggle.addEventListener("click", () => {
+            const isHidden = logOverflow.hidden;
+            logOverflow.hidden = !isHidden;
+            logToggle.innerHTML = isHidden
+                ? `COLLAPSE <i class="fas fa-chevron-up"></i>`
+                : `SHOW ${count} OLDER UPDATES <i class="fas fa-chevron-down"></i>`;
+        });
+    }
+
     // --- Insights Search + Category Filters (Homepage) ---
     const insightsSection = document.querySelector("#insights");
     if (insightsSection) {
