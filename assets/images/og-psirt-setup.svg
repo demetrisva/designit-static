@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07141d"/>
+      <stop offset="100%" stop-color="#0d1f2d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#88fff0"/>
+      <stop offset="100%" stop-color="#ffbf69"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.1" stroke="#88fff0" stroke-width="0.5">
+    <line x1="0" y1="90" x2="1200" y2="90"/><line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="120" y1="0" x2="120" y2="630"/><line x1="240" y1="0" x2="240" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/><line x1="480" y1="0" x2="480" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="720" y1="0" x2="720" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="960" y1="0" x2="960" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/>
+  </g>
+  <rect x="70" y="70" width="1060" height="490" rx="18" fill="rgba(13,22,34,0.85)" stroke="rgba(136,255,240,0.2)" stroke-width="1"/>
+  <text x="110" y="165" fill="#88fff0" font-size="24" font-family="Space Mono, monospace" letter-spacing="4">DESIGNIT.PRO</text>
+  <text x="110" y="250" fill="#f9fcff" font-size="64" font-family="Space Mono, monospace" font-weight="700" letter-spacing="-2">PSIRT_SETUP</text>
+  <text x="110" y="322" fill="#c5d2df" font-size="28" font-family="Space Mono, monospace">BUILDING CRA RESPONSE CAPABILITY</text>
+  <text x="110" y="380" fill="#8d9bab" font-size="20" font-family="Space Mono, monospace">SECURITY_BRIEF / 2026-05-01</text>
+  <rect x="110" y="415" width="320" height="5" fill="url(#accent)" rx="2"/>
+  <text x="110" y="478" fill="#8d9bab" font-size="20" font-family="Space Mono, monospace">designit.pro</text>
+</svg>
