@@ -37,7 +37,7 @@
     <meta name="twitter:description" content="A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.">
     <meta name="twitter:image" content="assets/images/og-wcag22-checklist.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "WCAG 2.2 IMPLEMENTATION CHECKLIST", "description": "A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.", "datePublished": "2026-05-01", "dateModified": "2026-05-10", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-wcag22-checklist.svg", "mainEntityOfPage": "https://designit.pro/article-wcag22-checklist.html", "url": "https://designit.pro/article-wcag22-checklist.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "WCAG 2.2 IMPLEMENTATION CHECKLIST", "description": "A practical WCAG 2.2 implementation checklist for frontend teams — covering the new criteria, common failure patterns, and how to embed testing into delivery.", "datePublished": "2026-05-01", "dateModified": "2026-05-30", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-wcag22-checklist.svg", "mainEntityOfPage": "https://designit.pro/article-wcag22-checklist.html", "url": "https://designit.pro/article-wcag22-checklist.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -56,9 +56,9 @@
         <article class="article-shell">
             <header class="article-header">
                 <span class="mono-label article-label">:: ACCESSIBILITY_BRIEF_013</span>
-                <h1 class="article-title">WCAG_2_2_IMPLEMENTATION_CHECKLIST</h1>
+                <h1 class="article-title">WCAG_2_2_IMPLEMENTATION_<wbr>CHECKLIST</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-05-10</span>
+                    <span><i class="far fa-calendar"></i> 2026-05-30</span>
                     <span><i class="far fa-clock"></i> 10 MIN READ</span>
                     <span><i class="fas fa-tag"></i> ACCESSIBILITY</span>
                 </div>
@@ -66,14 +66,14 @@
 
             <div class="article-content">
 
-                <p class="lead-text">WCAG 2.2 has been the W3C recommendation since October 2023, and it is the standard that the European Accessibility Act's harmonised technical standard EN 301 549 v3.3.1 points toward for web content and applications. Teams that built their accessibility practice against WCAG 2.1 have work to do — four new success criteria at Level AA and the removal of one criterion that was often misapplied. This checklist covers what changed and how to implement it.</p>
+                <p class="lead-text">WCAG 2.2 has been the W3C recommendation since October 2023. EN 301 549 v3.2.1 remains the harmonised ICT accessibility standard referenced for current EU web accessibility alignment, while the next EN 301 549 revision is expected to bring WCAG 2.2 support for European Accessibility Act work. Teams that built their accessibility practice against WCAG 2.1 have work to do: four new Level AA success criteria in WCAG 2.2 and the removal of one criterion that was often misapplied.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">WHAT_CHANGED_FROM_2_1</span>
-                    <p>WCAG 2.2 adds nine new success criteria across Levels A, AA, and AAA, and removes SC 4.1.1 Parsing (which was made obsolete by modern browser handling of HTML errors). For teams working to Level AA — the level required by the EAA — the practically significant changes are four new criteria: Focus Appearance (AA), Dragging Movements (AA), Target Size Minimum (AA), and Focus Not Obscured (AA). Three additional criteria are at AAA: Focus Appearance (enhanced), Accessible Authentication (no cognitive function test), and Redundant Entry (reduced).</p>
+                    <p>WCAG 2.2 adds nine new success criteria across Levels A, AA, and AAA, and removes SC 4.1.1 Parsing, which was made obsolete by modern browser handling of HTML errors. For teams working to Level AA, the new criteria to implement are Focus Not Obscured (Minimum), Dragging Movements, Target Size (Minimum), and Accessible Authentication (Minimum). Focus Appearance is important design-system work, but it is a Level AAA criterion in WCAG 2.2, not a Level AA requirement.</p>
                 </div>
 
-                <h2>SC_2_4_11_FOCUS_NOT_OBSCURED_MINIMUM</h2>
+                <h2>SC_2_4_11_FOCUS_NOT_OBSCURED_<wbr>MINIMUM</h2>
                 <p>This criterion requires that when a component receives keyboard focus, the component is not entirely hidden by author-created content. The failure case is a sticky header, cookie banner, or chat widget that sits on top of focused elements and obscures the focus indicator. The criterion is at minimum level — the focused component should not be entirely hidden, though it may be partially obscured. SC 2.4.12 Focus Not Obscured (Enhanced, AAA) requires that the focused component is not obscured at all.</p>
                 <p>The implementation fix for most products is ensuring that the scroll margin or scroll padding values on focusable elements account for the height of any sticky positioned content. CSS <code>scroll-margin-top</code> can compensate for a sticky header. For cookie banners and chat widgets that appear unpredictably, the fix requires either ensuring the focusable elements in the banner are in the DOM order before the affected page content, or using z-index management that keeps focused page elements visible above the overlay content.</p>
                 <ul class="article-list">
@@ -83,15 +83,15 @@
                     <li>Test with the cookie consent banner visible, since that is the common failure case on first page load.</li>
                 </ul>
 
-                <h2>SC_2_4_12_FOCUS_APPEARANCE_MINIMUM</h2>
-                <p>This criterion requires that the keyboard focus indicator meets minimum size and contrast thresholds. The focus indicator must have an area of at least the perimeter of the unfocused component multiplied by 2 CSS pixels, and the focus indicator color must have a contrast ratio of at least 3:1 against adjacent colors. The criterion provides an alternative: a focus indicator that has sufficient area and sufficient contrast against any adjacent color meets the requirement.</p>
-                <p>In practice, this catches focus rings that are present but functionally invisible: a 1px outline in a color that barely contrasts against the background, or a focus state that changes only the background color of a button without adding a visible indicator against the page background. The most reliable implementation is a composite focus indicator — an outline with sufficient contrast against both the component background and the page background — that does not rely on a single color being legible across all the contexts where the component appears.</p>
-                <p>The minimum area calculation is not a practical bar for most well-designed focus indicators. A standard 2px solid outline around a 200px wide button creates far more than the minimum area. The criterion is designed to catch degenerate focus indicators — single-pixel lines, near-invisible color changes — not to require elaborate focus styling for components that already have reasonable focus states.</p>
+                <h2>SC_3_3_8_ACCESSIBLE_AUTHENTICATION_MINIMUM</h2>
+                <p>This criterion requires that authentication flows do not depend on a cognitive function test unless the site also provides an accessible alternative, a mechanism that helps the user complete the step, or an object-recognition or personal-content exception applies. The common failure case is a login or account recovery flow that requires memorising and transcribing a one-time code, solving a puzzle, or retyping a password without allowing password managers or copy-paste.</p>
+                <p>In practice, the fix is usually operational rather than decorative: support password managers, allow paste into verification fields, avoid blocking copy from a password manager, provide magic-link or passkey options where appropriate, and make CAPTCHA alternatives genuinely usable. Authentication is often owned by a platform team, but the failure appears in product journeys such as checkout, account recovery, support access, and subscription management.</p>
+                <p>Focus Appearance remains worth implementing as a design-system quality bar even though it is Level AAA. Strong focus indicators reduce errors for keyboard users and make the Level AA Focus Not Obscured requirement easier to test, but the checklist should not label it as one of the four new Level AA criteria.</p>
                 <ul class="article-list">
-                    <li>Audit every interactive component for focus state: verify that the focus indicator is visible against the component's resting background and against the page background.</li>
-                    <li>Check focus state contrast in both light and dark mode if your product supports both. A dark focus ring that is visible on a light background may be invisible on a dark background.</li>
-                    <li>Remove or replace focus styles that use only color change without a positional indicator — color alone is not sufficient for users who cannot distinguish the colors reliably.</li>
-                    <li>Test focus appearance in high contrast mode (Windows High Contrast, macOS Increase Contrast). Custom focus styles often fail in high contrast mode.</li>
+                    <li>Audit login, account recovery, checkout, and administrative sign-in flows for memory, transcription, puzzle, and re-entry requirements.</li>
+                    <li>Allow password managers, passkeys, and paste into verification fields unless there is a specific, documented security reason not to.</li>
+                    <li>Provide an accessible alternative for CAPTCHA or challenge flows, and test that the alternative is available before the user is blocked.</li>
+                    <li>Include authentication flows in release QA, not just component-level accessibility testing. Authentication failures often sit outside the main design system.</li>
                 </ul>
 
                 <h2>SC_2_5_7_DRAGGING_MOVEMENTS</h2>
@@ -124,7 +124,7 @@
                 <ul class="article-list">
                     <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C WCAG 2.2 Recommendation</a></li>
                     <li><a href="https://www.w3.org/TR/WCAG22/#new-features-in-wcag-2-2" target="_blank" rel="noopener noreferrer">W3C: New features in WCAG 2.2</a></li>
-                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.03.01_60/en_301549v030301p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.3.1</a></li>
+                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.2.1</a></li>
                     <li><a href="https://github.com/dequelabs/axe-core" target="_blank" rel="noopener noreferrer">axe-core: Accessibility testing engine</a></li>
                     <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L0882" target="_blank" rel="noopener noreferrer">Directive (EU) 2019/882: European Accessibility Act</a></li>
                 </ul>

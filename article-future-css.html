@@ -38,7 +38,7 @@
     <meta name="twitter:description" content="What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.">
     <meta name="twitter:image" content="assets/images/og-future-css.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "ACCESSIBILITY AFTER JUNE 2025", "description": "What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.", "datePublished": "2026-03-28", "dateModified": "2026-05-10", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-future-css.svg", "mainEntityOfPage": "https://designit.pro/article-future-css.html", "url": "https://designit.pro/article-future-css.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "ACCESSIBILITY AFTER JUNE 2025", "description": "What the European Accessibility Act now means for websites, apps, ecommerce journeys, and frontend delivery teams.", "datePublished": "2026-03-28", "dateModified": "2026-05-30", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-future-css.svg", "mainEntityOfPage": "https://designit.pro/article-future-css.html", "url": "https://designit.pro/article-future-css.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
                 <span class="mono-label article-label">:: ACCESSIBILITY_BRIEF_001</span>
                 <h1 class="article-title">ACCESSIBILITY_AFTER_JUNE_2025</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-05-10</span>
+                    <span><i class="far fa-calendar"></i> 2026-05-30</span>
                     <span><i class="far fa-clock"></i> 7 MIN READ</span>
                     <span><i class="fas fa-tag"></i> ACCESSIBILITY</span>
                 </div>
@@ -67,11 +67,11 @@
 
             <div class="article-content">
 
-                <p class="lead-text">The European Accessibility Act has been in force since 28 June 2025. Ten months in, the conversation has shifted from "what does this require" to "what does enforcement actually look like." National market surveillance authorities are now active in several Member States, and teams without documented compliance work are in a much harder position than they would have been a year ago.</p>
+                <p class="lead-text">The European Accessibility Act has been in force since 28 June 2025. Eleven months in, the conversation has shifted from "what does this require" to "what does enforcement actually look like." National market surveillance authorities are now active in several Member States, and teams without documented compliance work are in a much harder position than they would have been a year ago.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">THE_TECHNICAL_STANDARD</span>
-                    <p>The harmonised standard supporting the EAA is EN 301 549, currently at version 3.3.1. For web content and applications, EN 301 549 maps substantially to WCAG 2.1 Level AA at its core — but teams should be working to WCAG 2.2 now. The newer success criteria address real interaction patterns that WCAG 2.1 left unresolved, including Focus Appearance, Dragging Movements, and Target Size Minimum.</p>
+                    <p>The current harmonised ICT accessibility reference is EN 301 549 v3.2.1, which maps substantially to WCAG 2.1 Level AA for web content and applications. The next EN 301 549 revision is expected to support the European Accessibility Act more directly and bring WCAG 2.2 alignment. Teams should therefore treat WCAG 2.2 as the working delivery baseline while documenting the exact standard version used for formal evidence.</p>
                 </div>
 
                 <h2>WHAT_ENFORCEMENT_LOOKS_LIKE_NOW</h2>
@@ -89,7 +89,7 @@
                 <p>Teams that have moved fastest are the ones that embedded WCAG 2.2 acceptance criteria into their design system primitives — and who treat keyboard navigation and screen reader testing as part of the same QA workflow as visual regression, not as a separate specialist audit pass conducted after the code is already merged.</p>
 
                 <ul class="article-list">
-                    <li>Work to WCAG 2.2 Level AA, not 2.1 — this is what the harmonised standard now points toward for covered services.</li>
+                    <li>Work to WCAG 2.2 Level AA as the practical delivery baseline, while recording the EN 301 549 version used for formal conformance evidence.</li>
                     <li>Prioritize the flows that generate revenue first: checkout, login, password reset, account management, support forms.</li>
                     <li>Attach accessibility evidence to release sign-off so a future audit or complaint investigation has something to look at beyond the current state of the product.</li>
                     <li>Test keyboard flow, visible focus at all interaction states, zoom behavior at 200%, and error handling with screen readers — these fail silently in most design-system-driven products.</li>
@@ -99,13 +99,14 @@
                 <p>If shared components reintroduce the same accessibility issues across every new page that uses them, individual page audits will never close the gap. The fix needs to live at the primitive level: color contrast tokens, focus states, error messaging patterns, touch target sizes. Everything above that either inherits the fix or introduces new debt that surfaces in the next complaint.</p>
 
                 <h2>WCAG_2_2_NEW_CRITERIA_IN_PRACTICE</h2>
-                <p>The four new success criteria in WCAG 2.2 address patterns that were common in existing products and poorly handled by the previous standard. Focus Appearance (SC 2.4.11 and 2.4.12) requires that keyboard focus indicators have a minimum size and sufficient contrast against adjacent colors. This catches the common pattern of a thin or low-contrast focus ring that is technically present but practically invisible to users who depend on it.</p>
+                <p>The four new Level AA success criteria in WCAG 2.2 address patterns that were common in existing products and poorly handled by the previous standard. Focus Not Obscured (SC 2.4.11) catches sticky headers, cookie banners, and chat widgets that hide the focused control. Accessible Authentication (SC 3.3.8) catches login and recovery flows that require memorisation, transcription, or puzzle solving without an accessible alternative.</p>
                 <p>Dragging Movements (SC 2.5.7) requires that functionality implemented via drag can also be operated with a single pointer without a path-dependent gesture. This matters for components that use drag-and-drop sorting, resizable panels, or canvas-based interactions. Many design systems implemented drag-only interaction patterns because they felt natural on desktop; SC 2.5.7 requires a non-drag alternative for each of those patterns.</p>
                 <p>Target Size Minimum (SC 2.5.8) requires that interactive targets are at least 24 by 24 CSS pixels, with exceptions for inline text links and targets that have sufficient spacing. This catches icon-only buttons at 16 or 20 pixels that are common in dense UI designs and that create real interaction difficulty for users with motor impairments. The criterion allows flexibility on spacing rather than requiring every target to be enlarged, which makes it more practical to achieve in existing designs.</p>
                 <ul class="article-list">
-                    <li>Audit focus ring implementation across all interactive components — verify minimum size and contrast against all background colors the component appears on, including hover and active states.</li>
+                    <li>Audit focus handling across all interactive components and overlays so focused controls are not hidden by sticky or fixed-position content.</li>
                     <li>Identify every drag-based interaction in your product and document the pointer-based alternative. If no alternative exists, it needs to be built.</li>
                     <li>Check touch target sizes in components using icon-only controls, inline actions, and compact table rows. Spacing-based solutions are often more practical than enlarging the target itself.</li>
+                    <li>Review authentication and account recovery flows for password-manager support, paste support, and accessible alternatives to cognitive challenges.</li>
                     <li>Update your accessibility acceptance criteria to include all four new WCAG 2.2 success criteria explicitly, with testable definitions for each.</li>
                 </ul>
 
@@ -121,7 +122,8 @@
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32019L0882" target="_blank" rel="noopener noreferrer">Directive (EU) 2019/882, the European Accessibility Act</a></li>
-                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.03.01_60/en_301549v030301p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.3.1 (harmonised standard)</a></li>
+                    <li><a href="https://www.etsi.org/human-factors-accessibility/en-301-549-v3-the-harmonized-european-standard-for-ict-accessibility" target="_blank" rel="noopener noreferrer">ETSI: EN 301 549 and the planned EAA revision</a></li>
+                    <li><a href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf" target="_blank" rel="noopener noreferrer">EN 301 549 v3.2.1</a></li>
                     <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C WCAG 2.2</a></li>
                 </ul>
             </div>

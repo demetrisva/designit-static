@@ -38,7 +38,7 @@
     <meta name="twitter:description" content="The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.">
     <meta name="twitter:image" content="assets/images/og-security-jwt.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "CRA SHIPPING CALENDAR", "description": "The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.", "datePublished": "2026-03-25", "dateModified": "2026-05-10", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "CRA SHIPPING CALENDAR", "description": "The Cyber Resilience Act dates product teams should work backward from, and what needs to exist before 2026 and 2027 milestones arrive.", "datePublished": "2026-03-25", "dateModified": "2026-05-30", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-security-jwt.svg", "mainEntityOfPage": "https://designit.pro/article-security-jwt.html", "url": "https://designit.pro/article-security-jwt.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
                 <span class="mono-label article-label label-danger">:: SECURITY_BRIEF_007</span>
                 <h1 class="article-title">CRA_SHIPPING_CALENDAR</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-05-10</span>
+                    <span><i class="far fa-calendar"></i> 2026-05-30</span>
                     <span><i class="far fa-clock"></i> 7 MIN READ</span>
                     <span><i class="fas fa-shield-alt"></i> PRODUCT SECURITY</span>
                 </div>
@@ -67,7 +67,7 @@
 
             <div class="article-content">
 
-                <p class="lead-text">The CRA vulnerability reporting obligation starts on 11 September 2026. That is five months away. The reporting timeline under Article 14 is demanding: a 24-hour early warning when a vulnerability is actively exploited, a 72-hour notification with initial details, and a final report within a month of discovery. Teams without a working vulnerability intake and classification process will not meet that cadence.</p>
+                <p class="lead-text">The CRA vulnerability reporting obligation starts on 11 September 2026. That is just over three months away. The Article 14 reporting timeline is demanding: a 24-hour early warning, a 72-hour notification with initial details, and a final report deadline that depends on the event type. Teams without a working vulnerability intake and classification process will not meet that cadence.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">KEY_DATES</span>
@@ -77,7 +77,7 @@
                 <h2>WHAT_THE_REPORTING_TIMELINE_ACTUALLY_REQUIRES</h2>
                 <p>The 24-hour early warning is the hard one. It assumes your team can identify that a vulnerability is being actively exploited, classify it as significant, and file an initial report to ENISA — within one working day of discovery, not within one working day of completing the investigation. That requires a detection path, a written classification criteria document, and clear ownership for who initiates the filing. Most organisations do not have that sequence documented today.</p>
 
-                <p>The 72-hour notification expands on the early warning with a description of the vulnerability, an initial severity assessment, and available mitigation information. The 30-day final report then requires the full picture: timeline, root cause, complete impact scope, and remediation steps taken.</p>
+                <p>The 72-hour notification expands on the early warning with a description of the vulnerability, an initial severity assessment, and available mitigation information. Final reports then require the full picture: timeline, root cause, complete impact scope, and remediation steps taken. For actively exploited vulnerabilities, the final report is due no later than 14 days after a corrective or mitigating measure is available. For severe incidents, it is due within one month.</p>
 
                 <blockquote>
                     "Regulation lands as workflow long before it lands as paperwork."
@@ -108,13 +108,14 @@
                 </ul>
 
                 <h2>RUNNING_A_TABLETOP_AGAINST_ARTICLE_14</h2>
-                <p>A tabletop exercise for the Article 14 reporting timeline involves a facilitator presenting a realistic scenario — an actively exploited vulnerability discovered in your product — and walking the response team through the 24-hour, 72-hour, and 30-day reporting obligations in real time. The objective is not to produce a perfect simulated report. It is to identify where the process breaks down before September 2026 rather than during the first real event.</p>
-                <p>The breaks that surface most reliably in tabletop exercises are: no documented definition of what "actively exploited" means for your classification criteria, no agreed escalation path from the engineering team that discovers the vulnerability to the person authorized to file the ENISA report, missing technical information required for the 72-hour notification (affected versions, severity, available mitigations), and unclear ownership of the 30-day final report when the incident spanned multiple teams.</p>
+                <p>A tabletop exercise for the Article 14 reporting timeline involves a facilitator presenting a realistic scenario — an actively exploited vulnerability discovered in your product — and walking the response team through the 24-hour early warning, 72-hour notification, and final-report obligations in real time. The objective is not to produce a perfect simulated report. It is to identify where the process breaks down before September 2026 rather than during the first real event.</p>
+                <p>The breaks that surface most reliably in tabletop exercises are: no documented definition of what "actively exploited" means for your classification criteria, no agreed escalation path from the engineering team that discovers the vulnerability to the person authorized to file the ENISA report, missing technical information required for the 72-hour notification (affected versions, severity, available mitigations), and unclear ownership of the final report when the incident spanned multiple teams.</p>
                 <p>Running the tabletop before the September 2026 deadline gives you time to update the classification criteria, update the escalation documentation, and assign clear ownership for each reporting obligation. Running it after the deadline means your first real event is also your first real test of a process that has never been exercised.</p>
 
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" target="_blank" rel="noopener noreferrer">Cyber Resilience Act, Regulation (EU) 2024/2847</a></li>
+                    <li><a href="https://digital-strategy.ec.europa.eu/en/policies/cra-reporting" target="_blank" rel="noopener noreferrer">European Commission: CRA reporting obligations</a></li>
                     <li><a href="https://www.enisa.europa.eu/topics/cybersecurity-policy/cyber-resilience-act" target="_blank" rel="noopener noreferrer">ENISA: Cyber Resilience Act resources</a></li>
                     <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/2024-11-20" target="_blank" rel="noopener noreferrer">Consolidated CRA text on EUR-Lex</a></li>
                 </ul>
