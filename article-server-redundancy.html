@@ -38,7 +38,7 @@
     <meta name="twitter:description" content="Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.">
     <meta name="twitter:image" content="assets/images/og-server-redundancy.svg">
 
-    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "RESILIENCE DRILLS UNDER DORA", "description": "Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.", "datePublished": "2026-03-27", "dateModified": "2026-05-30", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
+    <script type="application/ld+json" id="jsonld-article">{"@context": "https://schema.org", "@type": "Article", "headline": "RESILIENCE DRILLS UNDER DORA", "description": "Operational resilience after DORA means tested procedures, accountable owners, and evidence that recovery paths have really been exercised.", "datePublished": "2026-03-27", "dateModified": "2026-06-08", "author": {"@type": "Organization", "name": "DesignIt.pro"}, "publisher": {"@type": "Organization", "name": "DesignIt.pro", "logo": {"@type": "ImageObject", "url": "https://designit.pro/assets/images/designit_logo.png"}}, "image": "https://designit.pro/assets/images/og-server-redundancy.svg", "mainEntityOfPage": "https://designit.pro/article-server-redundancy.html", "url": "https://designit.pro/article-server-redundancy.html", "inLanguage": "en"}</script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
                 <span class="mono-label article-label">:: FIELD_REPORT_002</span>
                 <h1 class="article-title">RESILIENCE_DRILLS_UNDER_DORA</h1>
                 <div class="article-meta">
-                    <span><i class="far fa-calendar"></i> 2026-05-30</span>
+                    <span><i class="far fa-calendar"></i> 2026-06-08</span>
                     <span><i class="far fa-clock"></i> 6 MIN READ</span>
                     <span><i class="fas fa-tag"></i> RESILIENCE</span>
                 </div>
@@ -67,17 +67,17 @@
 
             <div class="article-content">
 
-                <p class="lead-text">DORA has been in force for more than sixteen months. The Regulation's position is clear: resilience is not a diagram on a slide, it is evidence of tested recovery. Teams that understood this early have built drills, documentation, and third-party evidence into ordinary operations. Teams that treated DORA as a future planning exercise are now catching up under active regulatory scrutiny.</p>
+                <p class="lead-text">DORA has been in force for nearly seventeen months. The Regulation's position is clear: resilience is not a diagram on a slide, it is evidence of tested recovery. Teams that understood this early have built drills, documentation, and third-party evidence into ordinary operations. Teams that treated DORA as a future planning exercise are now catching up under active regulatory scrutiny.</p>
 
                 <div class="article-callout">
                     <span class="callout-label">THE_REGULATORY_PICTURE</span>
-                    <p>DORA has applied since 17 January 2025. The ESAs — EBA, EIOPA, and ESMA — have published final regulatory technical standards covering ICT risk management, incident classification, threat-led penetration testing, and third-party risk register requirements. Those standards are now in force and are what supervisory examinations will test against.</p>
+                    <p>DORA has applied since 17 January 2025. The ESAs — EBA, EIOPA, and ESMA — have published final regulatory technical standards covering ICT risk management, incident classification, threat-led penetration testing, and third-party risk register requirements. On 3 June 2026, the ESAs also published their first annual overview of major ICT-related incidents under DORA, highlighting borderless, interconnected ICT risks and the operational importance of third-party risk management during incident response.</p>
                 </div>
 
                 <h2>WHERE_ARCHITECTURE_ASSUMPTIONS_BREAK</h2>
                 <p>Every platform has hidden coupling that the architecture diagram does not show. DNS resolvers, identity providers, shared payment rails, internal certificate authorities, backup storage endpoints. These become visible when something fails. The objective under DORA is to find them before regulators or customers do.</p>
 
-                <p>Explicit failure domains make graceful degradation achievable rather than theoretical. When you know which dependencies sit in the critical path of which customer journeys, you can make reasonable decisions about load shedding, read-only fallback modes, and what a meaningful partial outage looks like compared to a total one.</p>
+                <p>Explicit failure domains make graceful degradation achievable rather than theoretical. When you know which dependencies sit in the critical path of which customer journeys, you can make reasonable decisions about load shedding, read-only fallback modes, and what a meaningful partial outage looks like compared to a total one. The June 2026 ESA incident overview reinforces that this is not only an internal reliability problem: system failures, external events, and outsourced service dependencies become supervisory facts once they are reported under DORA.</p>
 
                 <blockquote>
                     "Resilience is measured in minutes of confusion you avoid, not years of uptime you claim."
@@ -120,6 +120,8 @@
                 <h2>PRIMARY_REFERENCES</h2>
                 <ul class="article-list">
                     <li><a href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer">DORA Regulation (EU) 2022/2554</a></li>
+                    <li><a href="https://www.eba.europa.eu/publications-and-media/press-releases/esas-publish-first-report-dora-major-ict-related-incidents" target="_blank" rel="noopener noreferrer">ESAs: first report on DORA major ICT-related incidents</a></li>
+                    <li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora" target="_blank" rel="noopener noreferrer">ESMA: Digital Operational Resilience Act overview</a></li>
                     <li><a href="https://sre.google/sre-book/service-level-objectives/" target="_blank" rel="noopener noreferrer">Google SRE Book: Service Level Objectives</a></li>
                     <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework</a></li>
                 </ul>

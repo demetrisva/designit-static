@@ -1290,8 +1290,9 @@ header {
     position: relative;
     background: var(--surface-color);
     border: 1px solid var(--glass-border);
-    border-radius: 18px;
-    padding: 2.8rem 2.3rem;
+    border-radius: 8px;
+    padding: 2.45rem 2rem;
+    min-height: 100%;
     box-shadow: var(--shadow-soft);
     overflow: hidden;
     -webkit-backdrop-filter: blur(18px);
@@ -1302,7 +1303,7 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 18px;
+    border-radius: 8px;
     pointer-events: none;
     padding: 1px;
     background: linear-gradient(140deg, rgba(136, 255, 240, 0.42), rgba(255, 191, 105, 0.42));
@@ -1318,17 +1319,48 @@ header {
 }
 
 .service-card:hover {
-    transform: translateY(-10px) scale(1.015);
+    transform: translateY(-6px);
     background: linear-gradient(180deg, rgba(18, 31, 46, 0.94), rgba(14, 22, 34, 0.92));
 }
 
 .card-header {
     color: var(--primary-color);
+    gap: 1rem;
 }
 
 .service-card h3 {
     font-size: 1.2rem;
+    line-height: 1.25;
     margin-bottom: 0.6rem;
+    overflow-wrap: anywhere;
+}
+
+.service-points {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 1.2rem;
+    list-style: none;
+}
+
+.service-points li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.service-points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-dim);
 }
 
 .service-card > * {
@@ -1348,6 +1380,7 @@ header {
     color: var(--text-dim);
     text-transform: uppercase;
     align-self: center;
+    white-space: nowrap;
 }
 
 .log-overflow {

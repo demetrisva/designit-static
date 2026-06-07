@@ -24,7 +24,7 @@
   <text x="110" y="165" fill="#88fff0" font-size="24" font-family="Space Mono, monospace" letter-spacing="4">DESIGNIT.PRO</text>
   <text x="110" y="250" fill="#f9fcff" font-size="64" font-family="Space Mono, monospace" font-weight="700" letter-spacing="-2">PSIRT_SETUP</text>
   <text x="110" y="322" fill="#c5d2df" font-size="28" font-family="Space Mono, monospace">BUILDING CRA RESPONSE CAPABILITY</text>
-  <text x="110" y="380" fill="#8d9bab" font-size="20" font-family="Space Mono, monospace">SECURITY_BRIEF / 2026-05-30</text>
+  <text x="110" y="380" fill="#8d9bab" font-size="20" font-family="Space Mono, monospace">SECURITY_BRIEF / 2026-06-08</text>
   <rect x="110" y="415" width="320" height="5" fill="url(#accent)" rx="2"/>
   <text x="110" y="478" fill="#8d9bab" font-size="20" font-family="Space Mono, monospace">designit.pro</text>
 </svg>
