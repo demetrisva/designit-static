@@ -65,7 +65,7 @@ h4,
 .logo,
 .mono-label {
     text-transform: uppercase;
-    letter-spacing: -0.05em;
+    letter-spacing: 0;
     font-weight: 700;
 }
 
@@ -974,7 +974,7 @@ h4,
 .logo,
 .mono-label {
     font-family: var(--font-heading);
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     text-transform: uppercase;
 }
 
@@ -1288,10 +1288,12 @@ header {
 
 .service-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: var(--surface-color);
     border: 1px solid var(--glass-border);
     border-radius: 8px;
-    padding: 2.45rem 2rem;
+    padding: 2rem;
     min-height: 100%;
     box-shadow: var(--shadow-soft);
     overflow: hidden;
@@ -1320,19 +1322,30 @@ header {
 
 .service-card:hover {
     transform: translateY(-6px);
-    background: linear-gradient(180deg, rgba(18, 31, 46, 0.94), rgba(14, 22, 34, 0.92));
+    background: linear-gradient(180deg, rgba(20, 26, 32, 0.96), rgba(10, 14, 18, 0.94));
 }
 
 .card-header {
     color: var(--primary-color);
     gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
 }
 
 .service-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     line-height: 1.25;
-    margin-bottom: 0.6rem;
+    margin: 0.35rem 0 0.75rem;
     overflow-wrap: anywhere;
+}
+
+.service-card p {
+    margin-bottom: 1rem;
+}
+
+.service-card .svc-link {
+    margin-top: auto;
 }
 
 .service-points {
