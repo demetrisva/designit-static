@@ -206,18 +206,9 @@ document.addEventListener("DOMContentLoaded", () => {
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
     // Elements to animate
     const animatedElements = document.querySelectorAll(
-        "section, .service-card, .hero-text, .step, .log-entry, .related-card, .article-nav-link, .article-shell, .contact-card, .policy-card, .impact-card, .project-card, .project-metrics .metric, .capability-card, .featured-insight"
+        "section, .service-card, .hero-text, .step, .log-entry, .related-card, .article-nav-link, .contact-card, .policy-card, .impact-card, .project-card, .project-metrics .metric, .capability-card, .featured-insight, .report-listing-card"
     );
 
     const staggerGroups = [
@@ -261,10 +252,31 @@ document.addEventListener("DOMContentLoaded", () => {
         el.addEventListener("mouseleave", onLeave);
     });
 
-    animatedElements.forEach(el => {
-        el.classList.add("fade-in-section"); // Add the helper class
-        observer.observe(el);
-    });
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        animatedElements.forEach(el => {
+            el.classList.add("fade-in-section");
+            observer.observe(el);
+        });
+
+        window.setTimeout(() => {
+            animatedElements.forEach(el => {
+                el.classList.add("is-visible");
+            });
+        }, 900);
+    } else {
+        animatedElements.forEach(el => {
+            el.classList.add("is-visible");
+        });
+    }
 
     // --- Reading Progress Bar (Article Pages) ---
     const article = document.querySelector("article");
